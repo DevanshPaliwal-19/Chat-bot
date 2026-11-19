@@ -1,0 +1,138 @@
+{
+  "schema_version": 1,
+  "service_folder": "10_erp_crm_solutions",
+  "document_id": "erp-crm-solutions-v3",
+  "source_file": "faqs.md",
+  "faqs": [
+    {
+      "faq_id": "erp-crm-solutions-001",
+      "question": "What are ERP and CRM solutions?",
+      "source_tag": "untagged",
+      "approval_status": "draft",
+      "owner": null,
+      "reviewer": null,
+      "reviewed_on": null,
+      "source_pdf_pages": {
+        "start": 57,
+        "end": 61
+      }
+    },
+    {
+      "faq_id": "erp-crm-solutions-002",
+      "question": "What ERP and CRM services does Osiyatech provide?",
+      "source_tag": "untagged",
+      "approval_status": "draft",
+      "owner": null,
+      "reviewer": null,
+      "reviewed_on": null,
+      "source_pdf_pages": {
+        "start": 57,
+        "end": 61
+      }
+    },
+    {
+      "faq_id": "erp-crm-solutions-003",
+      "question": "Does Osiyatech provide Microsoft Dynamics 365 services?",
+      "source_tag": "untagged",
+      "approval_status": "draft",
+      "owner": null,
+      "reviewer": null,
+      "reviewed_on": null,
+      "source_pdf_pages": {
+        "start": 57,
+        "end": 61
+      }
+    },
+    {
+      "faq_id": "erp-crm-solutions-004",
+      "question": "Can existing ERP and CRM systems integrate with other business applications?",
+      "source_tag": "untagged",
+      "approval_status": "draft",
+      "owner": null,
+      "reviewer": null,
+      "reviewed_on": null,
+      "source_pdf_pages": {
+        "start": 57,
+        "end": 61
+      }
+    },
+    {
+      "faq_id": "erp-crm-solutions-005",
+      "question": "Is it possible to migrate from an existing ERP or CRM platform?",
+      "source_tag": "untagged",
+      "approval_status": "draft",
+      "owner": null,
+      "reviewer": null,
+      "reviewed_on": null,
+      "source_pdf_pages": {
+        "start": 57,
+        "end": 61
+      }
+    },
+    {
+      "faq_id": "erp-crm-solutions-006",
+      "question": "Do you provide ongoing ERP and CRM maintenance?",
+      "source_tag": "untagged",
+      "approval_status": "draft",
+      "owner": null,
+      "reviewer": null,
+      "reviewed_on": null,
+      "source_pdf_pages": {
+        "start": 57,
+        "end": 61
+      }
+    },
+    {
+      "faq_id": "erp-crm-solutions-007",
+      "question": "Do you work with Salesforce, HubSpot, SAP, Odoo or Zoho?",
+      "source_tag": "drafted",
+      "approval_status": "draft",
+      "owner": null,
+      "reviewer": null,
+      "reviewed_on": null,
+      "source_pdf_pages": {
+        "start": 57,
+        "end": 61
+      }
+    },
+    {
+      "faq_id": "erp-crm-solutions-008",
+      "question": "Should we build a custom ERP/CRM or use Dynamics 365?",
+      "source_tag": "drafted",
+      "approval_status": "draft",
+      "owner": null,
+      "reviewer": null,
+      "reviewed_on": null,
+      "source_pdf_pages": {
+        "start": 57,
+        "end": 61
+      }
+    },
+    {
+      "faq_id": "erp-crm-solutions-009",
+      "question": "Will you train our team on the new system?",
+      "source_tag": "drafted",
+      "approval_status": "draft",
+      "owner": null,
+      "reviewer": null,
+      "reviewed_on": null,
+      "source_pdf_pages": {
+        "start": 57,
+        "end": 61
+      }
+    },
+    {
+      "faq_id": "erp-crm-solutions-010",
+      "question": "How much does an ERP or CRM project cost?",
+      "source_tag": "drafted",
+      "approval_status": "draft",
+      "owner": null,
+      "reviewer": null,
+      "reviewed_on": null,
+      "source_pdf_pages": {
+        "start": 57,
+        "end": 61
+      }
+    }
+  ]
+}

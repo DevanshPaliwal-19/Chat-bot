@@ -1,0 +1,516 @@
+"""Streamlit UI behaviour via AppTest with a fake backend client (no network, no browser)."""
+from __future__ import annotations
+
+import base64
+from pathlib import Path
+
+import pytest
+from streamlit.testing.v1 import AppTest
+
+from frontend.api_client import ApiClient, ApiError
+
+APP = str(Path(__file__).resolve().parent.parent / "frontend" / "app.py")
+
+CONFIG = {
+    "company_name": "Fixture Corp", "assistant_name": "Fixie", "company_website": "https://fixture.example/",
+    "features": {"voice_input": True, "voice_output": True}, "limits": {"max_audio_seconds": 60},
+    "human_handoff": {"live_notification": False, "contact_email": None},
+}
+
+
+class FakeApi:
+    def __init__(self) -> None:
+        self.chats: list[dict] = []
+        self.audio_calls: list[dict] = []
+        self.leads: list[dict] = []
+        self.deleted: list[tuple] = []
+        self.config_error: ApiError | None = None
+        self.chat_errors: list[ApiError] = []
+        self.audio_result: dict | None = None
+        self.tts_error: ApiError | None = None
+        self.config_data = dict(CONFIG)
+
+    def config(self):
+        if self.config_error:
+            raise self.config_error
+        return self.config_data
+
+    def health(self):
+        return {"status": "ok", "knowledge_base": {"ready": True}, "llm": {"status": "ok"}}
+
+    def chat(self, payload):
+        if self.chat_errors:
+            raise self.chat_errors.pop(0)
+        self.chats.append(payload)
+        return {
+            "conversation_id": "conv_" + "a" * 12, "message_id": "m" * 12, "answer": f"Answer to: {payload['message']}",
+            "response_status": "answered", "interaction_mode": payload["interaction_mode"], "lead_status": "none",
+            "sources": [{"index": 1, "title": "AI Chatbot Development", "source_document": "ai-services/chatbots.md",
+                         "source_url": "https://fixture.example/services/chatbots", "page_number": None}],
+            "suggested_actions": [{"type": "open_lead_form", "label": "Have the team contact me"}],
+        }
+
+    def process_audio(self, audio, **kw):
+        self.audio_calls.append({"bytes": len(audio), **kw})
+        if self.audio_result is not None:
+            return self.audio_result
+        return {"transcript": "what services do you offer", "needs_confirmation": False,
+                "chat": {**self.chat({"message": "what services do you offer", "interaction_mode": kw["mode"]}), "conversation_id": "conv_" + "a" * 12},
+                "audio_base64": base64.b64encode(b"RIFF" + b"\0" * 100).decode(), "audio_mime": "audio/wav", "tts_error": None}
+
+    def synthesize(self, session_id, text):
+        if self.tts_error:
+            raise self.tts_error
+        return b"RIFF" + b"\0" * 100, "audio/wav"
+
+    def create_lead(self, payload):
+        self.leads.append(payload)
+        return {"lead_id": 1, "message": "Thanks! Your request is saved in the team's follow-up queue.", "notified": False}
+
+    def delete_conversation(self, session_id, conversation_id):
+        self.deleted.append((session_id, conversation_id))
+
+
+def make_app(api: FakeApi | None = None) -> tuple[AppTest, FakeApi]:
+    api = api or FakeApi()
+    at = AppTest.from_file(APP, default_timeout=15)
+    at.session_state["_api"] = api
+    return at, api
+
+
+def texts(at: AppTest) -> str:
+    return " ".join(str(m.value) for m in at.markdown)
+
+
+def send(at: AppTest, message: str) -> AppTest:
+    at.chat_input[0].set_value(message).run()
+    return at
+
+
+# ------------------------------------------------------------------ rendering
+def test_initial_render_has_welcome_and_suggestions():
+    at, _ = make_app()
+    at.run()
+    assert not at.exception
+    body = texts(at)
+    assert "Welcome to Fixture Corp" in body and "Fixie" in body and "Fixture Corp AI Assistant" in body
+    assert [b.label for b in at.button if b.key and b.key.startswith("sugg_")] == [
+        "What services do you offer?", "I'm planning a new project", "Tell me about your company"]
+    assert at.chat_input[0].disabled is False
+
+
+def test_header_escapes_company_name():
+    api = FakeApi()
+    api.config_data = {**CONFIG, "company_name": "<script>alert(1)</script>"}
+    at, _ = make_app(api)
+    at.run()
+    # Only HTML-enabled markdown needs escaping; the welcome bubble uses plain markdown (HTML is inert there).
+    hero = next(str(m.value) for m in at.markdown if 'class="osiya-hero"' in str(m.value))
+    assert "<script>" not in hero and "&lt;script&gt;" in hero
+    html_enabled = [str(m.value) for m in at.markdown if "<div" in str(m.value) or "<style" in str(m.value)]
+    assert all("<script>" not in h for h in html_enabled)
+
+
+def test_backend_down_shows_banner_but_a_message_is_not_swallowed():
+    api = FakeApi()
+    api.config_error = ApiError("backend_unreachable", "x", retryable=True)
+    api.chat_errors = [ApiError("backend_unreachable", "I can't reach the assistant service right now.", None, True)]
+    at, _ = make_app(api)
+    at.run()
+    assert not at.exception
+    assert any("can't reach the assistant service" in e.value for e in at.error)
+    assert "Offline" in texts(at)
+    assert at.chat_input[0].disabled is False  # typing stays possible...
+    send(at, "hello?")
+    assert [m["status"] for m in at.session_state["messages"]] == ["failed"]  # ...and a failed send is kept, not dropped
+    assert any(b.key == "retry_btn" for b in at.button)
+
+
+# ------------------------------------------------------------------ text chat
+def test_text_chat_roundtrip_with_sources_and_conversation_id():
+    at, api = make_app()
+    at.run()
+    send(at, "Do you build chatbots?")
+    assert not at.exception
+    assert api.chats[0]["message"] == "Do you build chatbots?" and api.chats[0]["interaction_mode"] == "text"
+    assert api.chats[0]["client_message_id"] and "conversation_id" not in api.chats[0]
+    assert "Answer to: Do you build chatbots?" in texts(at)
+    assert any(e.label == "Sources (1)" for e in at.expander)
+    assert "ai-services/chatbots.md" in texts(at)
+    send(at, "and mobile apps?")
+    assert api.chats[1]["conversation_id"] == "conv_" + "a" * 12
+    assert api.chats[0]["session_id"] == api.chats[1]["session_id"]
+    assert at.session_state["conversation_id"] == "conv_" + "a" * 12
+    assert len(at.session_state["messages"]) == 4
+
+
+def test_history_survives_reruns():
+    at, _ = make_app()
+    at.run()
+    send(at, "hello")
+    before = list(at.session_state["messages"])
+    at.run()
+    at.run()
+    assert at.session_state["messages"] == before and texts(at).count("Answer to: hello") == 1
+
+
+def test_suggested_prompt_click_sends_and_hides_suggestions():
+    at, api = make_app()
+    at.run()
+    next(b for b in at.button if b.label == "What services do you offer?").click().run()
+    assert api.chats[0]["message"] == "What services do you offer?"
+    assert not [b for b in at.button if b.key and b.key.startswith("sugg_")]
+
+
+def test_suggested_action_opens_lead_form():
+    at, _ = make_app()
+    at.run()
+    send(at, "how much does it cost")
+    next(b for b in at.button if b.label == "Have the team contact me").click().run()
+    assert at.session_state["lead_open"] is True
+    assert any("Talk to the team" in str(m.value) for m in at.markdown)
+
+
+# ------------------------------------------------------------------ errors, retry, duplicates
+def test_retryable_error_then_retry_reuses_message_id_and_does_not_duplicate():
+    api = FakeApi()
+    api.chat_errors = [ApiError("llm_unavailable", "The assistant is temporarily unavailable.", 503, True)]
+    at, _ = make_app(api)
+    at.run()
+    send(at, "Do you build chatbots?")
+    assert any("temporarily unavailable" in e.value for e in at.error)
+    assert at.chat_input[0].disabled is True  # can't pile on while a failure is unresolved
+    failed_cid = at.session_state["failed"]["pending"]["cid"]
+    assert [m["status"] for m in at.session_state["messages"]] == ["failed"]
+    next(b for b in at.button if b.key == "retry_btn").click().run()
+    assert not at.error and api.chats[0]["client_message_id"] == failed_cid
+    assert [m["role"] for m in at.session_state["messages"]] == ["user", "assistant"]
+    assert at.session_state["messages"][0]["status"] == "sent"
+
+
+def test_non_retryable_error_has_no_retry_and_dismiss_removes_message():
+    api = FakeApi()
+    api.chat_errors = [ApiError("message_too_long", "Please keep your message shorter.", 422, False)]
+    at, _ = make_app(api)
+    at.run()
+    send(at, "x")
+    assert any("shorter" in e.value for e in at.error)
+    assert not [b for b in at.button if b.key == "retry_btn"]
+    next(b for b in at.button if b.key == "dismiss_btn").click().run()
+    assert not at.error and at.session_state["messages"] == [] and at.chat_input[0].disabled is False
+
+
+def test_rate_limit_error_mentions_retry_after():
+    api = FakeApi()
+    api.chat_errors = [ApiError("rate_limited", "Too many requests.", 429, True, retry_after=12)]
+    at, _ = make_app(api)
+    at.run()
+    send(at, "hi")
+    assert "12s" in at.error[0].value
+
+
+def test_enqueue_blocks_while_request_in_flight():
+    from frontend import pipeline
+
+    def script():
+        import streamlit as st
+        from frontend.state import init_state
+        from frontend import pipeline
+        init_state()
+        st.session_state.mode = "text"
+        st.session_state.r1 = pipeline.enqueue_text("first")
+        st.session_state.r2 = pipeline.enqueue_text("second")  # pending already set
+        st.session_state.r3 = pipeline.enqueue_text("   ")
+
+    at = AppTest.from_function(script).run()
+    assert (at.session_state["r1"], at.session_state["r2"], at.session_state["r3"]) == (True, False, False)
+    assert [m["content"] for m in at.session_state["messages"]] == ["first"]
+
+
+def test_conversation_restart_notice_is_shown():
+    api = FakeApi()
+    orig = api.chat
+    api.chat = lambda p: {**orig(p), "conversation_restarted": True}
+    at, _ = make_app(api)
+    at.run()
+    send(at, "hello")
+    send(at, "again")
+    assert "expired, so we're starting fresh" in texts(at)
+
+
+# ------------------------------------------------------------------ conversation management
+def test_new_conversation_resets_and_rotates_session():
+    at, api = make_app()
+    at.run()
+    send(at, "hello")
+    old_sid = at.session_state["session_id"]
+    next(b for b in at.button if "New conversation" in b.label).click().run()
+    assert at.session_state["messages"] == [] and at.session_state["conversation_id"] is None
+    assert at.session_state["session_id"] != old_sid and api.deleted == [(old_sid, "conv_" + "a" * 12)]
+    assert "Welcome to Fixture Corp" in texts(at)
+
+
+def test_clear_conversation_keeps_session():
+    at, api = make_app()
+    at.run()
+    send(at, "hello")
+    sid = at.session_state["session_id"]
+    next(b for b in at.button if "Clear conversation" in b.label).click().run()
+    assert at.session_state["messages"] == [] and at.session_state["session_id"] == sid
+
+
+# ------------------------------------------------------------------ lead form
+def _fill_lead_form(at, *, name="Jane Doe", email="jane@acme.io", consent=True, follow_up=True):
+    by_label = {t.label: t for t in at.text_input}  # select by label: AppTest orders widgets column by column
+    by_label["Name *"].set_value(name)
+    by_label["Work email *"].set_value(email)
+    next(c for c in at.checkbox if c.label.startswith("I'd like someone")).set_value(follow_up)
+    next(c for c in at.checkbox if c.label.startswith("I agree")).set_value(consent)
+    next(b for b in at.button if b.label == "Submit").click().run()
+
+
+def _open_form():
+    at, api = make_app()
+    at.session_state["lead_open"] = True
+    at.run()
+    return at, api
+
+
+def test_lead_form_submits_with_consent_and_shows_honest_result():
+    at, api = _open_form()
+    _fill_lead_form(at)
+    assert len(api.leads) == 1 and api.leads[0]["consent"] is True and api.leads[0]["request_human_follow_up"] is True
+    assert api.leads[0]["email"] == "jane@acme.io" and api.leads[0]["name"] == "Jane Doe"
+    assert any("follow-up queue" in s.value for s in at.success)
+    assert "notified" not in at.success[0].value.lower()
+
+
+def test_lead_form_blocks_submission_without_consent():
+    at, api = _open_form()
+    _fill_lead_form(at, consent=False)
+    assert any("consent box" in w.value for w in at.warning) and api.leads == [] and not at.success
+
+
+def test_lead_form_requires_name_and_email():
+    at, api = _open_form()
+    _fill_lead_form(at, name="  ", email="")
+    assert any("Name and email are required" in w.value for w in at.warning) and api.leads == []
+
+
+def test_lead_form_shows_backend_validation_error():
+    at, api = _open_form()
+    api.create_lead = lambda payload: (_ for _ in ()).throw(ApiError("invalid_email", "Please enter a valid email address.", 422, False))
+    _fill_lead_form(at, email="not-an-email")
+    assert any("valid email" in e.value for e in at.error) and not at.success
+
+
+def test_lead_form_explains_no_live_notification():
+    at, _ = make_app()
+    at.session_state["lead_open"] = True
+    at.run()
+    assert any("can't contact the team directly" in c.value for c in at.caption)
+
+
+def test_talk_to_team_button_opens_form_with_follow_up_prechecked():
+    at, _ = make_app()
+    at.run()
+    next(b for b in at.button if "Talk to the team" in b.label).click().run()
+    assert at.session_state["lead_open"] and at.checkbox[0].value is True
+
+
+# ------------------------------------------------------------------ voice / avatar (server side of the flow)
+def test_voice_pipeline_success_updates_state_and_reply():
+    api = FakeApi()
+
+    def script():
+        import streamlit as st
+        from frontend.state import init_state, get_api
+        from frontend import pipeline
+        init_state()
+        st.session_state.mode = "voice"
+        pipeline.enqueue_audio(b"RIFFxxxx" * 10, interrupted=True)
+        pipeline.run_pending(get_api())
+
+    at = AppTest.from_function(script)
+    at.session_state["_api"] = api
+    at.run()
+    assert not at.exception
+    call = api.audio_calls[0]
+    assert call["mode"] == "voice" and call["interrupted"] is True and call["client_message_id"]
+    msgs = at.session_state["messages"]
+    assert [(m["role"], m["content"][:12]) for m in msgs] == [("user", "what service"), ("assistant", "Answer to: w")]
+    assert msgs[0]["voice"] is True
+    reply = at.session_state["reply"]
+    assert reply["id"] == 1 and reply["audio_b64"] and reply["mime"] == "audio/wav"
+
+
+def test_voice_pipeline_low_confidence_asks_for_confirmation_then_sends_edit():
+    api = FakeApi()
+    api.audio_result = {"transcript": "wat serv ices", "needs_confirmation": True, "transcript_confidence": 0.1, "chat": None}
+
+    def script():
+        import streamlit as st
+        from frontend.state import init_state, get_api
+        from frontend import pipeline
+        init_state()
+        st.session_state.mode = "avatar"
+        pipeline.enqueue_audio(b"RIFFyyyy" * 10)
+        pipeline.run_pending(get_api())
+        st.session_state.has_confirm = st.session_state.confirm is not None
+
+    at = AppTest.from_function(script)
+    at.session_state["_api"] = api
+    at.run()
+    assert at.session_state["has_confirm"] and at.session_state["confirm"]["transcript"] == "wat serv ices"
+    assert at.session_state["messages"] == [] and api.chats == []
+
+
+def test_voice_pipeline_duplicate_recording_is_ignored_and_failure_allows_retry():
+    api = FakeApi()
+
+    def script():
+        import streamlit as st
+        from frontend.state import init_state, get_api
+        from frontend import pipeline
+        init_state()
+        st.session_state.mode = "voice"
+        a = pipeline.enqueue_audio(b"RIFFzzzz" * 10)
+        pipeline.run_pending(get_api())
+        b = pipeline.enqueue_audio(b"RIFFzzzz" * 10)   # same bytes again (duplicate submission)
+        st.session_state.dup = (a, b)
+
+    at = AppTest.from_function(script)
+    at.session_state["_api"] = api
+    at.run()
+    assert at.session_state["dup"] == (True, False) and len(api.audio_calls) == 1
+
+
+def test_voice_pipeline_stt_failure_keeps_conversation_and_offers_retry():
+    api = FakeApi()
+
+    def bad(audio, **kw):
+        raise ApiError("stt_unavailable", "Voice input is not available right now. You can type your question instead.", 503, True)
+
+    api.process_audio = bad
+
+    def script():
+        import streamlit as st
+        from frontend.state import init_state, get_api
+        from frontend import pipeline
+        init_state()
+        st.session_state.mode = "voice"
+        st.session_state.messages.append({"id": "x", "role": "user", "content": "earlier", "mode": "text", "status": "sent", "sources": [], "actions": [], "local": False})
+        pipeline.enqueue_audio(b"RIFFqqqq" * 10)
+        pipeline.run_pending(get_api())
+        pipeline.retry_failed()
+        st.session_state.after_retry = (st.session_state.pending is not None, st.session_state.failed)
+
+    at = AppTest.from_function(script)
+    at.session_state["_api"] = api
+    at.run()
+    assert at.session_state["after_retry"] == (True, None) and at.session_state["messages"][0]["content"] == "earlier"
+
+
+def test_voice_mode_typed_message_is_spoken_and_tts_failure_is_tolerated():
+    api = FakeApi()
+
+    def script():
+        import streamlit as st
+        from frontend.state import init_state, get_api
+        from frontend import pipeline
+        init_state()
+        st.session_state.mode = "avatar"
+        pipeline.enqueue_text("hello there")
+        pipeline.run_pending(get_api())
+
+    at = AppTest.from_function(script)
+    at.session_state["_api"] = api
+    at.run()
+    assert api.chats[0]["interaction_mode"] == "avatar" and at.session_state["reply"]["audio_b64"]
+    api2 = FakeApi()
+    api2.tts_error = ApiError("tts_unavailable", "Voice replies are not available right now.", 503, True)
+    at2 = AppTest.from_function(script)
+    at2.session_state["_api"] = api2
+    at2.run()
+    assert not at2.exception and at2.session_state["reply"]["audio_b64"] is None
+    assert at2.session_state["reply"]["tts_error"] == "tts_unavailable" and len(at2.session_state["messages"]) == 2
+
+
+def test_voice_event_handling_dedupes_by_event_id_and_rejects_bad_base64():
+    from frontend.components import voice_panel
+
+    api = FakeApi()
+
+    def script():
+        import streamlit as st
+        from frontend.state import init_state
+        from frontend.components import voice_panel
+        init_state()
+        st.session_state.mode = "voice"
+        ev = {"event_id": "e1", "type": "recording", "audio_b64": "UklGRg==", "mime": "audio/wav", "interrupted": False}
+        voice_panel._handle_event(ev)  # first time: queues the audio, then st.rerun() restarts the script
+        voice_panel._handle_event(ev)  # same event again (after the rerun): ignored
+        voice_panel._handle_event({"event_id": "e2", "type": "recording", "audio_b64": "!!!not base64!!!"})
+        st.session_state.n_pending = int(st.session_state.pending is not None)
+
+    at = AppTest.from_function(script)
+    at.session_state["_api"] = api
+    at.run()
+    assert at.session_state["n_pending"] == 1 and at.session_state["pending"]["kind"] == "audio"
+    assert at.session_state["last_event_id"] == "e2"
+    assert at.session_state["notice"] == "That recording could not be read. Please try again."
+
+
+def test_voice_mode_without_server_support_shows_info_not_component():
+    api = FakeApi()
+    api.config_data = {**CONFIG, "features": {"voice_input": False, "voice_output": False}}
+    at, _ = make_app(api)
+    at.session_state["mode"] = "voice"
+    at.run()
+    assert not at.exception
+    assert any("Voice input isn't enabled" in i.value for i in at.info)
+
+
+# ------------------------------------------------------------------ API client
+class _Resp:
+    def __init__(self, status, body=None, headers=None, text=""):
+        self.status_code, self._body, self.headers, self.content, self.text = status, body, headers or {}, b"", text
+
+    def json(self):
+        if self._body is None:
+            raise ValueError("no json")
+        return self._body
+
+
+class _Http:
+    def __init__(self, result):
+        self.result = result
+
+    def request(self, method, url, **kw):
+        if isinstance(self.result, Exception):
+            raise self.result
+        return self.result
+
+
+def test_api_client_error_mapping():
+    import requests
+    c = lambda r: ApiClient("http://x", session=_Http(r))  # noqa: E731
+    with pytest.raises(ApiError) as e:
+        c(requests.exceptions.ConnectionError("refused")).chat({})
+    assert e.value.code == "backend_unreachable" and e.value.retryable and "refused" not in e.value.message
+    with pytest.raises(ApiError) as e:
+        c(requests.exceptions.ReadTimeout()).chat({})
+    assert e.value.code == "request_timeout" and e.value.retryable
+    with pytest.raises(ApiError) as e:
+        c(_Resp(429, {"error": {"code": "rate_limited", "message": "Too many requests."}}, {"Retry-After": "7"})).chat({})
+    assert e.value.retry_after == 7 and e.value.retryable and e.value.status == 429
+    with pytest.raises(ApiError) as e:
+        c(_Resp(422, {"error": {"code": "message_too_long", "message": "Shorter please."}})).chat({})
+    assert not e.value.retryable and e.value.message == "Shorter please."
+    with pytest.raises(ApiError) as e:
+        c(_Resp(502, None, text="<html>Bad gateway</html>")).chat({})
+    assert e.value.retryable and "html" not in e.value.message.lower()
+    with pytest.raises(ApiError) as e:
+        c(_Resp(200, None)).chat({})
+    assert e.value.code == "bad_response"
+    assert c(_Resp(200, {"ok": 1})).chat({}) == {"ok": 1}

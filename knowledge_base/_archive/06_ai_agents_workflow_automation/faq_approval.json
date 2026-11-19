@@ -1,0 +1,209 @@
+{
+  "schema_version": 2,
+  "service_folder": "06_ai_agents_workflow_automation",
+  "document_id": "ai-agents-workflow-automation-v3",
+  "source_file": "faqs.md",
+  "faqs": [
+    {
+      "faq_id": "ai-agents-workflow-automation-001",
+      "question": "What is the difference between an AI chatbot and an AI agent?",
+      "source_tag": "drafted",
+      "approval_status": "approved",
+      "owner": "Osiyatech Team",
+      "reviewer": "Osiyatech Team",
+      "reviewed_on": "2026-10-31",
+      "source_pdf_pages": {
+        "start": 38,
+        "end": 41
+      },
+      "answer": "An AI chatbot mainly holds a conversation: it understands a question and gives an answer, often drawing on\nyour documents. An AI agent goes further and takes action. It can work through a multi-step task, decide what\nto do next, look up information in your systems, update records, trigger workflows and hand the case to a\nperson when needed. Multi-agent systems use several specialised agents working together on complex\nprocesses. Osiyatech builds all of these and recommends the right level for your needs.",
+      "source_url": "https://osiyatech.com/services (no dedicated page yet)",
+      "source_document": "Osiyatech_Services_Knowledge_Base_v3.pdf",
+      "source_pdf_page": null,
+      "version": "3.0"
+    },
+    {
+      "faq_id": "ai-agents-workflow-automation-002",
+      "question": "What kinds of tasks can AI agents automate?",
+      "source_tag": "drafted",
+      "approval_status": "approved",
+      "owner": "Osiyatech Team",
+      "reviewer": "Osiyatech Team",
+      "reviewed_on": "2026-10-31",
+      "source_pdf_pages": {
+        "start": 38,
+        "end": 41
+      },
+      "answer": "AI agents are well suited to repetitive, rules-guided work that involves reading, deciding and acting. Examples\ninclude answering common customer questions, triaging and routing incoming requests, collecting details from\ncustomers before a human takes over, looking up information across systems, updating CRM records,\ngenerating summaries or follow-up messages, and coordinating multi-step back-office processes. During\nassessment, Osiyatech helps identify which of your workflows will benefit most.",
+      "source_url": "https://osiyatech.com/services (no dedicated page yet)",
+      "source_document": "Osiyatech_Services_Knowledge_Base_v3.pdf",
+      "source_pdf_page": null,
+      "version": "3.0"
+    },
+    {
+      "faq_id": "ai-agents-workflow-automation-003",
+      "question": "Can you build a chatbot that answers from our own documents?",
+      "source_tag": "drafted",
+      "approval_status": "approved",
+      "owner": "Osiyatech Team",
+      "reviewer": "Osiyatech Team",
+      "reviewed_on": "2026-10-31",
+      "source_pdf_pages": {
+        "start": 38,
+        "end": 41
+      },
+      "answer": "Yes. Knowledge-base and document chatbots are a core offering. They use retrieval-augmented generation\n(RAG): when someone asks a question, the system finds the relevant passages in your documents and uses\nthem to write an accurate answer. This grounds responses in your actual content, such as manuals, policies,\nproduct information or FAQs, instead of the AI's general knowledge, and the knowledge base can be updated\nas your content changes.",
+      "source_url": "https://osiyatech.com/services (no dedicated page yet)",
+      "source_document": "Osiyatech_Services_Knowledge_Base_v3.pdf",
+      "source_pdf_page": null,
+      "version": "3.0"
+    },
+    {
+      "faq_id": "ai-agents-workflow-automation-004",
+      "question": "Can an AI assistant work on WhatsApp or connect to our CRM?",
+      "source_tag": "drafted",
+      "approval_status": "approved",
+      "owner": "Osiyatech Team",
+      "reviewer": "Osiyatech Team",
+      "reviewed_on": "2026-10-31",
+      "source_pdf_pages": {
+        "start": 38,
+        "end": 41
+      },
+      "answer": "Yes. WhatsApp API is part of the technology stack, so assistants can talk to customers directly on WhatsApp.\nCRM and third-party integrations are a listed capability, which lets agents read and update customer\ninformation, log conversations and pass qualified leads or cases to your team. The exact integrations for your\nsystems are confirmed during project assessment.",
+      "source_url": "https://osiyatech.com/services (no dedicated page yet)",
+      "source_document": "Osiyatech_Services_Knowledge_Base_v3.pdf",
+      "source_pdf_page": 41,
+      "version": "3.0"
+    },
+    {
+      "faq_id": "ai-agents-workflow-automation-005",
+      "question": "Can you automate our customer support?",
+      "source_tag": "drafted",
+      "approval_status": "approved",
+      "owner": "Osiyatech Team",
+      "reviewer": "Osiyatech Team",
+      "reviewed_on": "2026-10-31",
+      "source_pdf_pages": {
+        "start": 38,
+        "end": 41
+      },
+      "answer": "Yes. Customer support automation uses AI chatbots and agents to answer common enquiries instantly, at any\nhour, and to collect the details needed to resolve more complex issues. When a question needs a person, the\nconversation is handed to your support team with the full context, so customers don't have to repeat\nthemselves. The result is faster responses for customers and less repetitive work for your team.",
+      "source_url": "https://osiyatech.com/services (no dedicated page yet)",
+      "source_document": "Osiyatech_Services_Knowledge_Base_v3.pdf",
+      "source_pdf_page": 41,
+      "version": "3.0"
+    },
+    {
+      "faq_id": "ai-agents-workflow-automation-006",
+      "question": "Will the AI hand conversations over to a human when needed?",
+      "source_tag": "drafted",
+      "approval_status": "approved",
+      "owner": "Osiyatech Team",
+      "reviewer": "Osiyatech Team",
+      "reviewed_on": "2026-10-31",
+      "source_pdf_pages": {
+        "start": 38,
+        "end": 41
+      },
+      "answer": "Yes. Good automation knows its limits. Agents and chatbots can be designed to escalate to a human when a\nquestion falls outside what they should handle, when a customer asks for a person, or when a situation is\nsensitive. The handover rules are agreed with you during design, so automation supports your team rather than\nreplacing judgement where it matters.",
+      "source_url": "https://osiyatech.com/services (no dedicated page yet)",
+      "source_document": "Osiyatech_Services_Knowledge_Base_v3.pdf",
+      "source_pdf_page": 41,
+      "version": "3.0"
+    },
+    {
+      "faq_id": "ai-agents-workflow-automation-007",
+      "question": "How do you make sure the AI gives accurate answers?",
+      "source_tag": "drafted",
+      "approval_status": "approved",
+      "owner": "Osiyatech Team",
+      "reviewer": "Osiyatech Team",
+      "reviewed_on": "2026-10-31",
+      "source_pdf_pages": {
+        "start": 38,
+        "end": 41
+      },
+      "answer": "Accuracy comes from grounding the AI in your approved content through RAG, setting clear instructions on\nwhat it should and shouldn't answer, and testing it thoroughly with real questions before launch. After launch,\nconversations can be monitored and the knowledge base and instructions refined over time. Osiyatech's AI\ndevelopment process includes model validation and continuous optimisation for this reason.",
+      "source_url": "https://osiyatech.com/services (no dedicated page yet)",
+      "source_document": "Osiyatech_Services_Knowledge_Base_v3.pdf",
+      "source_pdf_page": 41,
+      "version": "3.0"
+    },
+    {
+      "faq_id": "ai-agents-workflow-automation-008",
+      "question": "Is our data secure when using AI agents?",
+      "source_tag": "drafted",
+      "approval_status": "approved",
+      "owner": "Osiyatech Team",
+      "reviewer": "Osiyatech Team",
+      "reviewed_on": "2026-10-31",
+      "source_pdf_pages": {
+        "start": 38,
+        "end": 41
+      },
+      "answer": "Data security is built into the design. Depending on your requirements, this can include secure authentication,\nrole-based access to connected systems, encryption of data in transit and at rest, and private deployment\noptions for sensitive information. Agents are given only the access they need to do their job. Osiyatech doesn't\nhold formal certifications such as SOC 2 or HIPAA, but solutions can be designed to support your\norganisation's security and compliance requirements.",
+      "source_url": "https://osiyatech.com/services (no dedicated page yet)",
+      "source_document": "Osiyatech_Services_Knowledge_Base_v3.pdf",
+      "source_pdf_page": 41,
+      "version": "3.0"
+    },
+    {
+      "faq_id": "ai-agents-workflow-automation-009",
+      "question": "How long does it take to build an AI agent or automation?",
+      "source_tag": "drafted",
+      "approval_status": "approved",
+      "owner": "Osiyatech Team",
+      "reviewer": "Osiyatech Team",
+      "reviewed_on": "2026-10-31",
+      "source_pdf_pages": {
+        "start": 38,
+        "end": 41
+      },
+      "answer": "It depends on the complexity of the workflow, the number of systems to connect and how ready your\nknowledge sources are. A focused chatbot or single-task agent can often be delivered as a proof of concept\nrelatively quickly, while multi-agent systems that span several systems take longer to design, build and test.\nYou'll receive a timeline after the assessment.",
+      "source_url": "https://osiyatech.com/services (no dedicated page yet)",
+      "source_document": "Osiyatech_Services_Knowledge_Base_v3.pdf",
+      "source_pdf_page": 41,
+      "version": "3.0"
+    },
+    {
+      "faq_id": "ai-agents-workflow-automation-010",
+      "question": "Which technologies do you use for AI agents?",
+      "source_tag": "drafted",
+      "approval_status": "approved",
+      "owner": "Osiyatech Team",
+      "reviewer": "Osiyatech Team",
+      "reviewed_on": "2026-10-31",
+      "source_pdf_pages": {
+        "start": 38,
+        "end": 41
+      },
+      "answer": "Osiyatech builds agents with OpenAI models and the LangChain framework, using Python, Node.js and\nFastAPI for the backend, the WhatsApp API for messaging, RAG pipelines for knowledge retrieval, and Redis\nfor conversation memory, caching and reliable task queues. If you have a preferred AI provider or platform,\nOsiyatech can work with it.",
+      "source_url": "https://osiyatech.com/services (no dedicated page yet)",
+      "source_document": "Osiyatech_Services_Knowledge_Base_v3.pdf",
+      "source_pdf_page": 41,
+      "version": "3.0"
+    },
+    {
+      "faq_id": "ai-agents-workflow-automation-011",
+      "question": "How much does an AI automation project cost?",
+      "source_tag": "drafted",
+      "approval_status": "approved",
+      "owner": "Osiyatech Team",
+      "reviewer": "Osiyatech Team",
+      "reviewed_on": "2026-10-31",
+      "source_pdf_pages": {
+        "start": 38,
+        "end": 41
+      },
+      "answer": "Osiyatech doesn't publish fixed prices. Cost depends on the workflows being automated, the number of\nchannels and integrations, the size of the knowledge base and the AI complexity. Starting with one high-impact\nworkflow is a common way to prove value quickly. After a consultation, you'll receive a transparent estimate.",
+      "source_url": "https://osiyatech.com/services (no dedicated page yet)",
+      "source_document": "Osiyatech_Services_Knowledge_Base_v3.pdf",
+      "source_pdf_page": 41,
+      "version": "3.0"
+    }
+  ],
+  "answer_extraction": "original_markdown",
+  "enriched_at": "2026-10-30T19:22:35.668922+05:30",
+  "last_updated_at": "2026-10-31T12:26:05.687278+05:30"
+}

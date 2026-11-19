@@ -1,0 +1,227 @@
+{
+  "schema_version": 2,
+  "service_folder": "05_ai_ml_development",
+  "document_id": "ai-machine-learning-v3",
+  "source_file": "faqs.md",
+  "faqs": [
+    {
+      "faq_id": "ai-machine-learning-001",
+      "question": "What AI and machine learning development services do you offer?",
+      "source_tag": "untagged",
+      "approval_status": "approved",
+      "owner": "Osiyatech Team",
+      "reviewer": "Osiyatech Team",
+      "reviewed_on": "2026-10-31",
+      "source_pdf_pages": {
+        "start": 32,
+        "end": 37
+      },
+      "answer": "Osiyatech provides end-to-end custom AI and machine learning development. That includes LLM-powered\napplications and AI chatbots, retrieval-augmented generation (RAG) over your own data, generative AI,\npredictive analytics and forecasting, natural language processing (NLP), computer vision and object detection,\ndocument intelligence, and integrating AI models into existing systems. Projects run from the initial data and\nopportunity assessment through model development, deployment and ongoing optimisation, so you get a\nworking solution rather than an experiment.",
+      "source_url": "https://osiyatech.com/ai-machine-learning",
+      "source_document": "Osiyatech_Services_Knowledge_Base_v3.pdf",
+      "source_pdf_page": null,
+      "version": "3.0"
+    },
+    {
+      "faq_id": "ai-machine-learning-002",
+      "question": "Can you develop custom AI solutions for our business?",
+      "source_tag": "untagged",
+      "approval_status": "approved",
+      "owner": "Osiyatech Team",
+      "reviewer": "Osiyatech Team",
+      "reviewed_on": "2026-10-31",
+      "source_pdf_pages": {
+        "start": 32,
+        "end": 37
+      },
+      "answer": "Yes. Every AI solution is designed around your business objectives, your existing data and your operational\nrequirements. Osiyatech starts by understanding the problem you want to solve and checking whether your\ndata can support it, then recommends the most practical approach, whether that is an intelligent application, a\npredictive model, a computer vision system or a combination. This keeps the focus on measurable business\nvalue instead of AI for its own sake.",
+      "source_url": "https://osiyatech.com/ai-machine-learning",
+      "source_document": "Osiyatech_Services_Knowledge_Base_v3.pdf",
+      "source_pdf_page": 36,
+      "version": "3.0"
+    },
+    {
+      "faq_id": "ai-machine-learning-003",
+      "question": "What is the difference between generative AI and traditional machine learning?",
+      "source_tag": "untagged",
+      "approval_status": "approved",
+      "owner": "Osiyatech Team",
+      "reviewer": "Osiyatech Team",
+      "reviewed_on": "2026-10-31",
+      "source_pdf_pages": {
+        "start": 32,
+        "end": 37
+      },
+      "answer": "Traditional machine learning finds patterns in data to make predictions or classifications, for example\nforecasting next month's sales, detecting fraud or recognising objects in an image. Generative AI creates new\ncontent, such as written answers, summaries, emails or descriptions, using models like large language models\n(LLMs). The two often work best together: a business application might use machine learning to predict which\ncustomers need attention and generative AI to draft a personalised message to each one.",
+      "source_url": "https://osiyatech.com/ai-machine-learning",
+      "source_document": "Osiyatech_Services_Knowledge_Base_v3.pdf",
+      "source_pdf_page": 36,
+      "version": "3.0"
+    },
+    {
+      "faq_id": "ai-machine-learning-004",
+      "question": "Can AI models be trained using our company's data?",
+      "source_tag": "untagged",
+      "approval_status": "approved",
+      "owner": "Osiyatech Team",
+      "reviewer": "Osiyatech Team",
+      "reviewed_on": "2026-10-31",
+      "source_pdf_pages": {
+        "start": 32,
+        "end": 37
+      },
+      "answer": "Yes. There are two main approaches, and Osiyatech recommends the right one for your situation. Fine-tuning\nadapts an existing AI model using your data, so it learns your terminology, tone or specialised tasks.\nRetrieval-augmented generation (RAG) connects an AI model to your documents and databases, so it looks\nup relevant information before answering, which keeps answers accurate and current without retraining. The\nright choice depends on your data, use case, accuracy needs and budget, and the two can be combined.",
+      "source_url": "https://osiyatech.com/ai-machine-learning",
+      "source_document": "Osiyatech_Services_Knowledge_Base_v3.pdf",
+      "source_pdf_page": 36,
+      "version": "3.0"
+    },
+    {
+      "faq_id": "ai-machine-learning-005",
+      "question": "Can you integrate AI and machine learning into our existing applications?",
+      "source_tag": "untagged",
+      "approval_status": "approved",
+      "owner": "Osiyatech Team",
+      "reviewer": "Osiyatech Team",
+      "reviewed_on": "2026-10-31",
+      "source_pdf_pages": {
+        "start": 32,
+        "end": 37
+      },
+      "answer": "Yes. AI can be added to your existing websites, mobile apps, enterprise software and business platforms\nthrough APIs and custom integrations, usually without rebuilding the whole system. For example, a chatbot can\nbe added to your current website, document processing can feed your existing ERP, or a forecasting model can\nfeed your current dashboards. This lets you gain AI capabilities while protecting your existing investment.",
+      "source_url": "https://osiyatech.com/ai-machine-learning",
+      "source_document": "Osiyatech_Services_Knowledge_Base_v3.pdf",
+      "source_pdf_page": 36,
+      "version": "3.0"
+    },
+    {
+      "faq_id": "ai-machine-learning-006",
+      "question": "How long does it take to develop an AI or machine learning solution?",
+      "source_tag": "untagged",
+      "approval_status": "approved",
+      "owner": "Osiyatech Team",
+      "reviewer": "Osiyatech Team",
+      "reviewed_on": "2026-10-31",
+      "source_pdf_pages": {
+        "start": 32,
+        "end": 37
+      },
+      "answer": "It depends on project complexity, how available and clean your data is, the model requirements and the\nintegrations needed. A basic proof of concept may take a few weeks and is a good way to confirm value early.\nA production-ready solution takes longer, because it needs thorough development, testing, deployment,\nmonitoring and optimisation for real-world use. You'll receive a clear roadmap after the discovery and data\nstrategy stage.",
+      "source_url": "https://osiyatech.com/ai-machine-learning",
+      "source_document": "Osiyatech_Services_Knowledge_Base_v3.pdf",
+      "source_pdf_page": 36,
+      "version": "3.0"
+    },
+    {
+      "faq_id": "ai-machine-learning-007",
+      "question": "Can you build object detection or computer vision systems?",
+      "source_tag": "drafted",
+      "approval_status": "approved",
+      "owner": "Osiyatech Team",
+      "reviewer": "Osiyatech Team",
+      "reviewed_on": "2026-10-31",
+      "source_pdf_pages": {
+        "start": 32,
+        "end": 37
+      },
+      "answer": "Yes. Osiyatech builds computer vision and object detection systems using models such as YOLOv8, for\nexample a utility meter reading system that detects meters and their reading areas in photos so readings no\nlonger have to be entered by hand. Similar approaches can count, measure, classify or inspect objects in\nimages and video. Models can run in the cloud or directly on mobile devices, depending on speed and\nconnectivity needs.",
+      "source_url": "https://osiyatech.com/ai-machine-learning",
+      "source_document": "Osiyatech_Services_Knowledge_Base_v3.pdf",
+      "source_pdf_page": 36,
+      "version": "3.0"
+    },
+    {
+      "faq_id": "ai-machine-learning-008",
+      "question": "Can you build an AI chatbot that answers questions from our own documents?",
+      "source_tag": "drafted",
+      "approval_status": "approved",
+      "owner": "Osiyatech Team",
+      "reviewer": "Osiyatech Team",
+      "reviewed_on": "2026-10-31",
+      "source_pdf_pages": {
+        "start": 32,
+        "end": 37
+      },
+      "answer": "Yes. Osiyatech builds AI chatbots and conversational assistants powered by large language models, and uses\nRAG so answers come from your own documents, databases and enterprise content. That makes the chatbot\nfar more accurate and relevant than a generic AI. The chatbot can be deployed on your website, inside your\napp, on messaging channels or internally for staff. See also the AI Agents & Workflow Automation service.",
+      "source_url": "https://osiyatech.com/ai-machine-learning",
+      "source_document": "Osiyatech_Services_Knowledge_Base_v3.pdf",
+      "source_pdf_page": 36,
+      "version": "3.0"
+    },
+    {
+      "faq_id": "ai-machine-learning-009",
+      "question": "Is our data kept private when using AI?",
+      "source_tag": "drafted",
+      "approval_status": "approved",
+      "owner": "Osiyatech Team",
+      "reviewer": "Osiyatech Team",
+      "reviewed_on": "2026-10-31",
+      "source_pdf_pages": {
+        "start": 32,
+        "end": 37
+      },
+      "answer": "Data privacy is taken seriously in every AI project. Osiyatech offers LLM fine-tuning and private deployment,\nwith secure hosting options and controlled access to sensitive information, so confidential data can stay within\ncontrolled infrastructure. Access controls, encryption and careful data handling are applied according to your\nrequirements. Osiyatech doesn't hold formal certifications such as SOC 2 or HIPAA, but if you have specific\nregulatory or data-residency requirements, the solution can be designed to support them, and the details are\nagreed during assessment.",
+      "source_url": "https://osiyatech.com/ai-machine-learning",
+      "source_document": "Osiyatech_Services_Knowledge_Base_v3.pdf",
+      "source_pdf_page": 36,
+      "version": "3.0"
+    },
+    {
+      "faq_id": "ai-machine-learning-010",
+      "question": "Which AI models and frameworks do you work with?",
+      "source_tag": "drafted",
+      "approval_status": "approved",
+      "owner": "Osiyatech Team",
+      "reviewer": "Osiyatech Team",
+      "reviewed_on": "2026-10-31",
+      "source_pdf_pages": {
+        "start": 32,
+        "end": 37
+      },
+      "answer": "For generative AI, Osiyatech works with OpenAI models, Hugging Face, LangChain and LlamaIndex. For\nmachine learning and deep learning, it uses PyTorch, TensorFlow and Scikit-learn. For computer vision, it uses\nYOLOv8 and TensorFlow Lite for on-device models. For vector search, it uses Pinecone and pgvector. Redis is\nused for caching and conversation memory. For deployment, the stack includes FastAPI, Docker, Kubernetes,\nKafka and AWS. If you have a preferred model provider or platform, Osiyatech can work with it.",
+      "source_url": "https://osiyatech.com/ai-machine-learning",
+      "source_document": "Osiyatech_Services_Knowledge_Base_v3.pdf",
+      "source_pdf_page": 37,
+      "version": "3.0"
+    },
+    {
+      "faq_id": "ai-machine-learning-011",
+      "question": "Can AI power augmented reality features?",
+      "source_tag": "drafted",
+      "approval_status": "approved",
+      "owner": "Osiyatech Team",
+      "reviewer": "Osiyatech Team",
+      "reviewed_on": "2026-10-31",
+      "source_pdf_pages": {
+        "start": 32,
+        "end": 37
+      },
+      "answer": "Yes. Computer vision is what lets AR apps recognise surfaces, objects and environments so digital content can\nbe placed accurately in the real world. Osiyatech combines its computer vision work with its mobile and UI/UX\nteams to build AR features, such as product visualisation, guided inspections and interactive training.",
+      "source_url": "https://osiyatech.com/ai-machine-learning",
+      "source_document": "Osiyatech_Services_Knowledge_Base_v3.pdf",
+      "source_pdf_page": 37,
+      "version": "3.0"
+    },
+    {
+      "faq_id": "ai-machine-learning-012",
+      "question": "How much does an AI project cost?",
+      "source_tag": "drafted",
+      "approval_status": "approved",
+      "owner": "Osiyatech Team",
+      "reviewer": "Osiyatech Team",
+      "reviewed_on": "2026-10-31",
+      "source_pdf_pages": {
+        "start": 32,
+        "end": 37
+      },
+      "answer": "Osiyatech doesn't publish fixed prices. Cost depends on the type of AI solution, the state of your data, model\ncomplexity, integrations and hosting requirements (for example, private deployment). Many clients start with a\nproof of concept, which keeps the initial investment focused and shows value before a full build. After a\nconsultation, you'll receive a transparent estimate.",
+      "source_url": "https://osiyatech.com/ai-machine-learning",
+      "source_document": "Osiyatech_Services_Knowledge_Base_v3.pdf",
+      "source_pdf_page": 37,
+      "version": "3.0"
+    }
+  ],
+  "answer_extraction": "original_markdown",
+  "enriched_at": "2026-10-30T19:22:35.665914+05:30",
+  "last_updated_at": "2026-10-31T12:26:05.687278+05:30"
+}

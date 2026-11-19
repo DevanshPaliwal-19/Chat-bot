@@ -1,0 +1,155 @@
+{
+  "schema_version": 2,
+  "service_folder": "09_custom_software_core_business_systems",
+  "document_id": "custom-software-development-v3",
+  "source_file": "faqs.md",
+  "faqs": [
+    {
+      "faq_id": "custom-software-development-001",
+      "question": "Can you replace our spreadsheets with a proper system?",
+      "source_tag": "drafted",
+      "approval_status": "approved",
+      "owner": "Osiyatech Team",
+      "reviewer": "Osiyatech Team",
+      "reviewed_on": "2026-10-31",
+      "source_pdf_pages": {
+        "start": 52,
+        "end": 56
+      },
+      "answer": "Yes. This service exists to replace fragile spreadsheets and rigid off-the-shelf tools with custom ERP, CRM and\noperations platforms designed around your workflows. Osiyatech first maps how your teams currently use\nspreadsheets, including the formulas, hand-offs and workarounds, then builds a system that does the same\nwork reliably, with proper permissions, audit trails and one source of truth. Your historical spreadsheet data can\nbe cleaned and migrated into the new system.",
+      "source_url": "https://osiyatech.com/custom-software-development",
+      "source_document": "Osiyatech_Services_Knowledge_Base_v3.pdf",
+      "source_pdf_page": null,
+      "version": "3.0"
+    },
+    {
+      "faq_id": "custom-software-development-002",
+      "question": "What's the difference between this and buying an ERP or CRM product?",
+      "source_tag": "drafted",
+      "approval_status": "approved",
+      "owner": "Osiyatech Team",
+      "reviewer": "Osiyatech Team",
+      "reviewed_on": "2026-10-31",
+      "source_pdf_pages": {
+        "start": 52,
+        "end": 56
+      },
+      "answer": "A packaged ERP or CRM gives you standard features and expects your business to adapt to them, and you\noften pay for modules you don't use. A custom system is built around your specific processes, includes only\nwhat you need, and can change as your business changes. Osiyatech offers both routes, including\nimplementing and extending Microsoft Dynamics 365 (see ERP & CRM Solutions), and will recommend the\nbest fit after understanding your operations.",
+      "source_url": "https://osiyatech.com/custom-software-development",
+      "source_document": "Osiyatech_Services_Knowledge_Base_v3.pdf",
+      "source_pdf_page": null,
+      "version": "3.0"
+    },
+    {
+      "faq_id": "custom-software-development-003",
+      "question": "Do you work with Microsoft Dynamics 365 Business Central?",
+      "source_tag": "drafted",
+      "approval_status": "approved",
+      "owner": "Osiyatech Team",
+      "reviewer": "Osiyatech Team",
+      "reviewed_on": "2026-10-31",
+      "source_pdf_pages": {
+        "start": 52,
+        "end": 56
+      },
+      "answer": "Yes. Osiyatech builds custom Business Central extensions and modules, custom telemetry tables, Power\nPlatform connectors, third-party warehouse integrations and two-way synchronisation bridges between\nDynamics 365 and legacy ERPs. This lets you keep the strengths of Dynamics while tailoring it to processes it\ndoesn't cover out of the box.",
+      "source_url": "https://osiyatech.com/custom-software-development",
+      "source_document": "Osiyatech_Services_Knowledge_Base_v3.pdf",
+      "source_pdf_page": null,
+      "version": "3.0"
+    },
+    {
+      "faq_id": "custom-software-development-004",
+      "question": "How do you make sure the system fits how we work?",
+      "source_tag": "drafted",
+      "approval_status": "approved",
+      "owner": "Osiyatech Team",
+      "reviewer": "Osiyatech Team",
+      "reviewed_on": "2026-10-31",
+      "source_pdf_pages": {
+        "start": 52,
+        "end": 56
+      },
+      "answer": "Every project starts with a business process audit. Osiyatech's team shadows your staff to map workflow\nbottlenecks, spreadsheet dependencies and integration needs, then designs the data structure and system\naround what they learn. Modules are delivered step by step, and your team tests each one through user\nacceptance testing and gives feedback before the next module begins. The system is shaped by the people\nwho will use it.",
+      "source_url": "https://osiyatech.com/custom-software-development",
+      "source_document": "Osiyatech_Services_Knowledge_Base_v3.pdf",
+      "source_pdf_page": null,
+      "version": "3.0"
+    },
+    {
+      "faq_id": "custom-software-development-005",
+      "question": "Will you move our existing data into the new system?",
+      "source_tag": "drafted",
+      "approval_status": "approved",
+      "owner": "Osiyatech Team",
+      "reviewer": "Osiyatech Team",
+      "reviewed_on": "2026-10-31",
+      "source_pdf_pages": {
+        "start": 52,
+        "end": 56
+      },
+      "answer": "Yes. Legacy data migration is a standard step. Historical company records are cleaned to remove duplicates\nand errors, then migrated by script into the new system, with validation to confirm everything arrived correctly.\nThe migration is planned to avoid disrupting your daily operations.",
+      "source_url": "https://osiyatech.com/custom-software-development",
+      "source_document": "Osiyatech_Services_Knowledge_Base_v3.pdf",
+      "source_pdf_page": null,
+      "version": "3.0"
+    },
+    {
+      "faq_id": "custom-software-development-006",
+      "question": "Will you train our staff?",
+      "source_tag": "drafted",
+      "approval_status": "approved",
+      "owner": "Osiyatech Team",
+      "reviewer": "Osiyatech Team",
+      "reviewed_on": "2026-10-31",
+      "source_pdf_pages": {
+        "start": 52,
+        "end": 56
+      },
+      "answer": "Yes. Rollout includes staff onboarding, administrator training and system documentation, so your team is\nconfident using and managing the new system from day one. After launch, dedicated SLA support is available\nfor questions, fixes and improvements.",
+      "source_url": "https://osiyatech.com/custom-software-development",
+      "source_document": "Osiyatech_Services_Knowledge_Base_v3.pdf",
+      "source_pdf_page": null,
+      "version": "3.0"
+    },
+    {
+      "faq_id": "custom-software-development-007",
+      "question": "Is the system secure?",
+      "source_tag": "drafted",
+      "approval_status": "approved",
+      "owner": "Osiyatech Team",
+      "reviewer": "Osiyatech Team",
+      "reviewed_on": "2026-10-31",
+      "source_pdf_pages": {
+        "start": 52,
+        "end": 56
+      },
+      "answer": "Security is built in. Systems include fine-grained role-based permissions so each person sees and does only\nwhat their role allows, automated audit trails that record who changed what, single sign-on (SSO)\nauthentication, and encryption of data at rest. Osiyatech doesn't hold formal certifications such as SOC 2, but\nthe system can be designed to support your organisation's security policies and compliance needs.",
+      "source_url": "https://osiyatech.com/custom-software-development",
+      "source_document": "Osiyatech_Services_Knowledge_Base_v3.pdf",
+      "source_pdf_page": null,
+      "version": "3.0"
+    },
+    {
+      "faq_id": "custom-software-development-008",
+      "question": "How much does custom business software cost?",
+      "source_tag": "drafted",
+      "approval_status": "approved",
+      "owner": "Osiyatech Team",
+      "reviewer": "Osiyatech Team",
+      "reviewed_on": "2026-10-31",
+      "source_pdf_pages": {
+        "start": 52,
+        "end": 56
+      },
+      "answer": "Osiyatech doesn't publish fixed prices. Cost depends on the number of modules, the complexity of your\nworkflows, integrations and the volume of data migration. Because the system is delivered module by module,\nyou can prioritise the most valuable parts first. After a consultation and process review, you'll receive a\ntransparent, milestone-based estimate.",
+      "source_url": "https://osiyatech.com/custom-software-development",
+      "source_document": "Osiyatech_Services_Knowledge_Base_v3.pdf",
+      "source_pdf_page": null,
+      "version": "3.0"
+    }
+  ],
+  "answer_extraction": "original_markdown",
+  "enriched_at": "2026-10-30T19:22:35.677740+05:30",
+  "last_updated_at": "2026-10-31T12:26:05.691450+05:30"
+}

@@ -1,0 +1,100 @@
+"""Structure-aware chunking: respects headings and paragraphs, tracks section + page, adds overlap."""
+from __future__ import annotations
+
+import re
+
+from .types import ChunkDraft, ParsedDocument
+
+_HEADING = re.compile(r"^(#{1,6})\s+(.*\S)\s*$")
+_SENTENCE = re.compile(r"(?<=[.!?])\s+(?=[A-Z0-9\"'(])")
+
+
+def _split_long(text: str, limit: int) -> list[str]:
+    if len(text) <= limit:
+        return [text]
+    out: list[str] = []
+    buf = ""
+    for sent in _SENTENCE.split(text):
+        if len(sent) > limit:  # no sentence boundaries: hard split on words
+            if buf:
+                out.append(buf)
+                buf = ""
+            words, cur = sent.split(), ""
+            for w in words:
+                if len(cur) + len(w) + 1 > limit:
+                    out.append(cur)
+                    cur = w
+                else:
+                    cur = f"{cur} {w}".strip()
+            buf = cur
+        elif len(buf) + len(sent) + 1 > limit:
+            out.append(buf)
+            buf = sent
+        else:
+            buf = f"{buf} {sent}".strip()
+    if buf:
+        out.append(buf)
+    return out
+
+
+def _tail(text: str, n: int) -> str:
+    if n <= 0 or len(text) <= n:
+        return "" if n <= 0 else text
+    cut = text[-n:]
+    return cut.split(" ", 1)[1] if " " in cut else cut
+
+
+def chunk_document(doc: ParsedDocument, chunk_chars: int = 900, overlap_chars: int = 120) -> list[ChunkDraft]:
+    drafts: list[ChunkDraft] = []
+    for page in doc.pages:
+        heading_stack: list[tuple[int, str]] = []
+        # units: (section path, paragraph text)
+        units: list[tuple[str | None, str]] = []
+        for block in re.split(r"\n\s*\n", page.text):
+            block = block.strip()
+            if not block:
+                continue
+            m = _HEADING.match(block.splitlines()[0])
+            if m:
+                level, title = len(m.group(1)), m.group(2)
+                while heading_stack and heading_stack[-1][0] >= level:
+                    heading_stack.pop()
+                heading_stack.append((level, title))
+                block = "\n".join(block.splitlines()[1:]).strip()
+                if not block:
+                    continue
+            section = " > ".join(t for _, t in heading_stack) or None
+            for piece in _split_long(block, chunk_chars):
+                units.append((section, piece))
+
+        buf, buf_section, prev_text = "", None, ""
+        page_meta = getattr(page, "meta", {})
+        for section, text in units:
+            if buf and (section != buf_section or len(buf) + len(text) + 2 > chunk_chars):
+                drafts.append(ChunkDraft(buf, page.page_number, buf_section, meta=dict(page_meta)))
+                prev_text = buf if section == buf_section else ""
+                overlap = _tail(prev_text, overlap_chars)
+                buf = f"{overlap}\n\n{text}".strip() if overlap and section == buf_section else text
+                buf_section = section
+            else:
+                buf = f"{buf}\n\n{text}".strip() if buf else text
+                buf_section = section
+        if buf:
+            drafts.append(ChunkDraft(buf, page.page_number, buf_section, meta=dict(page_meta)))
+
+    # merge a tiny trailing fragment into its predecessor when they share page and section
+    merged: list[ChunkDraft] = []
+    for d in drafts:
+        if (
+            merged
+            and len(d.text) < 120
+            and merged[-1].section == d.section
+            and merged[-1].page_number == d.page_number
+            and len(merged[-1].text) + len(d.text) <= chunk_chars * 1.3
+        ):
+            merged_meta = dict(merged[-1].meta)
+            merged_meta.update(d.meta)
+            merged[-1] = ChunkDraft(f"{merged[-1].text}\n\n{d.text}", d.page_number, d.section, meta=merged_meta)
+        else:
+            merged.append(d)
+    return [d for d in merged if len(d.text.strip()) >= 20]

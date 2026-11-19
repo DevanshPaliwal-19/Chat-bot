@@ -1,0 +1,5 @@
+About Fixture Corp
+
+Fixture Corp is a fictional software company used only for automated tests of this project.
+It is headquartered in the imaginary city of Testville and works with clients in several industries.
+Business hours are Monday to Friday. Visitors can reach the sales team through the website contact form.

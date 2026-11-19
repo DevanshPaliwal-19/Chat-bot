@@ -1,0 +1,193 @@
+"""Incremental ingestion: scan -> parse -> dedupe -> chunk -> embed (cached) -> index -> report."""
+from __future__ import annotations
+
+import logging
+import time
+from dataclasses import asdict, dataclass, field
+from datetime import datetime, timezone
+from hashlib import sha256
+from pathlib import Path
+
+import numpy as np
+
+from ..config import Settings
+from ..security.sanitize import detect_injection
+from .chunking import chunk_document
+from .embeddings import Embedder
+from .index import IndexUnavailable, KnowledgeIndex
+from .parsers import SUPPORTED_EXTENSIONS, ParseError, parse_file
+from .text import content_hash, sha1_short
+from .types import Chunk
+
+logger = logging.getLogger(__name__)
+
+
+@dataclass
+class IngestReport:
+    added: list[str] = field(default_factory=list)
+    updated: list[str] = field(default_factory=list)
+    unchanged: list[str] = field(default_factory=list)
+    removed: list[str] = field(default_factory=list)
+    duplicates: list[dict[str, str]] = field(default_factory=list)
+    skipped: list[dict[str, str]] = field(default_factory=list)
+    errors: list[dict[str, str]] = field(default_factory=list)
+    suspicious_chunks: list[str] = field(default_factory=list)
+    chunk_count: int = 0
+    index_version: int = 0
+    embedder: str = ""
+    full_rebuild: bool = False
+    duration_ms: float = 0.0
+
+    def to_dict(self) -> dict:
+        return asdict(self)
+
+    @property
+    def changed(self) -> bool:
+        return bool(self.added or self.updated or self.removed)
+
+
+def _file_hash(path: Path) -> str:
+    h = sha256()
+    with open(path, "rb") as fh:
+        for block in iter(lambda: fh.read(1 << 20), b""):
+            h.update(block)
+    return h.hexdigest()
+
+
+def _iso_mtime(path: Path) -> str:
+    return datetime.fromtimestamp(path.stat().st_mtime, tz=timezone.utc).date().isoformat()
+
+
+class Ingestor:
+    def __init__(self, settings: Settings, embedder: Embedder) -> None:
+        self.settings = settings
+        self.embedder = embedder
+
+    def _scan(self, report: IngestReport) -> dict[str, Path]:
+        root = self.settings.kb_dir
+        found: dict[str, Path] = {}
+        if not root.exists():
+            return found
+        for p in sorted(root.rglob("*")):
+            if not p.is_file():
+                continue
+            rel = p.relative_to(root)
+            if any(part.startswith((".", "_")) for part in rel.parts):
+                continue  # hidden / underscore-prefixed files are deliberately excluded
+            if p.suffix.lower() not in SUPPORTED_EXTENSIONS:
+                report.skipped.append({"path": rel.as_posix(), "reason": f"unsupported file type '{p.suffix}'"})
+                continue
+            found[rel.as_posix()] = p
+        return found
+
+    def run(self, full_rebuild: bool = False) -> IngestReport:
+        t0 = time.perf_counter()
+        report = IngestReport(embedder=self.embedder.name, full_rebuild=full_rebuild)
+        old: KnowledgeIndex | None = None
+        if not full_rebuild:
+            try:
+                old = KnowledgeIndex.load(self.settings.index_dir)
+                if old.embedder_name != self.embedder.name:
+                    logger.warning("embedder changed (%s -> %s): full rebuild", old.embedder_name, self.embedder.name)
+                    old, report.full_rebuild = None, True
+            except IndexUnavailable:
+                old = None
+        old_docs: dict[str, dict] = (old.manifest.get("documents", {}) if old else {})
+        old_chunks_by_doc: dict[str, list[Chunk]] = {}
+        vec_cache: dict[str, np.ndarray] = {}
+        if old is not None:
+            for c, v in zip(old.chunks, old.vectors):
+                old_chunks_by_doc.setdefault(c.source_document, []).append(c)
+                vec_cache[c.embed_key] = v
+
+        found = self._scan(report)
+        report.removed = sorted(set(old_docs) - set(found))
+
+        new_docs: dict[str, dict] = {}
+        kept_chunks: list[Chunk] = []
+        seen_content: dict[str, str] = {}  # document content hash -> rel path
+
+        for rel, path in found.items():
+            try:
+                fhash = _file_hash(path)
+                prev = old_docs.get(rel)
+                if prev and prev.get("file_hash") == fhash and rel in old_chunks_by_doc:
+                    owner = seen_content.get(prev["content_hash"])
+                    if owner is None:
+                        seen_content[prev["content_hash"]] = rel
+                        new_docs[rel] = prev
+                        kept_chunks.extend(old_chunks_by_doc[rel])
+                        report.unchanged.append(rel)
+                        continue
+                doc = parse_file(path)
+                dhash = content_hash(doc.full_text)
+                if dhash in seen_content:
+                    report.duplicates.append({"path": rel, "duplicate_of": seen_content[dhash]})
+                    continue
+                seen_content[dhash] = rel
+                drafts = chunk_document(doc, self.settings.chunk_chars, self.settings.chunk_overlap_chars)
+                if not drafts:
+                    raise ParseError("no usable text after chunking")
+                doc_id = sha1_short(rel)
+                category = doc.meta.get("service_category") or (Path(rel).parts[0] if len(Path(rel).parts) > 1 else None)
+                chunks: list[Chunk] = []
+                for n, d in enumerate(drafts):
+                    chunk = Chunk(
+                        chunk_id=f"{doc_id}:{n:04d}",
+                        document_id=doc_id,
+                        text=d.text,
+                        embed_key="",
+                        content_hash=content_hash(d.text),
+                        source_document=rel,
+                        source_type=doc.source_type,
+                        title=doc.title,
+                        section=d.section,
+                        source_url=doc.meta.get("source_url"),
+                        page_number=d.page_number,
+                        service_category=category,
+                        approval_status=doc.meta.get("approval_status"),
+                        last_updated=doc.meta.get("last_updated") or _iso_mtime(path),
+                        suspicious=detect_injection(d.text),
+                    )
+                    chunk.embed_key = sha1_short(f"{self.embedder.name}|{chunk.embed_text()}", 20)
+                    if chunk.suspicious:
+                        report.suspicious_chunks.append(chunk.chunk_id)
+                    chunks.append(chunk)
+                kept_chunks.extend(chunks)
+                new_docs[rel] = {
+                    "document_id": doc_id, "file_hash": fhash, "content_hash": dhash,
+                    "chunk_count": len(chunks), "source_type": doc.source_type, "title": doc.title,
+                }
+                (report.updated if prev else report.added).append(rel)
+            except ParseError as exc:
+                report.errors.append({"path": rel, "error": str(exc)})
+                if rel in old_docs and rel in old_chunks_by_doc:  # keep the last good version searchable
+                    new_docs[rel] = old_docs[rel]
+                    kept_chunks.extend(old_chunks_by_doc[rel])
+                    report.errors[-1]["note"] = "previous indexed version kept"
+                    seen_content.setdefault(old_docs[rel]["content_hash"], rel)
+
+        # embed only what we have not embedded before
+        missing = [c for c in kept_chunks if c.embed_key not in vec_cache]
+        if missing:
+            vecs = self.embedder.embed([c.embed_text() for c in missing])
+            for c, v in zip(missing, vecs):
+                vec_cache[c.embed_key] = v
+        dim = getattr(self.embedder, "dim", 1)
+        vectors = np.vstack([vec_cache[c.embed_key] for c in kept_chunks]) if kept_chunks else np.zeros((0, dim), "float32")
+
+        version = int(old.manifest.get("index_version", 0)) if old else 0
+        if report.changed or old is None or report.full_rebuild:
+            version += 1
+        index = KnowledgeIndex(kept_chunks, vectors, self.embedder.name)
+        if report.changed or old is None or report.full_rebuild or not (self.settings.index_dir / "manifest.json").exists():
+            index.save(self.settings.index_dir, {"index_version": version, "documents": new_docs})
+        report.chunk_count = len(kept_chunks)
+        report.index_version = version
+        report.duration_ms = round((time.perf_counter() - t0) * 1000, 1)
+        logger.info(
+            "ingestion finished: +%d ~%d -%d =%d docs, %d chunks, %d errors, v%d",
+            len(report.added), len(report.updated), len(report.removed), len(report.unchanged),
+            report.chunk_count, len(report.errors), version,
+        )
+        return report

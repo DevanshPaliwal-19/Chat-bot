@@ -1,0 +1,209 @@
+{
+  "schema_version": 2,
+  "service_folder": "02_mobile_app_development",
+  "document_id": "mobile-development-v3",
+  "source_file": "faqs.md",
+  "faqs": [
+    {
+      "faq_id": "mobile-development-001",
+      "question": "Should I choose native iOS/Android or a cross-platform framework like Flutter?",
+      "source_tag": "untagged",
+      "approval_status": "approved",
+      "owner": "Osiyatech Team",
+      "reviewer": "Osiyatech Team",
+      "reviewed_on": "2026-10-31",
+      "source_pdf_pages": {
+        "start": 14,
+        "end": 19
+      },
+      "answer": "It depends on your product goals, budget and the features you need. Cross-platform frameworks like Flutter\nand React Native launch on iOS and Android at the same time from one codebase, which the website says can\ncut time-to-market and engineering budget by up to 40%. That makes them a strong choice for most business,\ne-commerce and MVP apps. Native development (Swift for iOS, Kotlin for Android) is ideal for apps that need\ndeep hardware integration, complex Bluetooth or AR capabilities, or maximum performance. Osiyatech\nevaluates this with you during the Concept stage and recommends the best option for your situation.",
+      "source_url": "https://osiyatech.com/mobile-development",
+      "source_document": "Osiyatech_Services_Knowledge_Base_v3.pdf",
+      "source_pdf_page": null,
+      "version": "3.0"
+    },
+    {
+      "faq_id": "mobile-development-002",
+      "question": "How long does it take to develop a custom mobile application?",
+      "source_tag": "untagged",
+      "approval_status": "approved",
+      "owner": "Osiyatech Team",
+      "reviewer": "Osiyatech Team",
+      "reviewed_on": "2026-10-31",
+      "source_pdf_pages": {
+        "start": 14,
+        "end": 19
+      },
+      "answer": "An MVP or standard business app typically takes 6 to 10 weeks. Complex enterprise apps with custom\nbackend integrations, offline synchronisation and multi-tier authentication typically take 3 to 5 months.\nDevelopment runs in bi-weekly sprints, so you see working versions of the app regularly and can give feedback\nas it takes shape. AR, VR or other advanced features can affect the timeline, and you'll receive a detailed plan\nonce your requirements are reviewed.",
+      "source_url": "https://osiyatech.com/mobile-development",
+      "source_document": "Osiyatech_Services_Knowledge_Base_v3.pdf",
+      "source_pdf_page": null,
+      "version": "3.0"
+    },
+    {
+      "faq_id": "mobile-development-003",
+      "question": "Can you develop a single app for both Android and iOS?",
+      "source_tag": "untagged",
+      "approval_status": "approved",
+      "owner": "Osiyatech Team",
+      "reviewer": "Osiyatech Team",
+      "reviewed_on": "2026-10-31",
+      "source_pdf_pages": {
+        "start": 14,
+        "end": 19
+      },
+      "answer": "Yes. With cross-platform technologies like Flutter and React Native, Osiyatech builds one shared codebase\nthat runs on both Android and iOS. Users on both platforms get a consistent experience, development time is\nshorter, and maintenance is simpler because updates are made once instead of twice. Platform-specific\nfeatures can still be added where needed.",
+      "source_url": "https://osiyatech.com/mobile-development",
+      "source_document": "Osiyatech_Services_Knowledge_Base_v3.pdf",
+      "source_pdf_page": null,
+      "version": "3.0"
+    },
+    {
+      "faq_id": "mobile-development-004",
+      "question": "Will my mobile app work without an internet connection?",
+      "source_tag": "untagged",
+      "approval_status": "approved",
+      "owner": "Osiyatech Team",
+      "reviewer": "Osiyatech Team",
+      "reviewed_on": "2026-10-31",
+      "source_pdf_pages": {
+        "start": 14,
+        "end": 19
+      },
+      "answer": "Yes, if offline use matters for your users. Osiyatech builds offline-first apps that store data locally on the device\nusing SQLite and Room databases. Users can keep working, viewing records, filling in forms or taking orders,\nwithout a connection. When the network comes back, the app automatically syncs with the cloud backend. This\nis especially valuable for field teams, warehouses, inspections and areas with weak coverage.",
+      "source_url": "https://osiyatech.com/mobile-development",
+      "source_document": "Osiyatech_Services_Knowledge_Base_v3.pdf",
+      "source_pdf_page": null,
+      "version": "3.0"
+    },
+    {
+      "faq_id": "mobile-development-005",
+      "question": "Do you provide post-launch maintenance and OS updates?",
+      "source_tag": "untagged",
+      "approval_status": "approved",
+      "owner": "Osiyatech Team",
+      "reviewer": "Osiyatech Team",
+      "reviewed_on": "2026-10-31",
+      "source_pdf_pages": {
+        "start": 14,
+        "end": 19
+      },
+      "answer": "Yes. Apple and Google release major OS updates every year, and new devices with new screen sizes appear\nconstantly. Osiyatech offers SLA-backed maintenance packages that cover OS compatibility patches, new\ndevice screen adaptations, third-party SDK updates, security monitoring, bug fixes, performance optimisation\nand continuous feature additions. Without regular maintenance, apps can break or be removed from the stores,\nso a plan keeps your app reliable and up to date.",
+      "source_url": "https://osiyatech.com/mobile-development",
+      "source_document": "Osiyatech_Services_Knowledge_Base_v3.pdf",
+      "source_pdf_page": null,
+      "version": "3.0"
+    },
+    {
+      "faq_id": "mobile-development-006",
+      "question": "Who owns the source code and App Store developer accounts?",
+      "source_tag": "untagged",
+      "approval_status": "approved",
+      "owner": "Osiyatech Team",
+      "reviewer": "Osiyatech Team",
+      "reviewed_on": "2026-10-31",
+      "source_pdf_pages": {
+        "start": 14,
+        "end": 19
+      },
+      "answer": "You do. You keep 100% intellectual property ownership of the entire source code, design systems and\ndatabase schemas. Apps are published directly under your company's own Apple Developer and Google Play\nConsole accounts, so the app listing, reviews, users and revenue stay with your business. That gives you full\ncontrol and independence.",
+      "source_url": "https://osiyatech.com/mobile-development",
+      "source_document": "Osiyatech_Services_Knowledge_Base_v3.pdf",
+      "source_pdf_page": 19,
+      "version": "3.0"
+    },
+    {
+      "faq_id": "mobile-development-007",
+      "question": "Can you build AR or VR features into my app?",
+      "source_tag": "drafted",
+      "approval_status": "approved",
+      "owner": "Osiyatech Team",
+      "reviewer": "Osiyatech Team",
+      "reviewed_on": "2026-10-31",
+      "source_pdf_pages": {
+        "start": 14,
+        "end": 19
+      },
+      "answer": "Yes. Osiyatech builds augmented reality (AR) and virtual reality (VR) experiences, including AR product\nvisualisation (placing 3D products in the user's real space through the camera), AR-guided training and\ninspections, and immersive VR environments. Mobile AR typically uses Apple ARKit on iOS and Google\nARCore on Android, often combined with computer vision. Complex AR features are usually built natively for\nthe best performance, and the approach is agreed during the Concept stage.",
+      "source_url": "https://osiyatech.com/mobile-development",
+      "source_document": "Osiyatech_Services_Knowledge_Base_v3.pdf",
+      "source_pdf_page": 19,
+      "version": "3.0"
+    },
+    {
+      "faq_id": "mobile-development-008",
+      "question": "Can you add payments, push notifications and maps to my app?",
+      "source_tag": "drafted",
+      "approval_status": "approved",
+      "owner": "Osiyatech Team",
+      "reviewer": "Osiyatech Team",
+      "reviewed_on": "2026-10-31",
+      "source_pdf_pages": {
+        "start": 14,
+        "end": 19
+      },
+      "answer": "Yes. Common features Osiyatech builds into apps include Apple Pay and payment gateway integration, push\nnotifications (including through Firebase), maps and location services, in-app messaging, user accounts, and\nintegration with your backend and third-party systems. On the backend, Redis is often used to deliver real-time\nfeatures and queue notifications efficiently.",
+      "source_url": "https://osiyatech.com/mobile-development",
+      "source_document": "Osiyatech_Services_Knowledge_Base_v3.pdf",
+      "source_pdf_page": 19,
+      "version": "3.0"
+    },
+    {
+      "faq_id": "mobile-development-009",
+      "question": "Can you take over or fix an app built by another developer?",
+      "source_tag": "drafted",
+      "approval_status": "approved",
+      "owner": "Osiyatech Team",
+      "reviewer": "Osiyatech Team",
+      "reviewed_on": "2026-10-31",
+      "source_pdf_pages": {
+        "start": 14,
+        "end": 19
+      },
+      "answer": "Yes. Osiyatech's App Maintenance & Support offering covers taking over existing apps, fixing bugs, improving\nperformance and adding features, and client testimonials describe rescuing a failing app built by another\ndeveloper and making its admin workflows faster. The team first reviews the existing code, architecture and\nstore setup, then recommends whether to stabilise and improve the current app or rebuild parts of it.",
+      "source_url": "https://osiyatech.com/mobile-development",
+      "source_document": "Osiyatech_Services_Knowledge_Base_v3.pdf",
+      "source_pdf_page": 19,
+      "version": "3.0"
+    },
+    {
+      "faq_id": "mobile-development-010",
+      "question": "Do you design the app as well as build it?",
+      "source_tag": "drafted",
+      "approval_status": "approved",
+      "owner": "Osiyatech Team",
+      "reviewer": "Osiyatech Team",
+      "reviewed_on": "2026-10-31",
+      "source_pdf_pages": {
+        "start": 14,
+        "end": 19
+      },
+      "answer": "Yes. Mobile UI/UX design is part of the service. Osiyatech designs thumb-friendly layouts, smooth interactions\nand design systems that follow Apple's Human Interface Guidelines and Google Material Design 3, so the app\nfeels natural on each platform. For research-led or more extensive design work, the UI/UX Design &\nPrototyping service can create interactive prototypes and test them with users before development starts.",
+      "source_url": "https://osiyatech.com/mobile-development",
+      "source_document": "Osiyatech_Services_Knowledge_Base_v3.pdf",
+      "source_pdf_page": 19,
+      "version": "3.0"
+    },
+    {
+      "faq_id": "mobile-development-011",
+      "question": "How much does a mobile app cost?",
+      "source_tag": "drafted",
+      "approval_status": "approved",
+      "owner": "Osiyatech Team",
+      "reviewer": "Osiyatech Team",
+      "reviewed_on": "2026-10-31",
+      "source_pdf_pages": {
+        "start": 14,
+        "end": 19
+      },
+      "answer": "Osiyatech doesn't publish fixed prices. Cost depends on the platforms (iOS, Android or both), the number and\ncomplexity of features, backend and integration needs, offline functionality, and advanced features such as AR\nor VR. After a consultation, you'll receive a transparent, milestone-based estimate. Starting with an MVP is a\ncommon way to launch quickly and manage budget.",
+      "source_url": "https://osiyatech.com/mobile-development",
+      "source_document": "Osiyatech_Services_Knowledge_Base_v3.pdf",
+      "source_pdf_page": 19,
+      "version": "3.0"
+    }
+  ],
+  "answer_extraction": "original_markdown",
+  "enriched_at": "2026-10-30T19:22:35.657170+05:30",
+  "last_updated_at": "2026-10-31T12:26:05.687278+05:30"
+}

@@ -1,0 +1,191 @@
+{
+  "schema_version": 2,
+  "service_folder": "10_erp_crm_solutions",
+  "document_id": "erp-crm-solutions-v3",
+  "source_file": "faqs.md",
+  "faqs": [
+    {
+      "faq_id": "erp-crm-solutions-001",
+      "question": "What are ERP and CRM solutions?",
+      "source_tag": "untagged",
+      "approval_status": "approved",
+      "owner": "Osiyatech Team",
+      "reviewer": "Osiyatech Team",
+      "reviewed_on": "2026-10-31",
+      "source_pdf_pages": {
+        "start": 57,
+        "end": 61
+      },
+      "answer": "ERP (Enterprise Resource Planning) systems manage a company's internal operations, such as finance,\naccounting, inventory, procurement, production and supply chain, in one connected system. CRM (Customer\nRelationship Management) systems manage everything to do with customers: leads, sales pipelines,\ninteractions, marketing and service. When the two are connected, sales, operations and finance all work from\nthe same up-to-date information, which reduces errors and makes the business run more efficiently.",
+      "source_url": "https://osiyatech.com/services/erp-crm-solutions/",
+      "source_document": "Osiyatech_Services_Knowledge_Base_v3.pdf",
+      "source_pdf_page": null,
+      "version": "3.0"
+    },
+    {
+      "faq_id": "erp-crm-solutions-002",
+      "question": "What ERP and CRM services does Osiyatech provide?",
+      "source_tag": "untagged",
+      "approval_status": "approved",
+      "owner": "Osiyatech Team",
+      "reviewer": "Osiyatech Team",
+      "reviewed_on": "2026-10-31",
+      "source_pdf_pages": {
+        "start": 57,
+        "end": 61
+      },
+      "answer": "Osiyatech provides custom ERP and CRM development, Microsoft Dynamics 365 implementation and\ncustomisation, integration of ERP and CRM with other business applications, legacy platform modernization,\ndata migration and ongoing technical support. The team can implement an established platform, extend it with\ncustom modules, or build a fully custom ERP or CRM, depending on what fits your processes best.",
+      "source_url": "https://osiyatech.com/services/erp-crm-solutions/",
+      "source_document": "Osiyatech_Services_Knowledge_Base_v3.pdf",
+      "source_pdf_page": null,
+      "version": "3.0"
+    },
+    {
+      "faq_id": "erp-crm-solutions-003",
+      "question": "Does Osiyatech provide Microsoft Dynamics 365 services?",
+      "source_tag": "untagged",
+      "approval_status": "approved",
+      "owner": "Osiyatech Team",
+      "reviewer": "Osiyatech Team",
+      "reviewed_on": "2026-10-31",
+      "source_pdf_pages": {
+        "start": 57,
+        "end": 61
+      },
+      "answer": "Yes. Osiyatech's Dynamics 365 services include Business Central implementation and customisation, custom\nextensions and modules, Power Apps and Power Platform connectors, integration with other systems, workflow\nautomation, data migration from legacy ERPs and ongoing technical support. A client testimonial describes a\nsmooth data migration from Pronto to Dynamics 365.",
+      "source_url": "https://osiyatech.com/services/erp-crm-solutions/",
+      "source_document": "Osiyatech_Services_Knowledge_Base_v3.pdf",
+      "source_pdf_page": null,
+      "version": "3.0"
+    },
+    {
+      "faq_id": "erp-crm-solutions-004",
+      "question": "Can existing ERP and CRM systems integrate with other business applications?",
+      "source_tag": "untagged",
+      "approval_status": "approved",
+      "owner": "Osiyatech Team",
+      "reviewer": "Osiyatech Team",
+      "reviewed_on": "2026-10-31",
+      "source_pdf_pages": {
+        "start": 57,
+        "end": 61
+      },
+      "answer": "Yes. ERP and CRM systems can be integrated with accounting software, e-commerce platforms, inventory and\nwarehouse tools, payment gateways, marketing platforms and other business applications. Integrations use\nAPIs, middleware and automated data synchronisation, so information such as orders, stock levels, invoices\nand customer records flows between systems without manual re-entry.",
+      "source_url": "https://osiyatech.com/services/erp-crm-solutions/",
+      "source_document": "Osiyatech_Services_Knowledge_Base_v3.pdf",
+      "source_pdf_page": null,
+      "version": "3.0"
+    },
+    {
+      "faq_id": "erp-crm-solutions-005",
+      "question": "Is it possible to migrate from an existing ERP or CRM platform?",
+      "source_tag": "untagged",
+      "approval_status": "approved",
+      "owner": "Osiyatech Team",
+      "reviewer": "Osiyatech Team",
+      "reviewed_on": "2026-10-31",
+      "source_pdf_pages": {
+        "start": 57,
+        "end": 61
+      },
+      "answer": "Yes. Osiyatech migrates business records, customer information, transaction history and operational data from\nlegacy platforms to modern ERP or CRM systems. The migration is planned carefully: data is mapped, cleaned\nand moved, then validated and tested to confirm accuracy, with the aim of minimising disruption to daily\noperations. User training is provided so your team is ready to work in the new system.",
+      "source_url": "https://osiyatech.com/services/erp-crm-solutions/",
+      "source_document": "Osiyatech_Services_Knowledge_Base_v3.pdf",
+      "source_pdf_page": null,
+      "version": "3.0"
+    },
+    {
+      "faq_id": "erp-crm-solutions-006",
+      "question": "Do you provide ongoing ERP and CRM maintenance?",
+      "source_tag": "untagged",
+      "approval_status": "approved",
+      "owner": "Osiyatech Team",
+      "reviewer": "Osiyatech Team",
+      "reviewed_on": "2026-10-31",
+      "source_pdf_pages": {
+        "start": 57,
+        "end": 61
+      },
+      "answer": "Yes. Ongoing support includes troubleshooting, performance optimisation, security updates, system\nenhancements, integration maintenance, user support and platform upgrades. As your business changes, the\nsystem can be extended with new modules, workflows and reports to keep it aligned with your operations.",
+      "source_url": "https://osiyatech.com/services/erp-crm-solutions/",
+      "source_document": "Osiyatech_Services_Knowledge_Base_v3.pdf",
+      "source_pdf_page": null,
+      "version": "3.0"
+    },
+    {
+      "faq_id": "erp-crm-solutions-007",
+      "question": "Do you work with Salesforce, HubSpot, SAP, Odoo or Zoho?",
+      "source_tag": "drafted",
+      "approval_status": "approved",
+      "owner": "Osiyatech Team",
+      "reviewer": "Osiyatech Team",
+      "reviewed_on": "2026-10-31",
+      "source_pdf_pages": {
+        "start": 57,
+        "end": 61
+      },
+      "answer": "These platforms are part of Osiyatech's ERP and CRM technology stack, and its analytics work integrates data\nfrom Salesforce, HubSpot, SAP and Dynamics. Osiyatech's most detailed service offering is Microsoft\nDynamics 365. For other platforms, confirm the specific scope, such as integration, customisation or migration,\nwith the team.",
+      "source_url": "https://osiyatech.com/services/erp-crm-solutions/",
+      "source_document": "Osiyatech_Services_Knowledge_Base_v3.pdf",
+      "source_pdf_page": null,
+      "version": "3.0"
+    },
+    {
+      "faq_id": "erp-crm-solutions-008",
+      "question": "Should we build a custom ERP/CRM or use Dynamics 365?",
+      "source_tag": "drafted",
+      "approval_status": "approved",
+      "owner": "Osiyatech Team",
+      "reviewer": "Osiyatech Team",
+      "reviewed_on": "2026-10-31",
+      "source_pdf_pages": {
+        "start": 57,
+        "end": 61
+      },
+      "answer": "Both are valid, and the right choice depends on your business. An established platform like Dynamics 365 suits\ncompanies whose processes are fairly standard and who value a proven product with regular vendor updates.\nA custom ERP or CRM suits companies with unusual workflows, specific integration needs or a wish to avoid\npaying for unused features. Osiyatech offers both and recommends an approach after assessing your\nworkflows, systems and goals. A combination, such as Dynamics with custom modules, is also common.",
+      "source_url": "https://osiyatech.com/services/erp-crm-solutions/",
+      "source_document": "Osiyatech_Services_Knowledge_Base_v3.pdf",
+      "source_pdf_page": 61,
+      "version": "3.0"
+    },
+    {
+      "faq_id": "erp-crm-solutions-009",
+      "question": "Will you train our team on the new system?",
+      "source_tag": "drafted",
+      "approval_status": "approved",
+      "owner": "Osiyatech Team",
+      "reviewer": "Osiyatech Team",
+      "reviewed_on": "2026-10-31",
+      "source_pdf_pages": {
+        "start": 57,
+        "end": 61
+      },
+      "answer": "Yes. Training is part of ERP and CRM projects, including legacy migrations. Your users and administrators\nlearn how to use and manage the system so the change goes smoothly and the new platform is actually\nadopted.",
+      "source_url": "https://osiyatech.com/services/erp-crm-solutions/",
+      "source_document": "Osiyatech_Services_Knowledge_Base_v3.pdf",
+      "source_pdf_page": 61,
+      "version": "3.0"
+    },
+    {
+      "faq_id": "erp-crm-solutions-010",
+      "question": "How much does an ERP or CRM project cost?",
+      "source_tag": "drafted",
+      "approval_status": "approved",
+      "owner": "Osiyatech Team",
+      "reviewer": "Osiyatech Team",
+      "reviewed_on": "2026-10-31",
+      "source_pdf_pages": {
+        "start": 57,
+        "end": 61
+      },
+      "answer": "Osiyatech doesn't publish fixed prices. Cost depends on the platform chosen, the number of modules, the\namount of customisation, integrations, the volume of data migration and training needs. Platform licences, such\nas Microsoft licences, are separate from Osiyatech's services. After a consultation, you'll receive a transparent\nestimate.",
+      "source_url": "https://osiyatech.com/services/erp-crm-solutions/",
+      "source_document": "Osiyatech_Services_Knowledge_Base_v3.pdf",
+      "source_pdf_page": 61,
+      "version": "3.0"
+    }
+  ],
+  "answer_extraction": "original_markdown",
+  "enriched_at": "2026-10-30T19:22:35.679749+05:30",
+  "last_updated_at": "2026-10-31T12:26:05.692461+05:30"
+}

@@ -1,0 +1,356 @@
+
+from __future__ import annotations
+
+import asyncio
+import logging
+import re
+import time
+
+from ..config import Settings
+from ..errors import GatewayTimeout, ServiceBusy, ServiceUnavailable, ValidationFailed
+from ..leads.rules import extract_contact_details, lead_status_for, merge_fields, qualification_score
+from ..leads.service import HandoffService
+from ..llm.base import LLMError, LLMModelMissing, LLMProvider, LLMResult, LLMTimeout, LLMUnavailable
+from ..logging_setup import log_event
+from ..memory.sessions import Conversation, SessionStore, Turn, new_id
+from ..rag.retriever import Retriever
+from ..rag.types import RetrievalResult, RetrievedChunk
+from ..schemas import ChatRequest, ChatResponse, Confidence, Source, SuggestedAction
+from ..security.sanitize import clean_text, detect_injection
+from .analysis import (
+    NO_RETRIEVAL_INTENTS,
+    TurnAnalysis,
+    extract_options_from_text,
+    fallback_analysis,
+    parse_analysis,
+)
+from .prompts import (
+    build_analysis_messages,
+    build_generation_messages,
+    build_summary_messages,
+    build_system_prompt,
+    format_context,
+)
+from .validator import validate_answer
+
+logger = logging.getLogger(__name__)
+_CITE = re.compile(r"\[(\d{1,2})\]")
+_MARKDOWN = re.compile(r"(\*\*|__|`|^#+\s*|^\s*[-*•]\s+)", re.M)
+
+
+def _speakable(text: str) -> str:
+    return " ".join(_MARKDOWN.sub("", text).split())
+
+
+def _confidence(score: float, threshold: float) -> Confidence:
+    if score <= 0:
+        return Confidence(level="none", score=0.0)
+    level = "high" if score >= max(0.6, threshold * 1.8) else "medium" if score >= threshold else "low"
+    return Confidence(level=level, score=round(min(score, 1.0), 3))
+
+
+class ConversationEngine:
+    def __init__(self, settings: Settings, llm: LLMProvider, retriever: Retriever, sessions: SessionStore, handoff: HandoffService) -> None:
+        self.settings = settings
+        self.llm = llm
+        self.retriever = retriever
+        self.sessions = sessions
+        self.handoff = handoff
+        self._slots = asyncio.Semaphore(max(1, settings.llm_concurrency))
+        self._background: set[asyncio.Task] = set()
+
+    # ------------------------------------------------------------------ public
+    async def handle(self, req: ChatRequest, request_id: str | None = None) -> ChatResponse:
+        s = self.settings
+        started = time.perf_counter()
+        message = clean_text(req.message)
+        if not message:
+            raise ValidationFailed("Please type a message.", code="empty_message")
+        if len(message) > s.max_message_chars:
+            raise ValidationFailed(f"Please keep your message under {s.max_message_chars} characters.", code="message_too_long")
+
+        _, conv, restarted = self.sessions.get_or_create_conversation(req.session_id, req.conversation_id)
+        async with conv.lock:  # one turn at a time per conversation
+            if req.client_message_id and req.client_message_id in conv.handled:
+                return conv.handled[req.client_message_id].model_copy(update={"duplicate": True})
+            try:
+                resp = await self._process(conv, req, message, restarted, started, request_id)
+            except LLMUnavailable as exc:
+                raise ServiceUnavailable("The assistant is temporarily unavailable. Please try again shortly.", code="llm_unavailable") from exc
+            except LLMModelMissing as exc:
+                raise ServiceUnavailable("The assistant is temporarily unavailable. Please try again shortly.", code="llm_model_missing") from exc
+            except LLMTimeout as exc:
+                raise GatewayTimeout("The assistant took too long to answer. Please try again.", code="llm_timeout") from exc
+            except LLMError as exc:
+                raise ServiceUnavailable("The assistant ran into a problem. Please try again.", code="llm_error") from exc
+            if req.client_message_id:
+                conv.handled[req.client_message_id] = resp
+                while len(conv.handled) > 50:
+                    conv.handled.popitem(last=False)
+            return resp
+
+    async def drain(self) -> None:
+        """Wait for background work (summaries). Used by tests and shutdown."""
+        if self._background:
+            await asyncio.gather(*list(self._background), return_exceptions=True)
+
+    # ------------------------------------------------------------------ internals
+    async def _llm(self, messages: list[dict[str, str]], **kw) -> LLMResult:
+        try:
+            await asyncio.wait_for(self._slots.acquire(), self.settings.queue_timeout_s)
+        except asyncio.TimeoutError as exc:
+            raise ServiceBusy() from exc
+        try:
+            return await self.llm.chat(messages, **kw)
+        finally:
+            self._slots.release()
+
+    async def _analyze(self, conv: Conversation, message: str) -> TurnAnalysis:
+        recent = conv.turns[-self.settings.memory_recent_messages :]
+        prev_user = next((t.content for t in reversed(conv.turns) if t.role == "user"), None)
+        prev_assistant = next((t.content for t in reversed(conv.turns) if t.role == "assistant"), None)
+        fallback = fallback_analysis(
+            message,
+            previous_user_message=prev_user,
+            previous_assistant_message=prev_assistant,
+            last_options=conv.last_options_presented,
+            active_topic=conv.active_topic,
+            selected_service=conv.selected_service,
+        )
+        if not self.settings.analysis_enabled:
+            return fallback
+        try:
+            res = await self._llm(
+                build_analysis_messages(conv.summary, recent, message),
+                json_mode=True, max_tokens=self.settings.analysis_max_tokens, temperature=0.0,
+            )
+            analysis = parse_analysis(res.text)
+        except (LLMUnavailable, LLMModelMissing):
+            raise
+        except ServiceBusy:
+            raise
+        except (LLMError, ValueError) as exc:
+            log_event(logger, logging.WARNING, "analysis_fallback", reason=type(exc).__name__)
+            return fallback
+        if not analysis.standalone_query:
+            analysis.standalone_query = fallback.standalone_query
+        if not analysis.selected_service:
+            analysis.selected_service = fallback.selected_service
+        if not analysis.active_topic:
+            analysis.active_topic = fallback.active_topic
+        if not analysis.stage:
+            analysis.stage = fallback.stage
+        return analysis
+
+    def _update_lead(self, conv: Conversation, message: str, analysis: TurnAnalysis) -> None:
+        inputs: dict[str, object] = {**analysis.lead, **extract_contact_details(message)}
+        conv.lead.fields = merge_fields(conv.lead.fields, inputs)
+        conv.lead.score = qualification_score(conv.lead.fields)
+        if conv.lead.status not in {"captured", "handoff_requested"}:
+            conv.lead.status = lead_status_for(conv.lead.fields, conv.lead.score, self.settings.lead_offer_score)
+        if analysis.selected_service:
+            conv.selected_service = analysis.selected_service
+        if analysis.stage:
+            conv.stage = analysis.stage
+
+    async def _process(
+        self, conv: Conversation, req: ChatRequest, message: str, restarted: bool, started: float, request_id: str | None
+    ) -> ChatResponse:
+        s = self.settings
+        mode = req.interaction_mode
+        timings: dict[str, float] = {}
+        injection = detect_injection(message)
+
+        if req.interrupted_previous:
+            last_assistant = next((t for t in reversed(conv.turns) if t.role == "assistant"), None)
+            if last_assistant:
+                last_assistant.audio_interrupted = True
+
+        # 1. understand
+        t = time.perf_counter()
+        analysis = await self._analyze(conv, message)
+        timings["analysis"] = round((time.perf_counter() - t) * 1000, 1)
+        self._update_lead(conv, message, analysis)
+        wants_human = analysis.wants_human or analysis.intent == "human_request"
+
+        # 2. retrieve
+        retrieval = RetrievalResult.empty("skipped")
+        needs_kb = analysis.intent not in NO_RETRIEVAL_INTENTS
+        if needs_kb:
+            t = time.perf_counter()
+            try:
+                retrieval = await asyncio.to_thread(self.retriever.retrieve, analysis.standalone_query or message)
+            except Exception as exc:  # embedding/index failure must not take the chat down
+                log_event(logger, logging.ERROR, "retrieval_failed", error=type(exc).__name__)
+                retrieval = RetrievalResult.empty("index_unavailable")
+            timings["retrieval"] = round((time.perf_counter() - t) * 1000, 1)
+            if retrieval.status in {"index_unavailable", "empty_index"}:
+                log_event(logger, logging.WARNING, "knowledge_base_unavailable", status=retrieval.status)
+
+        # 3. grounding gate
+        grounded = bool(retrieval.chunks) and retrieval.confidence >= s.min_confidence
+        used: list[RetrievedChunk] = retrieval.chunks if grounded else []
+        is_consultative = (
+            analysis.intent == "project_discussion"
+            and retrieval.status not in {"index_unavailable", "empty_index"}
+            and bool(retrieval.chunks)
+        )
+        if not needs_kb or grounded or is_consultative:
+            status = "answered"
+            if is_consultative and not used:
+                used = retrieval.chunks[:2]
+        else:
+            status = "low_confidence" if retrieval.chunks else "no_knowledge"
+
+        # clarification short-circuit (only when nothing grounded could answer it)
+        if analysis.needs_clarification and analysis.clarifying_question and not grounded and not wants_human:
+            return self._finish(
+                conv, req, message, analysis, answer=analysis.clarifying_question, status="needs_clarification",
+                used=[], confidence=retrieval.confidence, actions=[], restarted=restarted, timings=timings,
+                started=started, request_id=request_id, mode=mode, injection=injection, validator_issues=[],
+            )
+
+        # 4. lead / handoff signals
+        conv.unresolved_count = conv.unresolved_count + 1 if status in {"low_confidence", "no_knowledge"} else 0
+        repeated_failure = conv.unresolved_count >= s.handoff_after_failures
+        offer_lead = conv.lead.status == "qualified" and not conv.lead.offered and not wants_human
+        actions: list[SuggestedAction] = []
+        if wants_human:
+            actions.append(SuggestedAction(type="request_human_handoff", label="Request a follow-up from the team"))
+        elif offer_lead or analysis.intent == "pricing" or status in {"low_confidence", "no_knowledge"} or repeated_failure:
+            actions.append(SuggestedAction(type="open_lead_form", label="Have the team contact me"))
+        if offer_lead:
+            conv.lead.offered = True
+        lead_hint = ""
+        if offer_lead:
+            lead_hint = "The visitor has described a real project. After answering, briefly offer to have the team discuss it with them. Do not ask for personal details in this reply."
+        elif conv.lead.status == "exploring" and conv.lead.fields.get("project_type") and not conv.lead.fields.get("requirements"):
+            lead_hint = "The visitor may be planning a project. Ask one natural question to understand what they need."
+        if wants_human or repeated_failure:
+            status = "handoff_offered"
+
+        # 5. generate
+        stage_hint = ""
+        if conv.stage == "discovery" or analysis.intent == "project_discussion":
+            stage_hint = "The visitor is exploring or defining a project. Act as an intelligent consultative AI advisor: understand their requirement, explain how Osiyatech approaches such solutions based on context, and ask one relevant discovery question to help scope their needs."
+        elif conv.stage == "exploring":
+            stage_hint = "The visitor is exploring Osiyatech services. Provide a concise, helpful overview and suggest natural options or next steps."
+
+        nav_hint = ""
+        if analysis.wants_navigation or analysis.intent == "website_navigation":
+            nav_hint = "The visitor is asking for page navigation or where to find information. Guide them clearly to the relevant Osiyatech section."
+
+        context_text = format_context(used)
+        system = build_system_prompt(
+            s, mode=mode, summary=conv.summary, lead_hint=lead_hint, stage_hint=stage_hint, nav_hint=nav_hint,
+            injection_suspected=injection, interrupted=req.interrupted_previous,
+            has_context=bool(used) or not needs_kb or is_consultative,
+            selected_service=conv.selected_service,
+        )
+        recent = conv.turns[-s.memory_recent_messages :]
+        messages = build_generation_messages(system, recent, message, context_text)
+        t = time.perf_counter()
+        result = await self._llm(
+            messages, max_tokens=s.llm_voice_max_tokens if mode in {"voice", "avatar"} else s.llm_max_tokens
+        )
+        timings["llm"] = round((time.perf_counter() - t) * 1000, 1)
+
+        # 6. validate: check strictly against retrieved context, NEVER user message or history
+        outcome = validate_answer(
+            result.text,
+            supporting_text=context_text,
+            system_prompt=system,
+            valid_citations=len(used),
+            strip_citations=mode in {"voice", "avatar"},
+            max_chars=s.validator_max_chars,
+        )
+        answer = outcome.text
+        if mode in {"voice", "avatar"}:
+            answer = _speakable(answer)
+        if wants_human or repeated_failure:
+            answer = f"{answer}\n\n{self.handoff.describe_contact()}"
+
+        is_truncated = result.is_truncated or outcome.is_truncated
+        if is_truncated and status == "answered":
+            status = "incomplete"
+
+        return self._finish(
+            conv, req, message, analysis, answer=answer, status=status, used=used,
+            confidence=retrieval.confidence, actions=actions, restarted=restarted, timings=timings, started=started,
+            request_id=request_id, mode=mode, injection=injection, validator_issues=outcome.issues, model=result.model,
+            raw_answer=result.text, is_truncated=is_truncated, finish_reason=result.finish_reason,
+        )
+
+    def _finish(
+        self, conv: Conversation, req: ChatRequest, message: str, analysis: TurnAnalysis, *, answer: str, status: str,
+        used: list[RetrievedChunk], confidence: float, actions: list[SuggestedAction], restarted: bool,
+        timings: dict[str, float], started: float, request_id: str | None, mode: str, injection: bool,
+        validator_issues: list[str], model: str = "", raw_answer: str | None = None,
+        is_truncated: bool = False, finish_reason: str | None = None,
+    ) -> ChatResponse:
+        s = self.settings
+        cited = {int(n) for n in _CITE.findall(raw_answer or answer) if 1 <= int(n) <= len(used)}
+        picks = sorted(cited)
+        sources = []
+        for n in picks:
+            c = used[n - 1].chunk
+            sources.append(Source(
+                index=n, title=c.title, source_document=c.source_document, source_url=c.source_url,
+                page_number=c.page_number, service_category=c.service_category, snippet=c.text[:200],
+            ))
+
+        message_id = new_id()
+        conv.turns.append(Turn("user", message, new_id(), mode))
+        conv.turns.append(Turn("assistant", answer, message_id, mode))
+        conv.last_intent = analysis.intent
+        if analysis.active_topic:
+            conv.active_topic = analysis.active_topic
+        if analysis.selected_service:
+            conv.selected_service = analysis.selected_service
+        if analysis.stage:
+            conv.stage = analysis.stage
+        conv.last_options_presented = extract_options_from_text(answer)
+        self.sessions.trim(conv)
+        self._maybe_summarize(conv)
+
+        timings["total"] = round((time.perf_counter() - started) * 1000, 1)
+        log_event(
+            logger, logging.INFO, "chat_handled", request_id=request_id, conversation_id=conv.id, mode=mode,
+            intent=analysis.intent, analysis_source=analysis.source, status=status, confidence=round(confidence, 3),
+            sources=len(sources), model=model or self.llm.model, injection_suspected=injection,
+            validator_issues=validator_issues, is_truncated=is_truncated, finish_reason=finish_reason,
+            **{f"{k}_ms": v for k, v in timings.items()},
+        )
+        return ChatResponse(
+            conversation_id=conv.id, message_id=message_id, answer=answer, response_status=status,  # type: ignore[arg-type]
+            sources=sources, confidence=_confidence(confidence, s.min_confidence), suggested_actions=actions,
+            lead_status=conv.lead.status, interaction_mode=mode,  # type: ignore[arg-type]
+            conversation_restarted=restarted, timings_ms=timings,
+            is_truncated=is_truncated, finish_reason=finish_reason,
+        )
+
+    # ------------------------------------------------------------------ memory
+    def _maybe_summarize(self, conv: Conversation) -> None:
+        s = self.settings
+        older_end = len(conv.turns) - s.memory_recent_messages
+        if conv.summarizing or older_end - conv.summarized_upto < s.memory_summary_batch:
+            return
+        conv.summarizing = True
+        task = asyncio.create_task(self._summarize(conv, older_end))
+        self._background.add(task)
+        task.add_done_callback(self._background.discard)
+
+    async def _summarize(self, conv: Conversation, older_end: int) -> None:
+        batch = conv.turns[conv.summarized_upto : older_end]
+        try:
+            res = await self._llm(build_summary_messages(conv.summary, batch), max_tokens=220, temperature=0.0)
+            summary = " ".join(res.text.split())[:900]
+            if not summary:
+                raise ValueError("empty summary")
+        except Exception as exc:  # extractive fallback keeps memory bounded even if the LLM is unavailable
+            log_event(logger, logging.WARNING, "summary_fallback", reason=type(exc).__name__)
+            extra = " ".join(f"{t.role[0]}: {t.content[:100]}" for t in batch)
+            summary = f"{conv.summary} {extra}".strip()[-900:]
+        conv.summary = summary
+        conv.summarized_upto = max(conv.summarized_upto, older_end)
+        conv.summarizing = False

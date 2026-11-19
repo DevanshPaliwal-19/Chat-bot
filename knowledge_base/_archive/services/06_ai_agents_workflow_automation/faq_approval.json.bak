@@ -1,0 +1,151 @@
+{
+  "schema_version": 1,
+  "service_folder": "06_ai_agents_workflow_automation",
+  "document_id": "ai-agents-workflow-automation-v3",
+  "source_file": "faqs.md",
+  "faqs": [
+    {
+      "faq_id": "ai-agents-workflow-automation-001",
+      "question": "What is the difference between an AI chatbot and an AI agent?",
+      "source_tag": "drafted",
+      "approval_status": "draft",
+      "owner": null,
+      "reviewer": null,
+      "reviewed_on": null,
+      "source_pdf_pages": {
+        "start": 38,
+        "end": 41
+      }
+    },
+    {
+      "faq_id": "ai-agents-workflow-automation-002",
+      "question": "What kinds of tasks can AI agents automate?",
+      "source_tag": "drafted",
+      "approval_status": "draft",
+      "owner": null,
+      "reviewer": null,
+      "reviewed_on": null,
+      "source_pdf_pages": {
+        "start": 38,
+        "end": 41
+      }
+    },
+    {
+      "faq_id": "ai-agents-workflow-automation-003",
+      "question": "Can you build a chatbot that answers from our own documents?",
+      "source_tag": "drafted",
+      "approval_status": "draft",
+      "owner": null,
+      "reviewer": null,
+      "reviewed_on": null,
+      "source_pdf_pages": {
+        "start": 38,
+        "end": 41
+      }
+    },
+    {
+      "faq_id": "ai-agents-workflow-automation-004",
+      "question": "Can an AI assistant work on WhatsApp or connect to our CRM?",
+      "source_tag": "drafted",
+      "approval_status": "draft",
+      "owner": null,
+      "reviewer": null,
+      "reviewed_on": null,
+      "source_pdf_pages": {
+        "start": 38,
+        "end": 41
+      }
+    },
+    {
+      "faq_id": "ai-agents-workflow-automation-005",
+      "question": "Can you automate our customer support?",
+      "source_tag": "drafted",
+      "approval_status": "draft",
+      "owner": null,
+      "reviewer": null,
+      "reviewed_on": null,
+      "source_pdf_pages": {
+        "start": 38,
+        "end": 41
+      }
+    },
+    {
+      "faq_id": "ai-agents-workflow-automation-006",
+      "question": "Will the AI hand conversations over to a human when needed?",
+      "source_tag": "drafted",
+      "approval_status": "draft",
+      "owner": null,
+      "reviewer": null,
+      "reviewed_on": null,
+      "source_pdf_pages": {
+        "start": 38,
+        "end": 41
+      }
+    },
+    {
+      "faq_id": "ai-agents-workflow-automation-007",
+      "question": "How do you make sure the AI gives accurate answers?",
+      "source_tag": "drafted",
+      "approval_status": "draft",
+      "owner": null,
+      "reviewer": null,
+      "reviewed_on": null,
+      "source_pdf_pages": {
+        "start": 38,
+        "end": 41
+      }
+    },
+    {
+      "faq_id": "ai-agents-workflow-automation-008",
+      "question": "Is our data secure when using AI agents?",
+      "source_tag": "drafted",
+      "approval_status": "draft",
+      "owner": null,
+      "reviewer": null,
+      "reviewed_on": null,
+      "source_pdf_pages": {
+        "start": 38,
+        "end": 41
+      }
+    },
+    {
+      "faq_id": "ai-agents-workflow-automation-009",
+      "question": "How long does it take to build an AI agent or automation?",
+      "source_tag": "drafted",
+      "approval_status": "draft",
+      "owner": null,
+      "reviewer": null,
+      "reviewed_on": null,
+      "source_pdf_pages": {
+        "start": 38,
+        "end": 41
+      }
+    },
+    {
+      "faq_id": "ai-agents-workflow-automation-010",
+      "question": "Which technologies do you use for AI agents?",
+      "source_tag": "drafted",
+      "approval_status": "draft",
+      "owner": null,
+      "reviewer": null,
+      "reviewed_on": null,
+      "source_pdf_pages": {
+        "start": 38,
+        "end": 41
+      }
+    },
+    {
+      "faq_id": "ai-agents-workflow-automation-011",
+      "question": "How much does an AI automation project cost?",
+      "source_tag": "drafted",
+      "approval_status": "draft",
+      "owner": null,
+      "reviewer": null,
+      "reviewed_on": null,
+      "source_pdf_pages": {
+        "start": 38,
+        "end": 41
+      }
+    }
+  ]
+}

@@ -1,0 +1,82 @@
+"""Wires services together. Tests inject fakes through the keyword overrides."""
+from __future__ import annotations
+
+import asyncio
+import logging
+from dataclasses import dataclass, field
+
+from .config import Settings
+from .core.engine import ConversationEngine
+from .leads.service import HandoffService, LeadService, Notifier
+from .leads.store import LeadStore, SQLiteLeadStore
+from .llm.base import LLMProvider
+from .llm.providers import build_llm
+from .memory.sessions import SessionStore
+from .rag.embeddings import Embedder, build_embedder
+from .rag.index import IndexUnavailable, KnowledgeIndex
+from .rag.retriever import Retriever
+from .security.rate_limit import SlidingWindowLimiter
+from .speech.providers import SpeechService, STTProvider, TTSProvider, build_stt, build_tts
+
+logger = logging.getLogger(__name__)
+
+
+@dataclass
+class Container:
+    settings: Settings
+    llm: LLMProvider
+    embedder: Embedder
+    retriever: Retriever
+    sessions: SessionStore
+    lead_store: LeadStore
+    handoff: HandoffService
+    lead_service: LeadService
+    speech: SpeechService
+    engine: ConversationEngine
+    limiter: SlidingWindowLimiter
+    ingest_lock: asyncio.Lock = field(default_factory=asyncio.Lock)
+
+    def reload_index(self) -> KnowledgeIndex | None:
+        try:
+            index = KnowledgeIndex.load(self.settings.index_dir)
+        except IndexUnavailable as exc:
+            logger.warning("knowledge index not loaded: %s", exc)
+            index = None
+        self.retriever.set_index(index)
+        return index
+
+
+def build_container(
+    settings: Settings,
+    *,
+    llm: LLMProvider | None = None,
+    embedder: Embedder | None = None,
+    sessions: SessionStore | None = None,
+    lead_store: LeadStore | None = None,
+    stt: STTProvider | None = None,
+    tts: TTSProvider | None = None,
+    notifier: Notifier | None = None,
+) -> Container:
+    embedder = embedder or build_embedder(settings)
+    llm = llm or build_llm(settings)
+    sessions = sessions or SessionStore(
+        settings.session_ttl_minutes,
+        settings.max_sessions,
+        settings.max_stored_turns,
+        db_path=settings.session_db_path,
+    )
+    retriever = Retriever(None, embedder, settings)
+    handoff = HandoffService(settings, notifier)
+    lead_store = lead_store or SQLiteLeadStore(settings.lead_db_path)
+    speech = SpeechService(settings, stt or build_stt(settings), tts or build_tts(settings))
+    container = Container(
+        settings=settings, llm=llm, embedder=embedder, retriever=retriever, sessions=sessions,
+        lead_store=lead_store, handoff=handoff, lead_service=LeadService(settings, lead_store, handoff),
+        speech=speech, engine=ConversationEngine(settings, llm, retriever, sessions, handoff),
+        limiter=SlidingWindowLimiter(settings.rate_limit_requests, settings.rate_limit_window_s),
+    )
+    index = container.reload_index()
+    if index and index.embedder_name != embedder.name:
+        logger.warning("index was built with '%s' but '%s' is configured: run a full re-ingest", index.embedder_name, embedder.name)
+        container.retriever.set_index(None)
+    return container

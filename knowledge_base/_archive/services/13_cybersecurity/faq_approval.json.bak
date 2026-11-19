@@ -1,0 +1,151 @@
+{
+  "schema_version": 1,
+  "service_folder": "13_cybersecurity",
+  "document_id": "cybersecurity-v3",
+  "source_file": "faqs.md",
+  "faqs": [
+    {
+      "faq_id": "cybersecurity-001",
+      "question": "What are cybersecurity services?",
+      "source_tag": "untagged",
+      "approval_status": "draft",
+      "owner": null,
+      "reviewer": null,
+      "reviewed_on": null,
+      "source_pdf_pages": {
+        "start": 72,
+        "end": 76
+      }
+    },
+    {
+      "faq_id": "cybersecurity-002",
+      "question": "What cybersecurity services does Osiyatech provide?",
+      "source_tag": "untagged",
+      "approval_status": "draft",
+      "owner": null,
+      "reviewer": null,
+      "reviewed_on": null,
+      "source_pdf_pages": {
+        "start": 72,
+        "end": 76
+      }
+    },
+    {
+      "faq_id": "cybersecurity-003",
+      "question": "How does cybersecurity help protect cloud infrastructure?",
+      "source_tag": "untagged",
+      "approval_status": "draft",
+      "owner": null,
+      "reviewer": null,
+      "reviewed_on": null,
+      "source_pdf_pages": {
+        "start": 72,
+        "end": 76
+      }
+    },
+    {
+      "faq_id": "cybersecurity-004",
+      "question": "How often should businesses conduct cybersecurity assessments?",
+      "source_tag": "untagged",
+      "approval_status": "draft",
+      "owner": null,
+      "reviewer": null,
+      "reviewed_on": null,
+      "source_pdf_pages": {
+        "start": 72,
+        "end": 76
+      }
+    },
+    {
+      "faq_id": "cybersecurity-005",
+      "question": "How can cybersecurity assessments improve business security?",
+      "source_tag": "untagged",
+      "approval_status": "draft",
+      "owner": null,
+      "reviewer": null,
+      "reviewed_on": null,
+      "source_pdf_pages": {
+        "start": 72,
+        "end": 76
+      }
+    },
+    {
+      "faq_id": "cybersecurity-006",
+      "question": "What measures help prevent unauthorized access to business systems?",
+      "source_tag": "untagged",
+      "approval_status": "draft",
+      "owner": null,
+      "reviewer": null,
+      "reviewed_on": null,
+      "source_pdf_pages": {
+        "start": 72,
+        "end": 76
+      }
+    },
+    {
+      "faq_id": "cybersecurity-007",
+      "question": "Does Osiyatech provide ongoing cybersecurity support?",
+      "source_tag": "untagged",
+      "approval_status": "draft",
+      "owner": null,
+      "reviewer": null,
+      "reviewed_on": null,
+      "source_pdf_pages": {
+        "start": 72,
+        "end": 76
+      }
+    },
+    {
+      "faq_id": "cybersecurity-008",
+      "question": "Do you perform penetration testing?",
+      "source_tag": "drafted",
+      "approval_status": "draft",
+      "owner": null,
+      "reviewer": null,
+      "reviewed_on": null,
+      "source_pdf_pages": {
+        "start": 72,
+        "end": 76
+      }
+    },
+    {
+      "faq_id": "cybersecurity-009",
+      "question": "Is Osiyatech certified, for example SOC 2, ISO 27001 or HIPAA?",
+      "source_tag": "drafted",
+      "approval_status": "draft",
+      "owner": null,
+      "reviewer": null,
+      "reviewed_on": null,
+      "source_pdf_pages": {
+        "start": 72,
+        "end": 76
+      }
+    },
+    {
+      "faq_id": "cybersecurity-010",
+      "question": "Can you help us prepare for SOC 2, ISO 27001 or other compliance requirements?",
+      "source_tag": "drafted",
+      "approval_status": "draft",
+      "owner": null,
+      "reviewer": null,
+      "reviewed_on": null,
+      "source_pdf_pages": {
+        "start": 72,
+        "end": 76
+      }
+    },
+    {
+      "faq_id": "cybersecurity-011",
+      "question": "How much do cybersecurity services cost?",
+      "source_tag": "drafted",
+      "approval_status": "draft",
+      "owner": null,
+      "reviewer": null,
+      "reviewed_on": null,
+      "source_pdf_pages": {
+        "start": 72,
+        "end": 76
+      }
+    }
+  ]
+}

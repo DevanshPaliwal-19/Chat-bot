@@ -1,0 +1,179 @@
+"""Document parsers: PDF, Markdown, TXT, HTML. Metadata is taken only from what the source provides."""
+from __future__ import annotations
+
+import json
+import re
+from pathlib import Path
+
+from bs4 import BeautifulSoup
+
+from .types import ParsedDocument, ParsedPage
+
+SUPPORTED_EXTENSIONS = {
+    ".pdf": "pdf",
+    ".md": "markdown",
+    ".markdown": "markdown",
+    ".txt": "text",
+    ".html": "html",
+    ".htm": "html",
+    ".jsonl": "jsonl",
+}
+ALLOWED_META_KEYS = {"title", "source_url", "approval_status", "last_updated", "service_category"}
+_FRONT_MATTER = re.compile(r"\A﻿?---\s*\n(.*?)\n---\s*(?:\n|\Z)", re.S)
+
+
+class ParseError(Exception):
+    """The file could not be turned into usable text."""
+
+
+def _normalize(text: str) -> str:
+    text = text.replace("\r\n", "\n").replace("\r", "\n").replace("\x00", "")
+    text = re.sub(r"[ \t]+\n", "\n", text)
+    return re.sub(r"\n{3,}", "\n\n", text).strip()
+
+
+def _read_text(path: Path) -> str:
+    raw = path.read_bytes()
+    for enc in ("utf-8-sig", "utf-16", "cp1252"):
+        try:
+            return raw.decode(enc)
+        except UnicodeError:
+            continue
+    return raw.decode("utf-8", errors="replace")
+
+
+def _split_front_matter(text: str) -> tuple[dict[str, str], str]:
+    m = _FRONT_MATTER.match(text)
+    if not m:
+        return {}, text
+    meta: dict[str, str] = {}
+    for line in m.group(1).splitlines():
+        if ":" in line:
+            k, v = line.split(":", 1)
+            k = k.strip().lower()
+            if k in ALLOWED_META_KEYS and v.strip():
+                meta[k] = v.strip().strip("\"'")
+    return meta, text[m.end():]
+
+
+def _first_heading(text: str) -> str | None:
+    m = re.search(r"^#\s+(.+)$", text, re.M)
+    return m.group(1).strip() if m else None
+
+
+def parse_markdown_or_text(path: Path, source_type: str) -> ParsedDocument:
+    meta, body = _split_front_matter(_read_text(path))
+    body = _normalize(body)
+    if not body:
+        raise ParseError("document is empty")
+    title = meta.get("title") or (_first_heading(body) if source_type == "markdown" else None)
+    return ParsedDocument([ParsedPage(body)], source_type, title, meta)
+
+
+def parse_html(path: Path) -> ParsedDocument:
+    soup = BeautifulSoup(_read_text(path), "html.parser")
+    meta: dict[str, str] = {}
+    for tag in soup.find_all("meta"):
+        name = (tag.get("name") or "").lower()
+        if name in ALLOWED_META_KEYS and tag.get("content"):
+            meta[name] = tag["content"].strip()
+    canonical = soup.find("link", rel="canonical")
+    if canonical and canonical.get("href") and "source_url" not in meta:
+        meta["source_url"] = canonical["href"].strip()
+    title = meta.get("title") or (soup.title.get_text(strip=True) if soup.title else None)
+    for t in soup(["script", "style", "noscript", "nav", "footer", "form", "svg"]):
+        t.decompose()
+    lines: list[str] = []
+    for el in soup.find_all(["h1", "h2", "h3", "h4", "h5", "h6", "p", "li", "td", "th", "pre", "blockquote"]):
+        if el.name in {"li", "td", "th", "blockquote"} and el.find(["p", "li"]):
+            continue  # avoid duplicating nested block text
+        text = " ".join(el.get_text(" ", strip=True).split())
+        if not text:
+            continue
+        if el.name.startswith("h") and len(el.name) == 2:
+            lines.append(f"{'#' * int(el.name[1])} {text}")
+        elif el.name == "li":
+            lines.append(f"- {text}")
+        else:
+            lines.append(text)
+    body = _normalize("\n\n".join(lines))
+    if not body:
+        raise ParseError("no readable text in HTML")
+    return ParsedDocument([ParsedPage(body)], "html", title, meta)
+
+
+def parse_pdf(path: Path) -> ParsedDocument:
+    try:
+        from pypdf import PdfReader
+
+        reader = PdfReader(str(path))
+        if reader.is_encrypted:
+            raise ParseError("PDF is encrypted")
+        pages: list[ParsedPage] = []
+        for i, page in enumerate(reader.pages, start=1):
+            text = _normalize(page.extract_text() or "")
+            if text:
+                pages.append(ParsedPage(text, i))
+        info = reader.metadata
+        title = str(info.title).strip() if info and info.title else None
+    except ParseError:
+        raise
+    except Exception as exc:  # pypdf raises many different errors for corrupt files
+        raise ParseError(f"PDF could not be read ({type(exc).__name__})") from exc
+    if not pages:
+        raise ParseError("PDF has no extractable text (scanned images need OCR)")
+    return ParsedDocument(pages, "pdf", title, {})
+
+
+def parse_jsonl(path: Path) -> ParsedDocument:
+    raw = _read_text(path)
+    pages: list[ParsedPage] = []
+    meta: dict[str, str] = {}
+    title = path.stem.replace("_", " ").title()
+    for line_num, line in enumerate(raw.splitlines(), start=1):
+        line = line.strip()
+        if not line:
+            continue
+        try:
+            record = json.loads(line)
+        except Exception:
+            continue
+        if not isinstance(record, dict):
+            continue
+        rec_title = record.get("title") or f"Unit {line_num}"
+        rec_cat = record.get("category") or ""
+        rec_sub = record.get("subcategory") or ""
+        rec_content = record.get("content") or ""
+        rec_url = record.get("source_url") or ""
+        rec_status = record.get("verification_status") or "approved"
+        related = record.get("related_questions")
+        related_str = f"\n\n**Related Questions:** {', '.join(related)}" if isinstance(related, list) and related else ""
+        header = f"# {rec_title}"
+        if rec_cat:
+            header += f"\n**Category:** {rec_cat}" + (f" - {rec_sub}" if rec_sub else "")
+        if rec_url:
+            header += f"\n**Source:** {rec_url}"
+        page_text = _normalize(f"{header}\n\n{rec_content}{related_str}")
+        if page_text:
+            pages.append(ParsedPage(text=page_text, page_number=line_num))
+    if not pages:
+        raise ParseError("JSONL document contains no valid records")
+    return ParsedDocument(pages, "jsonl", title, meta)
+
+
+def parse_file(path: Path) -> ParsedDocument:
+    kind = SUPPORTED_EXTENSIONS.get(path.suffix.lower())
+    if kind is None:
+        raise ParseError(f"unsupported file type '{path.suffix}'")
+    try:
+        if kind == "pdf":
+            return parse_pdf(path)
+        if kind == "html":
+            return parse_html(path)
+        if kind == "jsonl":
+            return parse_jsonl(path)
+        return parse_markdown_or_text(path, kind)
+    except ParseError:
+        raise
+    except OSError as exc:
+        raise ParseError(f"file could not be read ({type(exc).__name__})") from exc

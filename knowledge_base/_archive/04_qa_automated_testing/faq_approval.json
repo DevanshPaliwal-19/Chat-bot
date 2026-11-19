@@ -1,0 +1,209 @@
+{
+  "schema_version": 2,
+  "service_folder": "04_qa_automated_testing",
+  "document_id": "qa-testing-v3",
+  "source_file": "faqs.md",
+  "faqs": [
+    {
+      "faq_id": "qa-testing-001",
+      "question": "What is the difference between manual QA and automated testing?",
+      "source_tag": "untagged",
+      "approval_status": "approved",
+      "owner": "Osiyatech Team",
+      "reviewer": "Osiyatech Team",
+      "reviewed_on": "2026-10-31",
+      "source_pdf_pages": {
+        "start": 26,
+        "end": 31
+      },
+      "answer": "Manual testing is performed by QA professionals who use the application the way real users would. They\nevaluate functionality, usability and the overall experience, and catch problems a script might miss, such as\nconfusing layouts. Automated testing uses scripts and tools such as Playwright, Cypress and Selenium to run\nrepetitive tests quickly and consistently, for example re-checking every feature after each code change.\nOsiyatech combines both: automation for speed and repeatability, manual testing for judgement and real-user\ninsight. Together they give comprehensive coverage and reliable results.",
+      "source_url": "https://osiyatech.com/qa-testing",
+      "source_document": "Osiyatech_Services_Knowledge_Base_v3.pdf",
+      "source_pdf_page": null,
+      "version": "3.0"
+    },
+    {
+      "faq_id": "qa-testing-002",
+      "question": "What types of software testing services do you offer?",
+      "source_tag": "untagged",
+      "approval_status": "approved",
+      "owner": "Osiyatech Team",
+      "reviewer": "Osiyatech Team",
+      "reviewed_on": "2026-10-31",
+      "source_pdf_pages": {
+        "start": 26,
+        "end": 31
+      },
+      "answer": "Osiyatech provides functional testing, manual and automated testing, end-to-end and regression testing,\ncross-browser and compatibility testing, API and integration testing, performance and load testing, mobile app\ntesting on iOS and Android, security testing, and continuous testing inside CI/CD pipelines. The mix is tailored\nto your application's requirements, technology and business goals. A customer-facing store might focus on\ncheckout flows and peak traffic, for example, while an enterprise platform might focus on integrations and\nregression.",
+      "source_url": "https://osiyatech.com/qa-testing",
+      "source_document": "Osiyatech_Services_Knowledge_Base_v3.pdf",
+      "source_pdf_page": 30,
+      "version": "3.0"
+    },
+    {
+      "faq_id": "qa-testing-003",
+      "question": "How long does a software testing project take?",
+      "source_tag": "untagged",
+      "approval_status": "approved",
+      "owner": "Osiyatech Team",
+      "reviewer": "Osiyatech Team",
+      "reviewed_on": "2026-10-31",
+      "source_pdf_pages": {
+        "start": 26,
+        "end": 31
+      },
+      "answer": "It depends on the application's complexity, the number of features, the coverage you need and whether\nautomation is being built. Smaller testing projects may take a few days to two weeks. Complex applications, or\nbuilding a full automation framework, may take several weeks. Many clients continue with ongoing QA support,\nso every new release is tested as part of their regular development cycle.",
+      "source_url": "https://osiyatech.com/qa-testing",
+      "source_document": "Osiyatech_Services_Knowledge_Base_v3.pdf",
+      "source_pdf_page": 30,
+      "version": "3.0"
+    },
+    {
+      "faq_id": "qa-testing-004",
+      "question": "Can you test our existing website or mobile application?",
+      "source_tag": "untagged",
+      "approval_status": "approved",
+      "owner": "Osiyatech Team",
+      "reviewer": "Osiyatech Team",
+      "reviewed_on": "2026-10-31",
+      "source_pdf_pages": {
+        "start": 26,
+        "end": 31
+      },
+      "answer": "Yes. Osiyatech tests existing websites, web applications, SaaS platforms and iOS and Android apps, whether\nor not Osiyatech built them. Testing finds functional defects, usability issues, compatibility problems across\nbrowsers and devices, and performance bottlenecks. It can be done before a launch, after a major update, or\nas an independent health check of a live product.",
+      "source_url": "https://osiyatech.com/qa-testing",
+      "source_document": "Osiyatech_Services_Knowledge_Base_v3.pdf",
+      "source_pdf_page": 30,
+      "version": "3.0"
+    },
+    {
+      "faq_id": "qa-testing-005",
+      "question": "Which tools and frameworks do you use for QA testing?",
+      "source_tag": "untagged",
+      "approval_status": "approved",
+      "owner": "Osiyatech Team",
+      "reviewer": "Osiyatech Team",
+      "reviewed_on": "2026-10-31",
+      "source_pdf_pages": {
+        "start": 26,
+        "end": 31
+      },
+      "answer": "Depending on the project, Osiyatech uses Playwright, Cypress, Selenium and Robot Framework for web\nautomation; Appium for mobile; Postman and PyTest for API testing; JMeter and k6 for performance testing;\nand Snyk, SonarQube and OWASP ZAP for security and code quality. BrowserStack provides real browsers\nand devices for compatibility testing. Automated tests can run inside CI/CD workflows on GitHub Actions,\nGitLab CI or Jenkins. If your team already uses particular tools, Osiyatech can work with them.",
+      "source_url": "https://osiyatech.com/qa-testing",
+      "source_document": "Osiyatech_Services_Knowledge_Base_v3.pdf",
+      "source_pdf_page": 30,
+      "version": "3.0"
+    },
+    {
+      "faq_id": "qa-testing-006",
+      "question": "What reports and deliverables will I receive?",
+      "source_tag": "untagged",
+      "approval_status": "approved",
+      "owner": "Osiyatech Team",
+      "reviewer": "Osiyatech Team",
+      "reviewed_on": "2026-10-31",
+      "source_pdf_pages": {
+        "start": 26,
+        "end": 31
+      },
+      "answer": "You'll receive documented test cases describing what was tested and the expected results, execution results\nshowing what passed and failed, defect reports with clear reproduction steps so developers can fix issues\nquickly, and a testing summary. Automation projects also include the test scripts, instructions for running them,\nand recommendations for improving software quality. For continuous testing, you also get automated reports\nand failure notifications from your pipeline.",
+      "source_url": "https://osiyatech.com/qa-testing",
+      "source_document": "Osiyatech_Services_Knowledge_Base_v3.pdf",
+      "source_pdf_page": 30,
+      "version": "3.0"
+    },
+    {
+      "faq_id": "qa-testing-007",
+      "question": "Can you add automated tests to our CI/CD pipeline?",
+      "source_tag": "drafted",
+      "approval_status": "approved",
+      "owner": "Osiyatech Team",
+      "reviewer": "Osiyatech Team",
+      "reviewed_on": "2026-10-31",
+      "source_pdf_pages": {
+        "start": 26,
+        "end": 31
+      },
+      "answer": "Yes. Osiyatech's Continuous Testing offering builds automated tests into your CI/CD pipeline on GitHub\nActions, GitLab CI or Jenkins. Tests run automatically whenever code is pushed, quality gates stop faulty code\nbefore it reaches release, and the team is notified immediately if something fails. This catches defects early,\nwhen they're quickest and cheapest to fix.",
+      "source_url": "https://osiyatech.com/qa-testing",
+      "source_document": "Osiyatech_Services_Knowledge_Base_v3.pdf",
+      "source_pdf_page": 30,
+      "version": "3.0"
+    },
+    {
+      "faq_id": "qa-testing-008",
+      "question": "Can you check whether our application can handle high traffic?",
+      "source_tag": "drafted",
+      "approval_status": "approved",
+      "owner": "Osiyatech Team",
+      "reviewer": "Osiyatech Team",
+      "reviewed_on": "2026-10-31",
+      "source_pdf_pages": {
+        "start": 26,
+        "end": 31
+      },
+      "answer": "Yes. Performance Testing uses tools such as JMeter and k6 to simulate realistic and peak traffic through load,\nstress, scalability and concurrency testing. The results show how the application behaves as users increase,\nwhere the bottlenecks are, and at what point performance degrades. That lets you fix problems before a\nlaunch, campaign or seasonal peak instead of during one.",
+      "source_url": "https://osiyatech.com/qa-testing",
+      "source_document": "Osiyatech_Services_Knowledge_Base_v3.pdf",
+      "source_pdf_page": 30,
+      "version": "3.0"
+    },
+    {
+      "faq_id": "qa-testing-009",
+      "question": "Do you test for security vulnerabilities?",
+      "source_tag": "drafted",
+      "approval_status": "approved",
+      "owner": "Osiyatech Team",
+      "reviewer": "Osiyatech Team",
+      "reviewed_on": "2026-10-31",
+      "source_pdf_pages": {
+        "start": 26,
+        "end": 31
+      },
+      "answer": "Yes. Security Testing includes application vulnerability assessment, checks against the OWASP Top 10 (the\nmost common web application security risks), authentication and authorisation testing, and automated security\nscanning with risk reporting. For deeper work such as penetration testing, cloud security or infrastructure\nhardening, see the Cybersecurity service.",
+      "source_url": "https://osiyatech.com/qa-testing",
+      "source_document": "Osiyatech_Services_Knowledge_Base_v3.pdf",
+      "source_pdf_page": 30,
+      "version": "3.0"
+    },
+    {
+      "faq_id": "qa-testing-010",
+      "question": "Can you provide QA engineers to join our team?",
+      "source_tag": "drafted",
+      "approval_status": "approved",
+      "owner": "Osiyatech Team",
+      "reviewer": "Osiyatech Team",
+      "reviewed_on": "2026-10-31",
+      "source_pdf_pages": {
+        "start": 26,
+        "end": 31
+      },
+      "answer": "Yes. QA engineers are available through Osiyatech's Dedicated Engineering Teams service. They can join\nyour existing sprints and standups to provide manual and automated testing as part of your regular\ndevelopment process.",
+      "source_url": "https://osiyatech.com/qa-testing",
+      "source_document": "Osiyatech_Services_Knowledge_Base_v3.pdf",
+      "source_pdf_page": 31,
+      "version": "3.0"
+    },
+    {
+      "faq_id": "qa-testing-011",
+      "question": "How much does QA testing cost?",
+      "source_tag": "drafted",
+      "approval_status": "approved",
+      "owner": "Osiyatech Team",
+      "reviewer": "Osiyatech Team",
+      "reviewed_on": "2026-10-31",
+      "source_pdf_pages": {
+        "start": 26,
+        "end": 31
+      },
+      "answer": "Osiyatech doesn't publish fixed prices. Cost depends on the size and complexity of the application, the types of\ntesting required, the number of devices and browsers, and whether automation frameworks are being built or\ntesting is ongoing. After a consultation, you'll receive an estimate based on your scope.",
+      "source_url": "https://osiyatech.com/qa-testing",
+      "source_document": "Osiyatech_Services_Knowledge_Base_v3.pdf",
+      "source_pdf_page": 31,
+      "version": "3.0"
+    }
+  ],
+  "answer_extraction": "original_markdown",
+  "enriched_at": "2026-10-30T19:22:35.662520+05:30",
+  "last_updated_at": "2026-10-31T12:26:05.687278+05:30"
+}

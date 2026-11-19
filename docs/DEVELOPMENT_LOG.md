@@ -1,0 +1,89 @@
+# CHRONOLOGICAL DEVELOPMENT LOG: OSIYATECH AGENTIC AI ASSISTANT UPGRADE
+
+## Milestone 0 — Full Codebase Audit & Baseline Verification
+- **Date and time:** 2026-11-14T17:39:04+05:30 to 2026-11-16T10:41:31+05:30
+- **Milestone number:** Milestone 0
+- **Objective:** Complete audit of existing architecture, dependencies, knowledge base, speech/avatar subsystem, and test infrastructure. Identify all strengths, weaknesses, and missing capabilities before starting modifications.
+- **Files inspected:**
+  - `requirements.txt`, `requirements-voice.txt`, `requirements-dev.txt`, `.env`, `.env.example`, `pytest.ini`
+  - `app/config.py`, `app/main.py`, `app/container.py`, `app/schemas.py`, `app/errors.py`, `app/logging_setup.py`
+  - `app/api/deps.py`, `app/api/routes.py`
+  - `app/core/engine.py`, `app/core/analysis.py`, `app/core/prompts.py`, `app/core/validator.py`
+  - `app/rag/retriever.py`, `app/rag/index.py`, `app/rag/chunking.py`, `app/rag/parsers.py`, `app/rag/embeddings.py`, `app/rag/ingest.py`, `app/rag/types.py`, `app/rag/text.py`
+  - `app/speech/audio_utils.py`, `app/speech/providers.py`
+  - `app/leads/rules.py`, `app/leads/service.py`, `app/leads/store.py`
+  - `app/memory/sessions.py`
+  - `frontend/app.py`, `frontend/pipeline.py`, `frontend/state.py`, `frontend/settings.py`, `frontend/styles.py`
+  - `frontend/components/chat.py`, `frontend/components/lead_form.py`, `frontend/components/sidebar.py`, `frontend/components/voice_panel.py`
+  - `frontend/components/voice_avatar_component/index.html`
+  - `data/index/manifest.json`, `data/leads.sqlite3`
+  - `knowledge_base/` structure, `Osiyatech_Chatbot_final/08_website_review_report.md`, `Osiyatech_Chatbot_final/09_rag_knowledge_units.jsonl`
+  - `D:\osiya_tech project\chat_bot` (earlier prototype reference)
+- **Files modified:** None (Milestone 0 read-only rule).
+- **Files created:** `docs/DEVELOPMENT_LOG.md`
+- **Backups created:** None yet.
+- **Commands executed:**
+  - `Get-ChildItem -Recurse -File`
+  - `python --version` (Python 3.11.9 in `.venv`)
+  - `python -m pip list`
+  - `ollama list`
+  - `Test-Path` on Piper binary and ONNX models
+- **Tests executed:**
+  - `python -c "import faiss"` (PASSED)
+  - `python -c "import httpx"` (PASSED)
+- **Bugs discovered:**
+  - Grounding gate cutoff (0.30) causes consultative messages (e.g. "I want to build an ecommerce chatbot") to return generic "no verified information" refusals.
+  - Fallback context resolution only checks previous user turn and ignores assistant turns/options.
+  - Lack of website navigation agent and verified URL catalogue (`company_website` was set to staging domain `https://ayushitated.com/`).
+  - `.docx`, `.xlsx`, and `09_rag_knowledge_units.jsonl` not parsed by existing ingestion pipeline.
+  - Test fixtures permit `.env` leakage into tests under Pydantic v2.
+- **Decisions made:**
+  - Maintain FAISS-based vector retrieval; do not introduce external RAG engines or RAGFlow.
+  - Keep single conversation engine backing Text, Voice, and Avatar modes.
+  - Pin faster-whisper to CPU int8 and Piper to local binary to preserve 4 GB VRAM for Ollama `llama3.2:3b`.
+- **Remaining issues:** Proceed to Milestone 1 implementation.
+- **Next pending action:** Begin Milestone 1 — Core Intelligence and Conversation Engine.
+
+
+## Milestone 1 — Core Intelligence and Conversation Engine
+- **Date and time:** 2026-11-16T10:41:31+05:30 to 2026-11-16T11:35:20+05:30
+- **Milestone number:** Milestone 1
+- **Objective:** Improve turn intent detection, multi-turn reference resolution (anaphoric & ordinal), consultative conversation state tracking, and query normalization without breaking existing API contracts or grounding guarantees.
+- **Files inspected:**
+  - `app/memory/sessions.py`
+  - `app/core/analysis.py`
+  - `app/core/prompts.py`
+  - `app/core/engine.py`
+  - `tests/test_engine.py`
+  - `tests/test_units.py`
+- **Files modified:**
+  - `app/memory/sessions.py` (added `selected_service`, `stage`, `entities`, `last_options_presented` to `Conversation`)
+  - `app/core/analysis.py` (added `website_navigation` intent, `extract_options_from_text`, `detect_service_mention`, `resolve_references`, `normalize_query`, enhanced `fallback_analysis`)
+  - `app/core/prompts.py` (expanded `ANALYSIS_SYSTEM` with stage and navigation keys; updated `build_system_prompt` with consultative guidance rules, `stage_hint`, and `nav_hint`)
+  - `app/core/engine.py` (integrated multi-turn reference resolution, `is_consultative` discovery gate, option tracking from assistant replies, and updated conversation state)
+- **Files created:**
+  - `tests/test_conversation_intelligence.py` (unit tests covering query normalization, option extraction, ordinal/anaphoric resolution, intent detection, and conversation state)
+- **Backups created:**
+  - `app/memory/sessions.py.bak.20261116_m1`
+  - `app/core/analysis.py.bak.20261116_m1`
+  - `app/core/prompts.py.bak.20261116_m1`
+  - `app/core/engine.py.bak.20261116_m1`
+- **Commands executed:**
+  - `py_compile` syntax verification on all modified files
+  - `pytest tests/test_conversation_intelligence.py -v`
+  - `pytest tests/test_engine.py -v`
+  - `pytest tests/test_units.py tests/test_conversation_intelligence.py`
+  - Full suite: `pytest -m "not e2e"`
+- **Tests executed & actual results:**
+  - `tests/test_conversation_intelligence.py`: 6 passed in 0.05s
+  - `tests/test_engine.py`: 46 passed in 2.80s
+  - Full regression suite: 260 passed, 1 skipped in 21.35s (100% pass rate)
+- **Bugs discovered & resolved:**
+  - Discovered that sub-phrase `"cloud"` matched before `"cloud migration"` in `_SERVICE_KEYWORDS`; fixed by ordering multi-word specific phrases first.
+  - Discovered that closing phrases like `"Thank you, that's all for today."` failed exact match in `closings`; updated to handle prefix/substring delimiters cleanly.
+  - Ensured consultative project discussions allow requirement gathering without triggering false "no verified knowledge" refusals while strictly keeping factual company claims protected.
+- **Decisions made:**
+  - All existing API schemas and contracts remain 100% backward compatible.
+  - Options presented in assistant answers are automatically parsed and stored in `conv.last_options_presented`, enabling the assistant to immediately resolve follow-up phrases such as "the second option" or "the first one".
+- **Remaining issues:** None in Milestone 1. Ready for Milestone 2.
+- **Next pending action:** Milestone 2 — Advanced RAG Pipeline (knowledge ingestion improvements, query expansion, re-ranking, and verified citations).

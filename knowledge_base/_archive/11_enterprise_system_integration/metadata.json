@@ -1,0 +1,22 @@
+{
+  "document_id": "enterprise-system-integration-v3",
+  "content_type": "service",
+  "title": "Enterprise System Integration",
+  "source_url": "https://osiyatech.com/services/enterprise-system-integration/",
+  "source_document": "Osiyatech_Services_Knowledge_Base_v3.pdf",
+  "source_pdf_pages": {
+    "start": 62,
+    "end": 66
+  },
+  "owner": "Osiyatech Team",
+  "reviewer": "Osiyatech Team",
+  "approval_status": "approved",
+  "reviewed_on": "2026-10-31",
+  "review_due": null,
+  "version": "3.0",
+  "visibility": "public",
+  "notes": [
+    "Draft source content; obtain owner/reviewer approval before production ingestion.",
+    "Do not infer missing details or convert draft FAQs into approved claims."
+  ]
+}

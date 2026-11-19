@@ -1,0 +1,151 @@
+{
+  "schema_version": 1,
+  "service_folder": "04_qa_automated_testing",
+  "document_id": "qa-testing-v3",
+  "source_file": "faqs.md",
+  "faqs": [
+    {
+      "faq_id": "qa-testing-001",
+      "question": "What is the difference between manual QA and automated testing?",
+      "source_tag": "untagged",
+      "approval_status": "draft",
+      "owner": null,
+      "reviewer": null,
+      "reviewed_on": null,
+      "source_pdf_pages": {
+        "start": 26,
+        "end": 31
+      }
+    },
+    {
+      "faq_id": "qa-testing-002",
+      "question": "What types of software testing services do you offer?",
+      "source_tag": "untagged",
+      "approval_status": "draft",
+      "owner": null,
+      "reviewer": null,
+      "reviewed_on": null,
+      "source_pdf_pages": {
+        "start": 26,
+        "end": 31
+      }
+    },
+    {
+      "faq_id": "qa-testing-003",
+      "question": "How long does a software testing project take?",
+      "source_tag": "untagged",
+      "approval_status": "draft",
+      "owner": null,
+      "reviewer": null,
+      "reviewed_on": null,
+      "source_pdf_pages": {
+        "start": 26,
+        "end": 31
+      }
+    },
+    {
+      "faq_id": "qa-testing-004",
+      "question": "Can you test our existing website or mobile application?",
+      "source_tag": "untagged",
+      "approval_status": "draft",
+      "owner": null,
+      "reviewer": null,
+      "reviewed_on": null,
+      "source_pdf_pages": {
+        "start": 26,
+        "end": 31
+      }
+    },
+    {
+      "faq_id": "qa-testing-005",
+      "question": "Which tools and frameworks do you use for QA testing?",
+      "source_tag": "untagged",
+      "approval_status": "draft",
+      "owner": null,
+      "reviewer": null,
+      "reviewed_on": null,
+      "source_pdf_pages": {
+        "start": 26,
+        "end": 31
+      }
+    },
+    {
+      "faq_id": "qa-testing-006",
+      "question": "What reports and deliverables will I receive?",
+      "source_tag": "untagged",
+      "approval_status": "draft",
+      "owner": null,
+      "reviewer": null,
+      "reviewed_on": null,
+      "source_pdf_pages": {
+        "start": 26,
+        "end": 31
+      }
+    },
+    {
+      "faq_id": "qa-testing-007",
+      "question": "Can you add automated tests to our CI/CD pipeline?",
+      "source_tag": "drafted",
+      "approval_status": "draft",
+      "owner": null,
+      "reviewer": null,
+      "reviewed_on": null,
+      "source_pdf_pages": {
+        "start": 26,
+        "end": 31
+      }
+    },
+    {
+      "faq_id": "qa-testing-008",
+      "question": "Can you check whether our application can handle high traffic?",
+      "source_tag": "drafted",
+      "approval_status": "draft",
+      "owner": null,
+      "reviewer": null,
+      "reviewed_on": null,
+      "source_pdf_pages": {
+        "start": 26,
+        "end": 31
+      }
+    },
+    {
+      "faq_id": "qa-testing-009",
+      "question": "Do you test for security vulnerabilities?",
+      "source_tag": "drafted",
+      "approval_status": "draft",
+      "owner": null,
+      "reviewer": null,
+      "reviewed_on": null,
+      "source_pdf_pages": {
+        "start": 26,
+        "end": 31
+      }
+    },
+    {
+      "faq_id": "qa-testing-010",
+      "question": "Can you provide QA engineers to join our team?",
+      "source_tag": "drafted",
+      "approval_status": "draft",
+      "owner": null,
+      "reviewer": null,
+      "reviewed_on": null,
+      "source_pdf_pages": {
+        "start": 26,
+        "end": 31
+      }
+    },
+    {
+      "faq_id": "qa-testing-011",
+      "question": "How much does QA testing cost?",
+      "source_tag": "drafted",
+      "approval_status": "draft",
+      "owner": null,
+      "reviewer": null,
+      "reviewed_on": null,
+      "source_pdf_pages": {
+        "start": 26,
+        "end": 31
+      }
+    }
+  ]
+}

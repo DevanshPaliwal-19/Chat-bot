@@ -1,0 +1,69 @@
+# FAQs — UI/UX Design & Prototyping
+
+> Source: Osiyatech Services Knowledge Base, Draft v3.0. Captured 2026-10-26. Source PDF pages 20–25.
+> FAQ entries tagged `[drafted]` remain unapproved and must be reviewed.
+
+What is your typical UI/UX design process and timeline?
+Osiyatech follows the Double Diamond method, a proven design approach that first explores the problem
+broadly and then focuses on the best solution. The usual phases are discovery and user research (weeks 1 to
+2), information architecture and wireframing (weeks 2 to 3), high-fidelity UI design and the design system
+(weeks 3 to 5), and interactive prototyping with usability validation (weeks 5 to 6). A typical MVP or SaaS
+redesign takes 4 to 8 weeks, depending on the number of screens and the complexity of the workflows. You review the work at each stage, so the direction is agreed before detailed design begins.
+What deliverables will we receive at the end of the project?
+You receive complete ownership of an organised Figma workspace. It includes comprehensive user flow maps,
+clickable high-fidelity prototypes, a scalable design system component kit with documented variants and design
+tokens, icon sets, responsive desktop, tablet and mobile artboards, and full developer handoff specifications
+with CSS inspect values. Research documentation and wireframes are included too. Everything is structured so
+your developers, or Osiyatech's, can build from it directly.
+How do you ensure our UI/UX designs translate cleanly into code?
+Engineering feasibility is built into every step of the design process. Designs use auto-layout structures that
+mirror real CSS Flexbox and Grid, a standard 8pt spacing scale, and semantic design tokens that correspond
+directly to Tailwind CSS, React or Flutter variables. Osiyatech also runs live design-to-engineering handoff
+walkthroughs, where designers explain behaviours, states and edge cases to developers. The result is that
+what you approve in Figma is what gets built.
+Can you redesign our existing application without disrupting current users?
+Yes. Osiyatech specialises in progressive UX modernization. Instead of replacing everything at once with
+sudden, jarring changes, the team identifies the key friction points, simplifies bloated forms, improves visual
+hierarchy and rolls out refreshed components step by step. Experienced users keep their familiarity with the
+product while its look, usability and conversion improve. Changes can be tested with users along the way to
+confirm they help.
+Do you conduct usability testing with actual target users?
+Yes, depending on project scope. Osiyatech runs moderated sessions (a facilitator guides users through tasks)
+or unmoderated sessions (users complete tasks independently) using interactive prototypes, before any code is
+written. The team records task completion rates, time-on-task and points of confusion, then iterates on the
+design until it meets usability benchmarks. This finds problems while they're still cheap to fix.
+Who owns the intellectual property and Figma files?
+You keep 100% ownership of all Figma files, research documentation, wireframes, custom icon sets and design
+tokens when the project is complete. There are no proprietary lock-ins and no recurring licensing fees. You're
+free to use the designs with any development team.
+Can you audit our current website or app and tell us what to improve? [drafted]
+Yes. Osiyatech's UX Audits & Optimization offering reviews your existing product through heuristic evaluation
+(an expert review against established usability principles), usability testing and journey analysis. You receive
+clear findings on where users struggle or drop off, with prioritised, conversion-focused recommendations. The
+audit can be followed by a redesign if you choose.
+
+
+--- Source PDF page 25 ---
+
+Can you build a design system for our product team? [drafted]
+Yes. Osiyatech builds scalable design systems in Figma: component libraries, design tokens, style guides and
+reusable components with documented variants and states, plus developer handoff documentation. A design
+system keeps your products consistent, speeds up both design and development, and makes it easier for new
+team members to follow the same standards.
+Can you design AR, VR or 3D experiences? [drafted]
+Yes. Osiyatech designs interfaces and interactions for augmented reality, virtual reality and 3D experiences.
+That covers AR placement controls and on-screen guidance, VR navigation and interaction patterns, and 3D
+assets created in tools such as Blender. Immersive concepts can be prototyped and tested with users before
+development, and the Mobile and Web Development teams can then build them.
+Do you also develop the product after designing it? [drafted]
+Yes. Osiyatech's Web Development and Mobile App Development teams can build the product from the
+approved designs. Keeping design and engineering with one partner reduces handoff gaps, and designers stay
+involved during development to answer questions and review the built screens.
+How much does UI/UX design cost? [drafted]
+Osiyatech doesn't publish fixed prices. Cost depends on the number of screens, the complexity of workflows,
+the amount of user research and testing, and whether a full design system is needed. After a consultation, you'll
+receive a transparent estimate based on your scope.
+Escalation
+Refer custom scope, pricing, timelines, integrations, security, or contractual questions to:
+contact@osiyatech.com, +91 7746004294 (phone/WhatsApp), or the "Request Engineering Consultation" form.
+

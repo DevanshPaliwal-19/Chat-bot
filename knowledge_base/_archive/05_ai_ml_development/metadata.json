@@ -1,0 +1,22 @@
+{
+  "document_id": "ai-machine-learning-v3",
+  "content_type": "service",
+  "title": "AI & Machine Learning",
+  "source_url": "https://osiyatech.com/ai-machine-learning",
+  "source_document": "Osiyatech_Services_Knowledge_Base_v3.pdf",
+  "source_pdf_pages": {
+    "start": 32,
+    "end": 37
+  },
+  "owner": "Osiyatech Team",
+  "reviewer": "Osiyatech Team",
+  "approval_status": "approved",
+  "reviewed_on": "2026-10-31",
+  "review_due": null,
+  "version": "3.0",
+  "visibility": "public",
+  "notes": [
+    "Draft source content; obtain owner/reviewer approval before production ingestion.",
+    "Do not infer missing details or convert draft FAQs into approved claims."
+  ]
+}

@@ -1,0 +1,191 @@
+{
+  "schema_version": 2,
+  "service_folder": "08_enterprise_software_development",
+  "document_id": "enterprise-software-development-v3",
+  "source_file": "faqs.md",
+  "faqs": [
+    {
+      "faq_id": "enterprise-software-development-001",
+      "question": "What is enterprise software development?",
+      "source_tag": "untagged",
+      "approval_status": "approved",
+      "owner": "Osiyatech Team",
+      "reviewer": "Osiyatech Team",
+      "reviewed_on": "2026-10-31",
+      "source_pdf_pages": {
+        "start": 47,
+        "end": 51
+      },
+      "answer": "Enterprise software development means designing and building applications that support complex business\noperations: internal workflows, data management, approvals, reporting and the processes that connect\ndepartments. Unlike consumer apps or simple websites, enterprise software has to handle many users with\ndifferent permissions, integrate with other business systems, protect sensitive data and stay reliable for years.\nOsiyatech builds these solutions around each organisation's specific requirements, with scalability, security and\nintegration designed in from the start.",
+      "source_url": "https://osiyatech.com/services/enterprise-software-development/",
+      "source_document": "Osiyatech_Services_Knowledge_Base_v3.pdf",
+      "source_pdf_page": null,
+      "version": "3.0"
+    },
+    {
+      "faq_id": "enterprise-software-development-002",
+      "question": "What types of enterprise software does Osiyatech develop?",
+      "source_tag": "untagged",
+      "approval_status": "approved",
+      "owner": "Osiyatech Team",
+      "reviewer": "Osiyatech Team",
+      "reviewed_on": "2026-10-31",
+      "source_pdf_pages": {
+        "start": 47,
+        "end": 51
+      },
+      "answer": "Osiyatech develops custom business applications, enterprise portals for employees, customers, vendors and\npartners, workflow management and approval systems, internal operations platforms, business rule engines,\nlegacy modernization solutions and scalable multi-module enterprise applications. These are built for a range of\nindustries, including legal, manufacturing, civic technology and financial services.",
+      "source_url": "https://osiyatech.com/services/enterprise-software-development/",
+      "source_document": "Osiyatech_Services_Knowledge_Base_v3.pdf",
+      "source_pdf_page": null,
+      "version": "3.0"
+    },
+    {
+      "faq_id": "enterprise-software-development-003",
+      "question": "Can you modernize our existing enterprise applications?",
+      "source_tag": "untagged",
+      "approval_status": "approved",
+      "owner": "Osiyatech Team",
+      "reviewer": "Osiyatech Team",
+      "reviewed_on": "2026-10-31",
+      "source_pdf_pages": {
+        "start": 47,
+        "end": 51
+      },
+      "answer": "Yes. Legacy modernization is a core part of the service. Depending on what your system needs, it can include\nupgrading outdated technology, re-architecting monolithic applications into modular or microservice designs,\nstrengthening security, improving performance, and moving suitable workloads to modern cloud environments.\nOsiyatech first assesses the existing application to understand what the business depends on, then plans the\nmodernization in stages so operations continue throughout.",
+      "source_url": "https://osiyatech.com/services/enterprise-software-development/",
+      "source_document": "Osiyatech_Services_Knowledge_Base_v3.pdf",
+      "source_pdf_page": null,
+      "version": "3.0"
+    },
+    {
+      "faq_id": "enterprise-software-development-004",
+      "question": "Can your enterprise software integrate with our existing systems?",
+      "source_tag": "untagged",
+      "approval_status": "approved",
+      "owner": "Osiyatech Team",
+      "reviewer": "Osiyatech Team",
+      "reviewed_on": "2026-10-31",
+      "source_pdf_pages": {
+        "start": 47,
+        "end": 51
+      },
+      "answer": "Yes. Enterprise applications can connect with your existing ERP, CRM, accounting, inventory, HR and other\nbusiness platforms through APIs, middleware and custom integrations. That removes duplicate data entry and\nkeeps information consistent across systems. For integration-heavy projects, Osiyatech's Enterprise System\nIntegration service provides additional specialist expertise.",
+      "source_url": "https://osiyatech.com/services/enterprise-software-development/",
+      "source_document": "Osiyatech_Services_Knowledge_Base_v3.pdf",
+      "source_pdf_page": null,
+      "version": "3.0"
+    },
+    {
+      "faq_id": "enterprise-software-development-005",
+      "question": "How long does enterprise software development take?",
+      "source_tag": "untagged",
+      "approval_status": "approved",
+      "owner": "Osiyatech Team",
+      "reviewer": "Osiyatech Team",
+      "reviewed_on": "2026-10-31",
+      "source_pdf_pages": {
+        "start": 47,
+        "end": 51
+      },
+      "answer": "It depends on the complexity, the number of features and modules, the integrations required and the technical\nrequirements. A focused enterprise application may take a few months. Larger multi-module platforms are\nusually delivered in phases: core modules go live first so the business benefits early, and further modules\nfollow. A detailed roadmap is created during the Discovery stage.",
+      "source_url": "https://osiyatech.com/services/enterprise-software-development/",
+      "source_document": "Osiyatech_Services_Knowledge_Base_v3.pdf",
+      "source_pdf_page": null,
+      "version": "3.0"
+    },
+    {
+      "faq_id": "enterprise-software-development-006",
+      "question": "Why choose custom enterprise software instead of off-the-shelf solutions?",
+      "source_tag": "untagged",
+      "approval_status": "approved",
+      "owner": "Osiyatech Team",
+      "reviewer": "Osiyatech Team",
+      "reviewed_on": "2026-10-31",
+      "source_pdf_pages": {
+        "start": 47,
+        "end": 51
+      },
+      "answer": "Custom enterprise software is built around how your organisation actually works, instead of forcing your teams\nto adapt to a generic product. It gives you more flexibility, full control over functionality and integrations, and the\nability to change the software as your business changes. It can also reduce dependence on several\ndisconnected tools and their licence costs. Off-the-shelf products suit standard processes well, and Osiyatech\nwill tell you honestly if a packaged solution would serve you better.",
+      "source_url": "https://osiyatech.com/services/enterprise-software-development/",
+      "source_document": "Osiyatech_Services_Knowledge_Base_v3.pdf",
+      "source_pdf_page": null,
+      "version": "3.0"
+    },
+    {
+      "faq_id": "enterprise-software-development-007",
+      "question": "Do you provide SLA-based support for enterprise applications?",
+      "source_tag": "drafted",
+      "approval_status": "approved",
+      "owner": "Osiyatech Team",
+      "reviewer": "Osiyatech Team",
+      "reviewed_on": "2026-10-31",
+      "source_pdf_pages": {
+        "start": 47,
+        "end": 51
+      },
+      "answer": "Yes. Maintenance and dedicated SLA support are part of this service. Support covers performance monitoring,\nsecurity updates, troubleshooting, bug fixes and continuous enhancements for business-critical applications.\nResponse times and coverage are agreed in the SLA to match how critical the system is to your operations.",
+      "source_url": "https://osiyatech.com/services/enterprise-software-development/",
+      "source_document": "Osiyatech_Services_Knowledge_Base_v3.pdf",
+      "source_pdf_page": null,
+      "version": "3.0"
+    },
+    {
+      "faq_id": "enterprise-software-development-008",
+      "question": "Can you build portals for our customers, vendors or partners?",
+      "source_tag": "drafted",
+      "approval_status": "approved",
+      "owner": "Osiyatech Team",
+      "reviewer": "Osiyatech Team",
+      "reviewed_on": "2026-10-31",
+      "source_pdf_pages": {
+        "start": 47,
+        "end": 51
+      },
+      "answer": "Yes. Enterprise Portals & Business Platforms covers central portals for employees, customers, vendors and\npartners. Each portal has role-based access, so every user sees only what is relevant to them, along with\nreal-time information and connected workflows such as orders, approvals, documents or support requests.",
+      "source_url": "https://osiyatech.com/services/enterprise-software-development/",
+      "source_document": "Osiyatech_Services_Knowledge_Base_v3.pdf",
+      "source_pdf_page": 51,
+      "version": "3.0"
+    },
+    {
+      "faq_id": "enterprise-software-development-009",
+      "question": "Can you work with our existing technology stack?",
+      "source_tag": "drafted",
+      "approval_status": "approved",
+      "owner": "Osiyatech Team",
+      "reviewer": "Osiyatech Team",
+      "reviewed_on": "2026-10-31",
+      "source_pdf_pages": {
+        "start": 47,
+        "end": 51
+      },
+      "answer": "Yes. Osiyatech normally recommends the most suitable technology for each project, choosing from Node.js,\nPython, Java Spring, Go, .NET, React, Angular and more. If your organisation already has a pre-selected stack\nor internal technology standards, Osiyatech can build within them, so the solution fits your existing systems and\nyour in-house team can maintain it.",
+      "source_url": "https://osiyatech.com/services/enterprise-software-development/",
+      "source_document": "Osiyatech_Services_Knowledge_Base_v3.pdf",
+      "source_pdf_page": 51,
+      "version": "3.0"
+    },
+    {
+      "faq_id": "enterprise-software-development-010",
+      "question": "How much does enterprise software cost?",
+      "source_tag": "drafted",
+      "approval_status": "approved",
+      "owner": "Osiyatech Team",
+      "reviewer": "Osiyatech Team",
+      "reviewed_on": "2026-10-31",
+      "source_pdf_pages": {
+        "start": 47,
+        "end": 51
+      },
+      "answer": "Osiyatech doesn't publish fixed prices. Cost depends on the number of modules, the complexity of workflows,\nintegrations, user scale and support requirements. For larger or uncertain projects, the Discovery &\nArchitecture engagement provides a technical audit, architecture blueprint and cost estimate before you commit\nto the full build.",
+      "source_url": "https://osiyatech.com/services/enterprise-software-development/",
+      "source_document": "Osiyatech_Services_Knowledge_Base_v3.pdf",
+      "source_pdf_page": 51,
+      "version": "3.0"
+    }
+  ],
+  "answer_extraction": "original_markdown",
+  "enriched_at": "2026-10-30T19:22:35.672557+05:30",
+  "last_updated_at": "2026-10-31T12:26:05.691450+05:30"
+}

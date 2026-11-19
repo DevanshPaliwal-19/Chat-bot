@@ -1,0 +1,86 @@
+{
+  "schema_version": 1,
+  "service_folder": "15_dedicated_engineering_teams",
+  "document_id": "dedicated-engineering-teams-v3",
+  "source_file": "faqs.md",
+  "faqs": [
+    {
+      "faq_id": "dedicated-engineering-teams-001",
+      "question": "Can I hire a dedicated developer or a full team?",
+      "source_tag": "drafted",
+      "approval_status": "draft",
+      "owner": null,
+      "reviewer": null,
+      "reviewed_on": null,
+      "source_pdf_pages": {
+        "start": 81,
+        "end": 84
+      }
+    },
+    {
+      "faq_id": "dedicated-engineering-teams-002",
+      "question": "Pod?",
+      "source_tag": "drafted",
+      "approval_status": "draft",
+      "owner": null,
+      "reviewer": null,
+      "reviewed_on": null,
+      "source_pdf_pages": {
+        "start": 81,
+        "end": 84
+      }
+    },
+    {
+      "faq_id": "dedicated-engineering-teams-003",
+      "question": "Will the engineers work in our tools and meetings?",
+      "source_tag": "drafted",
+      "approval_status": "draft",
+      "owner": null,
+      "reviewer": null,
+      "reviewed_on": null,
+      "source_pdf_pages": {
+        "start": 81,
+        "end": 84
+      }
+    },
+    {
+      "faq_id": "dedicated-engineering-teams-004",
+      "question": "How do you ensure quality and continuity?",
+      "source_tag": "drafted",
+      "approval_status": "draft",
+      "owner": null,
+      "reviewer": null,
+      "reviewed_on": null,
+      "source_pdf_pages": {
+        "start": 81,
+        "end": 84
+      }
+    },
+    {
+      "faq_id": "dedicated-engineering-teams-005",
+      "question": "Can the team work with our existing technology stack?",
+      "source_tag": "drafted",
+      "approval_status": "draft",
+      "owner": null,
+      "reviewer": null,
+      "reviewed_on": null,
+      "source_pdf_pages": {
+        "start": 81,
+        "end": 84
+      }
+    },
+    {
+      "faq_id": "dedicated-engineering-teams-006",
+      "question": "How much does a dedicated team cost?",
+      "source_tag": "drafted",
+      "approval_status": "draft",
+      "owner": null,
+      "reviewer": null,
+      "reviewed_on": null,
+      "source_pdf_pages": {
+        "start": 81,
+        "end": 84
+      }
+    }
+  ]
+}

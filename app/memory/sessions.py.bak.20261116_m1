@@ -1,0 +1,129 @@
+"""Session-scoped conversation memory. Every lookup requires the owning session id (isolation)."""
+from __future__ import annotations
+
+import asyncio
+import time
+import uuid
+from collections import OrderedDict
+from dataclasses import dataclass, field
+from datetime import datetime, timezone
+from threading import Lock
+from typing import Any
+
+
+def _now_iso() -> str:
+    return datetime.now(timezone.utc).isoformat(timespec="seconds")
+
+
+def new_id() -> str:
+    return uuid.uuid4().hex
+
+
+@dataclass
+class Turn:
+    role: str
+    content: str
+    message_id: str
+    mode: str = "text"
+    ts: str = field(default_factory=_now_iso)
+    audio_interrupted: bool = False
+
+
+@dataclass
+class LeadState:
+    fields: dict[str, str] = field(default_factory=dict)
+    score: int = 0
+    status: str = "none"  # none | exploring | qualified | captured | handoff_requested
+    offered: bool = False
+
+
+@dataclass
+class Conversation:
+    id: str
+    turns: list[Turn] = field(default_factory=list)
+    summary: str = ""
+    summarized_upto: int = 0
+    active_topic: str | None = None
+    last_intent: str | None = None
+    unresolved_count: int = 0
+    summarizing: bool = False
+    lead: LeadState = field(default_factory=LeadState)
+    handled: "OrderedDict[str, Any]" = field(default_factory=OrderedDict)
+    lock: asyncio.Lock = field(default_factory=asyncio.Lock)
+    created_at: float = field(default_factory=time.monotonic)
+
+
+@dataclass
+class Session:
+    id: str
+    conversations: dict[str, Conversation] = field(default_factory=dict)
+    last_active: float = field(default_factory=time.monotonic)
+
+
+class SessionStore:
+    def __init__(self, ttl_minutes: int = 60, max_sessions: int = 2000, max_turns: int = 120) -> None:
+        self.ttl_s = ttl_minutes * 60
+        self.max_sessions = max_sessions
+        self.max_turns = max_turns
+        self._sessions: dict[str, Session] = {}
+        self._lock = Lock()
+
+    def _expired(self, s: Session, now: float) -> bool:
+        return now - s.last_active > self.ttl_s
+
+    def get_or_create_conversation(self, session_id: str, conversation_id: str | None) -> tuple[Session, Conversation, bool]:
+        """Return (session, conversation, restarted). Unknown ids for this session start a fresh conversation."""
+        now = time.monotonic()
+        with self._lock:
+            s = self._sessions.get(session_id)
+            if s is not None and self._expired(s, now):
+                del self._sessions[session_id]
+                s = None
+            if s is None:
+                if len(self._sessions) >= self.max_sessions:
+                    self._evict_oldest()
+                s = Session(session_id)
+                self._sessions[session_id] = s
+            s.last_active = now
+            conv = s.conversations.get(conversation_id) if conversation_id else None
+            restarted = bool(conversation_id) and conv is None
+            if conv is None:
+                conv = Conversation(id=new_id())
+                s.conversations[conv.id] = conv
+            return s, conv, restarted
+
+    def find_conversation(self, session_id: str, conversation_id: str) -> Conversation | None:
+        now = time.monotonic()
+        with self._lock:
+            s = self._sessions.get(session_id)
+            if s is None or self._expired(s, now):
+                return None
+            s.last_active = now
+            return s.conversations.get(conversation_id)
+
+    def delete_conversation(self, session_id: str, conversation_id: str) -> bool:
+        with self._lock:
+            s = self._sessions.get(session_id)
+            return bool(s and s.conversations.pop(conversation_id, None) is not None)
+
+    def trim(self, conv: Conversation) -> None:
+        overflow = len(conv.turns) - self.max_turns
+        if overflow > 0:
+            del conv.turns[:overflow]
+            conv.summarized_upto = max(0, conv.summarized_upto - overflow)
+
+    def purge_expired(self) -> int:
+        now = time.monotonic()
+        with self._lock:
+            dead = [sid for sid, s in self._sessions.items() if self._expired(s, now)]
+            for sid in dead:
+                del self._sessions[sid]
+            return len(dead)
+
+    def _evict_oldest(self) -> None:
+        oldest = min(self._sessions.values(), key=lambda s: s.last_active, default=None)
+        if oldest:
+            del self._sessions[oldest.id]
+
+    def __len__(self) -> int:
+        return len(self._sessions)

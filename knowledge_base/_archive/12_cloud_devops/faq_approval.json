@@ -1,0 +1,191 @@
+{
+  "schema_version": 2,
+  "service_folder": "12_cloud_devops",
+  "document_id": "cloud-devops-v3",
+  "source_file": "faqs.md",
+  "faqs": [
+    {
+      "faq_id": "cloud-devops-001",
+      "question": "What are Cloud & DevOps services?",
+      "source_tag": "untagged",
+      "approval_status": "approved",
+      "owner": "Osiyatech Team",
+      "reviewer": "Osiyatech Team",
+      "reviewed_on": "2026-10-31",
+      "source_pdf_pages": {
+        "start": 67,
+        "end": 71
+      },
+      "answer": "Cloud services cover designing, deploying and managing your applications and infrastructure on platforms\nsuch as AWS, Microsoft Azure and Google Cloud, instead of on servers you own and maintain yourself.\nDevOps covers how software is built and released. It automates development and deployment, improves\ncollaboration between developers and operations, and delivers software more reliably through continuous\nintegration, continuous delivery and infrastructure automation. Together, they give you faster releases, better\nreliability and infrastructure that grows with your business.",
+      "source_url": "https://osiyatech.com/cloud-devops",
+      "source_document": "Osiyatech_Services_Knowledge_Base_v3.pdf",
+      "source_pdf_page": null,
+      "version": "3.0"
+    },
+    {
+      "faq_id": "cloud-devops-002",
+      "question": "Which cloud platforms does Osiyatech support?",
+      "source_tag": "untagged",
+      "approval_status": "approved",
+      "owner": "Osiyatech Team",
+      "reviewer": "Osiyatech Team",
+      "reviewed_on": "2026-10-31",
+      "source_pdf_pages": {
+        "start": 67,
+        "end": 71
+      },
+      "answer": "Osiyatech provides cloud infrastructure and DevOps services for Amazon Web Services (AWS), Microsoft\nAzure, Google Cloud and hybrid environments that combine cloud and on-premises systems. Services include\narchitecture design, migration, deployment automation, containerisation, monitoring and optimisation. If your\norganisation has already chosen a cloud provider, Osiyatech works with it. If not, the team can recommend one\nbased on your applications, existing tools and budget.",
+      "source_url": "https://osiyatech.com/cloud-devops",
+      "source_document": "Osiyatech_Services_Knowledge_Base_v3.pdf",
+      "source_pdf_page": null,
+      "version": "3.0"
+    },
+    {
+      "faq_id": "cloud-devops-003",
+      "question": "Can existing applications and infrastructure be migrated to the cloud?",
+      "source_tag": "untagged",
+      "approval_status": "approved",
+      "owner": "Osiyatech Team",
+      "reviewer": "Osiyatech Team",
+      "reviewed_on": "2026-10-31",
+      "source_pdf_pages": {
+        "start": 67,
+        "end": 71
+      },
+      "answer": "Yes. Osiyatech migrates existing applications, databases and infrastructure to the cloud through a structured\nprocess: planning, compatibility assessment, data migration, testing and phased deployment. Moving in stages,\nwith testing at each step, minimises disruption to your operations. Migration is also a good opportunity to\nmodernise, for example by containerising applications or adding automated deployments.",
+      "source_url": "https://osiyatech.com/cloud-devops",
+      "source_document": "Osiyatech_Services_Knowledge_Base_v3.pdf",
+      "source_pdf_page": null,
+      "version": "3.0"
+    },
+    {
+      "faq_id": "cloud-devops-004",
+      "question": "What is CI/CD, and how does it benefit businesses?",
+      "source_tag": "untagged",
+      "approval_status": "approved",
+      "owner": "Osiyatech Team",
+      "reviewer": "Osiyatech Team",
+      "reviewed_on": "2026-10-31",
+      "source_pdf_pages": {
+        "start": 67,
+        "end": 71
+      },
+      "answer": "CI/CD stands for continuous integration and continuous delivery. With CI/CD, every code change is\nautomatically built, tested and prepared for release, and can be deployed to production through an automated,\nrepeatable process. For a business, this means fewer manual errors, faster and more frequent releases, better\nsoftware quality because tests run every time, and the ability to roll back quickly if something goes wrong.",
+      "source_url": "https://osiyatech.com/cloud-devops",
+      "source_document": "Osiyatech_Services_Knowledge_Base_v3.pdf",
+      "source_pdf_page": null,
+      "version": "3.0"
+    },
+    {
+      "faq_id": "cloud-devops-005",
+      "question": "How can Cloud & DevOps solutions reduce infrastructure costs?",
+      "source_tag": "untagged",
+      "approval_status": "approved",
+      "owner": "Osiyatech Team",
+      "reviewer": "Osiyatech Team",
+      "reviewed_on": "2026-10-31",
+      "source_pdf_pages": {
+        "start": 67,
+        "end": 71
+      },
+      "answer": "Cloud costs often grow because resources are oversized, left running when not needed, or never cleaned up.\nOsiyatech reduces spend by monitoring actual usage, choosing appropriate compute and storage\nconfigurations, automating scaling so you pay for capacity only when it's needed, removing unused\ninfrastructure, and improving workload efficiency, for example by using caching to reduce database load.\nOngoing monitoring keeps costs under control as your usage changes.",
+      "source_url": "https://osiyatech.com/cloud-devops",
+      "source_document": "Osiyatech_Services_Knowledge_Base_v3.pdf",
+      "source_pdf_page": null,
+      "version": "3.0"
+    },
+    {
+      "faq_id": "cloud-devops-006",
+      "question": "Does Osiyatech provide ongoing cloud infrastructure support?",
+      "source_tag": "untagged",
+      "approval_status": "approved",
+      "owner": "Osiyatech Team",
+      "reviewer": "Osiyatech Team",
+      "reviewed_on": "2026-10-31",
+      "source_pdf_pages": {
+        "start": 67,
+        "end": 71
+      },
+      "answer": "Yes. Ongoing cloud support includes infrastructure monitoring, troubleshooting, performance optimisation,\ndeployment management, security updates, backup configuration and resource and cost optimisation. This\nkeeps your cloud environment reliable, secure and efficient without your team having to manage it day to day.\nSupport levels and response times are agreed with you.",
+      "source_url": "https://osiyatech.com/cloud-devops",
+      "source_document": "Osiyatech_Services_Knowledge_Base_v3.pdf",
+      "source_pdf_page": null,
+      "version": "3.0"
+    },
+    {
+      "faq_id": "cloud-devops-007",
+      "question": "Do you work with Kubernetes and Docker?",
+      "source_tag": "drafted",
+      "approval_status": "approved",
+      "owner": "Osiyatech Team",
+      "reviewer": "Osiyatech Team",
+      "reviewed_on": "2026-10-31",
+      "source_pdf_pages": {
+        "start": 67,
+        "end": 71
+      },
+      "answer": "Yes. Containerization & Kubernetes is a core offering. Osiyatech packages applications into Docker containers,\nso they run the same way in every environment, and uses Kubernetes and Helm to deploy, scale and manage\nthem automatically. This improves portability, makes scaling easier and supports zero-downtime deployments.",
+      "source_url": "https://osiyatech.com/cloud-devops",
+      "source_document": "Osiyatech_Services_Knowledge_Base_v3.pdf",
+      "source_pdf_page": null,
+      "version": "3.0"
+    },
+    {
+      "faq_id": "cloud-devops-008",
+      "question": "Can you set up infrastructure as code?",
+      "source_tag": "drafted",
+      "approval_status": "approved",
+      "owner": "Osiyatech Team",
+      "reviewer": "Osiyatech Team",
+      "reviewed_on": "2026-10-31",
+      "source_pdf_pages": {
+        "start": 67,
+        "end": 71
+      },
+      "answer": "Yes. Osiyatech automates infrastructure provisioning and configuration with Terraform, Ansible and\ncloud-native templates. Your infrastructure is defined in version-controlled code, so environments can be\nrecreated consistently, changes are reviewed and tracked, and setting up a new environment takes minutes\ninstead of days.",
+      "source_url": "https://osiyatech.com/cloud-devops",
+      "source_document": "Osiyatech_Services_Knowledge_Base_v3.pdf",
+      "source_pdf_page": 71,
+      "version": "3.0"
+    },
+    {
+      "faq_id": "cloud-devops-009",
+      "question": "Can you work with our existing cloud setup and tools?",
+      "source_tag": "drafted",
+      "approval_status": "approved",
+      "owner": "Osiyatech Team",
+      "reviewer": "Osiyatech Team",
+      "reviewed_on": "2026-10-31",
+      "source_pdf_pages": {
+        "start": 67,
+        "end": 71
+      },
+      "answer": "Yes. If you already use a particular cloud provider, CI/CD tool or configuration approach, Osiyatech can work\nwithin it and improve it rather than replacing it. The team will assess your current setup and recommend\nimprovements where they would bring clear benefits.",
+      "source_url": "https://osiyatech.com/cloud-devops",
+      "source_document": "Osiyatech_Services_Knowledge_Base_v3.pdf",
+      "source_pdf_page": 71,
+      "version": "3.0"
+    },
+    {
+      "faq_id": "cloud-devops-010",
+      "question": "How much do Cloud & DevOps services cost?",
+      "source_tag": "drafted",
+      "approval_status": "approved",
+      "owner": "Osiyatech Team",
+      "reviewer": "Osiyatech Team",
+      "reviewed_on": "2026-10-31",
+      "source_pdf_pages": {
+        "start": 67,
+        "end": 71
+      },
+      "answer": "Osiyatech doesn't publish fixed prices. Cost depends on the size and complexity of your environment, the\nscope of migration or automation work, and the level of ongoing support needed. Fees paid to your cloud\nprovider (such as AWS or Azure) are separate. After an assessment, you'll receive a transparent estimate.",
+      "source_url": "https://osiyatech.com/cloud-devops",
+      "source_document": "Osiyatech_Services_Knowledge_Base_v3.pdf",
+      "source_pdf_page": 71,
+      "version": "3.0"
+    }
+  ],
+  "answer_extraction": "original_markdown",
+  "enriched_at": "2026-10-30T19:22:35.684772+05:30",
+  "last_updated_at": "2026-10-31T12:26:05.693555+05:30"
+}

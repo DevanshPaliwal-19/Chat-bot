@@ -1,0 +1,191 @@
+{
+  "schema_version": 2,
+  "service_folder": "11_enterprise_system_integration",
+  "document_id": "enterprise-system-integration-v3",
+  "source_file": "faqs.md",
+  "faqs": [
+    {
+      "faq_id": "enterprise-system-integration-001",
+      "question": "What is enterprise system integration?",
+      "source_tag": "untagged",
+      "approval_status": "approved",
+      "owner": "Osiyatech Team",
+      "reviewer": "Osiyatech Team",
+      "reviewed_on": "2026-10-31",
+      "source_pdf_pages": {
+        "start": 62,
+        "end": 66
+      },
+      "answer": "Enterprise system integration is the process of connecting different software applications, databases and\nbusiness platforms so they communicate and exchange data automatically. Instead of each system working in\nisolation, and people copying information between them, integrated systems share data the moment it\nchanges. This streamlines workflows, removes information silos, reduces errors and makes the whole\norganisation more efficient.",
+      "source_url": "https://osiyatech.com/services/enterprise-system-integration/",
+      "source_document": "Osiyatech_Services_Knowledge_Base_v3.pdf",
+      "source_pdf_page": null,
+      "version": "3.0"
+    },
+    {
+      "faq_id": "enterprise-system-integration-002",
+      "question": "What types of enterprise systems can be integrated?",
+      "source_tag": "untagged",
+      "approval_status": "approved",
+      "owner": "Osiyatech Team",
+      "reviewer": "Osiyatech Team",
+      "reviewed_on": "2026-10-31",
+      "source_pdf_pages": {
+        "start": 62,
+        "end": 66
+      },
+      "answer": "Most business systems can be integrated, including ERP, CRM, accounting, HR and payroll, inventory and\nwarehouse, e-commerce, payment and banking, supply chain and marketing platforms, as well as custom and\nlegacy applications. The method depends on each platform's capabilities: modern systems usually offer APIs or\nwebhooks, while older systems may need database connectors or custom integration layers.",
+      "source_url": "https://osiyatech.com/services/enterprise-system-integration/",
+      "source_document": "Osiyatech_Services_Knowledge_Base_v3.pdf",
+      "source_pdf_page": null,
+      "version": "3.0"
+    },
+    {
+      "faq_id": "enterprise-system-integration-003",
+      "question": "Can existing legacy systems be integrated with modern applications?",
+      "source_tag": "untagged",
+      "approval_status": "approved",
+      "owner": "Osiyatech Team",
+      "reviewer": "Osiyatech Team",
+      "reviewed_on": "2026-10-31",
+      "source_pdf_pages": {
+        "start": 62,
+        "end": 66
+      },
+      "answer": "Yes. Legacy and even mainframe applications can often be connected to modern software and cloud platforms\nusing custom APIs, middleware, database connectors and integration layers, without replacing the existing\ninfrastructure. This protects your investment in systems that still work, while letting them share data with newer\ntools. It can also be a first step towards gradual modernization.",
+      "source_url": "https://osiyatech.com/services/enterprise-system-integration/",
+      "source_document": "Osiyatech_Services_Knowledge_Base_v3.pdf",
+      "source_pdf_page": null,
+      "version": "3.0"
+    },
+    {
+      "faq_id": "enterprise-system-integration-004",
+      "question": "What is the difference between API integration and system integration?",
+      "source_tag": "untagged",
+      "approval_status": "approved",
+      "owner": "Osiyatech Team",
+      "reviewer": "Osiyatech Team",
+      "reviewed_on": "2026-10-31",
+      "source_pdf_pages": {
+        "start": 62,
+        "end": 66
+      },
+      "answer": "API integration connects two applications through their defined programming interfaces (APIs) so they can\nexchange data or trigger actions, for example sending new online orders to your ERP. System integration is the\nbroader discipline of connecting many technologies into one working environment, and it may combine APIs,\nmiddleware, databases, message queues, event streaming and automated workflows. API integration is often\none part of a larger system integration project.",
+      "source_url": "https://osiyatech.com/services/enterprise-system-integration/",
+      "source_document": "Osiyatech_Services_Knowledge_Base_v3.pdf",
+      "source_pdf_page": null,
+      "version": "3.0"
+    },
+    {
+      "faq_id": "enterprise-system-integration-005",
+      "question": "How does enterprise system integration improve business efficiency?",
+      "source_tag": "untagged",
+      "approval_status": "approved",
+      "owner": "Osiyatech Team",
+      "reviewer": "Osiyatech Team",
+      "reviewed_on": "2026-10-31",
+      "source_pdf_pages": {
+        "start": 62,
+        "end": 66
+      },
+      "answer": "Integration removes repetitive data entry, so staff time goes to more valuable work. It improves accuracy by\neliminating copy-and-paste errors, automates processes that span several systems, and gives everyone faster\naccess to current information. Departments coordinate better because they work from the same data, and\nmanagers get a more reliable view of the business.",
+      "source_url": "https://osiyatech.com/services/enterprise-system-integration/",
+      "source_document": "Osiyatech_Services_Knowledge_Base_v3.pdf",
+      "source_pdf_page": null,
+      "version": "3.0"
+    },
+    {
+      "faq_id": "enterprise-system-integration-006",
+      "question": "Can enterprise systems exchange data in real time?",
+      "source_tag": "untagged",
+      "approval_status": "approved",
+      "owner": "Osiyatech Team",
+      "reviewer": "Osiyatech Team",
+      "reviewed_on": "2026-10-31",
+      "source_pdf_pages": {
+        "start": 62,
+        "end": 66
+      },
+      "answer": "Yes. Real-time data exchange can be built using APIs, webhooks, event-driven architecture and messaging\nsystems such as Apache Kafka, RabbitMQ and Redis Pub/Sub. For example, a sale in your online store can\nupdate stock levels in your ERP instantly. Whether real-time is possible for each system depends on what the\nconnected platforms support. Where it isn't, scheduled synchronisation can be used instead.",
+      "source_url": "https://osiyatech.com/services/enterprise-system-integration/",
+      "source_document": "Osiyatech_Services_Knowledge_Base_v3.pdf",
+      "source_pdf_page": null,
+      "version": "3.0"
+    },
+    {
+      "faq_id": "enterprise-system-integration-007",
+      "question": "How is data security maintained during system integration?",
+      "source_tag": "untagged",
+      "approval_status": "approved",
+      "owner": "Osiyatech Team",
+      "reviewer": "Osiyatech Team",
+      "reviewed_on": "2026-10-31",
+      "source_pdf_pages": {
+        "start": 62,
+        "end": 66
+      },
+      "answer": "Integrations are designed with security at every step. Measures can include encrypted communication (data\nprotected while in transit), secure authentication between systems, role-based access controls, API\nauthorisation, data validation to prevent bad data spreading, and monitoring that detects failures or unusual\nactivity. Each integration is given only the access it needs.",
+      "source_url": "https://osiyatech.com/services/enterprise-system-integration/",
+      "source_document": "Osiyatech_Services_Knowledge_Base_v3.pdf",
+      "source_pdf_page": 66,
+      "version": "3.0"
+    },
+    {
+      "faq_id": "enterprise-system-integration-008",
+      "question": "Can you integrate payment gateways and banking systems?",
+      "source_tag": "drafted",
+      "approval_status": "approved",
+      "owner": "Osiyatech Team",
+      "reviewer": "Osiyatech Team",
+      "reviewed_on": "2026-10-31",
+      "source_pdf_pages": {
+        "start": 62,
+        "end": 66
+      },
+      "answer": "Yes. Payment gateway and banking integrations are a listed capability. They let your applications accept online\npayments, reconcile transactions and exchange data with financial systems securely.",
+      "source_url": "https://osiyatech.com/services/enterprise-system-integration/",
+      "source_document": "Osiyatech_Services_Knowledge_Base_v3.pdf",
+      "source_pdf_page": 66,
+      "version": "3.0"
+    },
+    {
+      "faq_id": "enterprise-system-integration-009",
+      "question": "How do you prevent data loss or mismatches between systems?",
+      "source_tag": "drafted",
+      "approval_status": "approved",
+      "owner": "Osiyatech Team",
+      "reviewer": "Osiyatech Team",
+      "reviewed_on": "2026-10-31",
+      "source_pdf_pages": {
+        "start": 62,
+        "end": 66
+      },
+      "answer": "Integrations are built with data validation, error handling, retries and monitoring, so failed transfers are detected\nand resolved rather than silently lost. Message queues and event streaming hold data safely until each system\nhas processed it. Osiyatech's Services page describes this as real-time, zero-loss data pipelines.",
+      "source_url": "https://osiyatech.com/services/enterprise-system-integration/",
+      "source_document": "Osiyatech_Services_Knowledge_Base_v3.pdf",
+      "source_pdf_page": 66,
+      "version": "3.0"
+    },
+    {
+      "faq_id": "enterprise-system-integration-010",
+      "question": "How much does an integration project cost?",
+      "source_tag": "drafted",
+      "approval_status": "approved",
+      "owner": "Osiyatech Team",
+      "reviewer": "Osiyatech Team",
+      "reviewed_on": "2026-10-31",
+      "source_pdf_pages": {
+        "start": 62,
+        "end": 66
+      },
+      "answer": "Osiyatech doesn't publish fixed prices. Cost depends on the number of systems to connect, how well each\nsystem supports integration, data volumes, real-time requirements and any legacy connectors needed. After an\nassessment of your systems, you'll receive a transparent estimate.",
+      "source_url": "https://osiyatech.com/services/enterprise-system-integration/",
+      "source_document": "Osiyatech_Services_Knowledge_Base_v3.pdf",
+      "source_pdf_page": 66,
+      "version": "3.0"
+    }
+  ],
+  "answer_extraction": "original_markdown",
+  "enriched_at": "2026-10-30T19:22:35.681746+05:30",
+  "last_updated_at": "2026-10-31T12:26:05.692461+05:30"
+}

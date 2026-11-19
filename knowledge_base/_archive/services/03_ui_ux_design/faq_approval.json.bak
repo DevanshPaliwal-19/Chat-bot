@@ -1,0 +1,151 @@
+{
+  "schema_version": 1,
+  "service_folder": "03_ui_ux_design",
+  "document_id": "ui-ux-design-v3",
+  "source_file": "faqs.md",
+  "faqs": [
+    {
+      "faq_id": "ui-ux-design-001",
+      "question": "What is your typical UI/UX design process and timeline?",
+      "source_tag": "untagged",
+      "approval_status": "draft",
+      "owner": null,
+      "reviewer": null,
+      "reviewed_on": null,
+      "source_pdf_pages": {
+        "start": 20,
+        "end": 25
+      }
+    },
+    {
+      "faq_id": "ui-ux-design-002",
+      "question": "What deliverables will we receive at the end of the project?",
+      "source_tag": "untagged",
+      "approval_status": "draft",
+      "owner": null,
+      "reviewer": null,
+      "reviewed_on": null,
+      "source_pdf_pages": {
+        "start": 20,
+        "end": 25
+      }
+    },
+    {
+      "faq_id": "ui-ux-design-003",
+      "question": "How do you ensure our UI/UX designs translate cleanly into code?",
+      "source_tag": "untagged",
+      "approval_status": "draft",
+      "owner": null,
+      "reviewer": null,
+      "reviewed_on": null,
+      "source_pdf_pages": {
+        "start": 20,
+        "end": 25
+      }
+    },
+    {
+      "faq_id": "ui-ux-design-004",
+      "question": "Can you redesign our existing application without disrupting current users?",
+      "source_tag": "untagged",
+      "approval_status": "draft",
+      "owner": null,
+      "reviewer": null,
+      "reviewed_on": null,
+      "source_pdf_pages": {
+        "start": 20,
+        "end": 25
+      }
+    },
+    {
+      "faq_id": "ui-ux-design-005",
+      "question": "Do you conduct usability testing with actual target users?",
+      "source_tag": "untagged",
+      "approval_status": "draft",
+      "owner": null,
+      "reviewer": null,
+      "reviewed_on": null,
+      "source_pdf_pages": {
+        "start": 20,
+        "end": 25
+      }
+    },
+    {
+      "faq_id": "ui-ux-design-006",
+      "question": "Who owns the intellectual property and Figma files?",
+      "source_tag": "untagged",
+      "approval_status": "draft",
+      "owner": null,
+      "reviewer": null,
+      "reviewed_on": null,
+      "source_pdf_pages": {
+        "start": 20,
+        "end": 25
+      }
+    },
+    {
+      "faq_id": "ui-ux-design-007",
+      "question": "Can you audit our current website or app and tell us what to improve?",
+      "source_tag": "drafted",
+      "approval_status": "draft",
+      "owner": null,
+      "reviewer": null,
+      "reviewed_on": null,
+      "source_pdf_pages": {
+        "start": 20,
+        "end": 25
+      }
+    },
+    {
+      "faq_id": "ui-ux-design-008",
+      "question": "Can you build a design system for our product team?",
+      "source_tag": "drafted",
+      "approval_status": "draft",
+      "owner": null,
+      "reviewer": null,
+      "reviewed_on": null,
+      "source_pdf_pages": {
+        "start": 20,
+        "end": 25
+      }
+    },
+    {
+      "faq_id": "ui-ux-design-009",
+      "question": "Can you design AR, VR or 3D experiences?",
+      "source_tag": "drafted",
+      "approval_status": "draft",
+      "owner": null,
+      "reviewer": null,
+      "reviewed_on": null,
+      "source_pdf_pages": {
+        "start": 20,
+        "end": 25
+      }
+    },
+    {
+      "faq_id": "ui-ux-design-010",
+      "question": "Do you also develop the product after designing it?",
+      "source_tag": "drafted",
+      "approval_status": "draft",
+      "owner": null,
+      "reviewer": null,
+      "reviewed_on": null,
+      "source_pdf_pages": {
+        "start": 20,
+        "end": 25
+      }
+    },
+    {
+      "faq_id": "ui-ux-design-011",
+      "question": "How much does UI/UX design cost?",
+      "source_tag": "drafted",
+      "approval_status": "draft",
+      "owner": null,
+      "reviewer": null,
+      "reviewed_on": null,
+      "source_pdf_pages": {
+        "start": 20,
+        "end": 25
+      }
+    }
+  ]
+}

@@ -1,0 +1,227 @@
+{
+  "schema_version": 2,
+  "service_folder": "01_web_development",
+  "document_id": "web-development-v3",
+  "source_file": "faqs.md",
+  "faqs": [
+    {
+      "faq_id": "web-development-001",
+      "question": "What web application development services does Osiyatech offer?",
+      "source_tag": "untagged",
+      "approval_status": "approved",
+      "owner": "Osiyatech Team",
+      "reviewer": "Osiyatech Team",
+      "reviewed_on": "2026-10-31",
+      "source_pdf_pages": {
+        "start": 7,
+        "end": 13
+      },
+      "answer": "Osiyatech offers the full range of web development: custom websites, web applications, SaaS platforms,\ncustomer portals, enterprise web portals, e-commerce stores, CMS-based websites, API development,\nthird-party integrations and modernization of existing applications. Projects can be as focused as a\nhigh-converting landing page or as large as a multi-tenant SaaS product or an enterprise system used across\ndepartments. Every solution is designed to be secure and scalable, and is tailored to your business\nrequirements rather than built from a generic template. Osiyatech can also add advanced features such as AI\nchatbots, 3D and AR product experiences, and real-time functionality where they add value.",
+      "source_url": "https://osiyatech.com/web-development",
+      "source_document": "Osiyatech_Services_Knowledge_Base_v3.pdf",
+      "source_pdf_page": null,
+      "version": "3.0"
+    },
+    {
+      "faq_id": "web-development-002",
+      "question": "Which technologies do you use for web application development?",
+      "source_tag": "untagged",
+      "approval_status": "approved",
+      "owner": "Osiyatech Team",
+      "reviewer": "Osiyatech Team",
+      "reviewed_on": "2026-10-31",
+      "source_pdf_pages": {
+        "start": 7,
+        "end": 13
+      },
+      "answer": "Osiyatech's web expertise includes React.js, Next.js, Vue.js and Angular on the frontend; Node.js, Python\n(Django), PHP (Laravel), Go, Java Spring and .NET on the backend; and databases including PostgreSQL,\nMySQL, Microsoft SQL Server, MongoDB, Supabase and Firebase. Redis is used for caching, sessions and\nqueues to keep applications fast under load. E-commerce and content projects use Shopify, Magento,\nWooCommerce and WordPress. The team recommends a stack based on your performance needs, scalability\ngoals and long-term maintainability. If you already have a preferred or existing stack, Osiyatech can work with\nit.",
+      "source_url": "https://osiyatech.com/web-development",
+      "source_document": "Osiyatech_Services_Knowledge_Base_v3.pdf",
+      "source_pdf_page": null,
+      "version": "3.0"
+    },
+    {
+      "faq_id": "web-development-003",
+      "question": "How long does it take to develop a custom web application?",
+      "source_tag": "untagged",
+      "approval_status": "approved",
+      "owner": "Osiyatech Team",
+      "reviewer": "Osiyatech Team",
+      "reviewed_on": "2026-10-31",
+      "source_pdf_pages": {
+        "start": 7,
+        "end": 13
+      },
+      "answer": "It depends on the application's complexity, the number of features, the integrations needed and the design\nrequirements. As a guide, a basic MVP may take 4 to 8 weeks, while more complex business applications can\ntake 3 to 6 months or longer. Larger platforms are often delivered in phases, so you can launch core features\nfirst and add more over time. You'll receive a detailed timeline with milestones after your requirements are\nreviewed, and you'll see working demos every other Friday during development.",
+      "source_url": "https://osiyatech.com/web-development",
+      "source_document": "Osiyatech_Services_Knowledge_Base_v3.pdf",
+      "source_pdf_page": 12,
+      "version": "3.0"
+    },
+    {
+      "faq_id": "web-development-004",
+      "question": "Can you modernize or upgrade an existing web application?",
+      "source_tag": "untagged",
+      "approval_status": "approved",
+      "owner": "Osiyatech Team",
+      "reviewer": "Osiyatech Team",
+      "reviewed_on": "2026-10-31",
+      "source_pdf_pages": {
+        "start": 7,
+        "end": 13
+      },
+      "answer": "Yes. Osiyatech regularly modernizes legacy websites and web applications. That can mean improving\nperformance, redesigning the interface, moving to a modern technology stack, refactoring old code, integrating\nnew APIs, adding new features, or migrating to the cloud. The team first reviews your current system to\nunderstand what works, what doesn't and what the business depends on, then plans the upgrade so critical\noperations keep running throughout. Client testimonials include rescuing applications left in poor shape by\nprevious developers.",
+      "source_url": "https://osiyatech.com/web-development",
+      "source_document": "Osiyatech_Services_Knowledge_Base_v3.pdf",
+      "source_pdf_page": 12,
+      "version": "3.0"
+    },
+    {
+      "faq_id": "web-development-005",
+      "question": "Will my web application be secure, scalable and mobile-friendly?",
+      "source_tag": "untagged",
+      "approval_status": "approved",
+      "owner": "Osiyatech Team",
+      "reviewer": "Osiyatech Team",
+      "reviewed_on": "2026-10-31",
+      "source_pdf_pages": {
+        "start": 7,
+        "end": 13
+      },
+      "answer": "Yes, these are built in from the start. Every interface is designed to be responsive, so it works well on desktop,\ntablet and mobile. Depending on your requirements, security measures include secure authentication,\nrole-based access control, API security and protection of sensitive data. For scalability, Osiyatech uses\ncloud-ready architecture, database optimisation, caching with Redis and, where appropriate, microservices, so\nthe application can handle growth in users and data. Automated testing and CI/CD pipelines help keep quality\nconsistent as the application evolves.",
+      "source_url": "https://osiyatech.com/web-development",
+      "source_document": "Osiyatech_Services_Knowledge_Base_v3.pdf",
+      "source_pdf_page": 12,
+      "version": "3.0"
+    },
+    {
+      "faq_id": "web-development-006",
+      "question": "Do you provide maintenance and support after launch?",
+      "source_tag": "untagged",
+      "approval_status": "approved",
+      "owner": "Osiyatech Team",
+      "reviewer": "Osiyatech Team",
+      "reviewed_on": "2026-10-31",
+      "source_pdf_pages": {
+        "start": 7,
+        "end": 13
+      },
+      "answer": "Yes. Every project includes post-launch support, and Osiyatech offers ongoing maintenance plans afterwards.\nA plan can include bug fixes, performance monitoring, security updates, framework and dependency upgrades,\nfeature enhancements and technical support. The scope of each plan is agreed with you, so you get the level of\nsupport your business needs, from occasional updates to continuous development with a dedicated team.",
+      "source_url": "https://osiyatech.com/web-development",
+      "source_document": "Osiyatech_Services_Knowledge_Base_v3.pdf",
+      "source_pdf_page": 12,
+      "version": "3.0"
+    },
+    {
+      "faq_id": "web-development-007",
+      "question": "Can you build an online store on Shopify, Magento or WooCommerce?",
+      "source_tag": "drafted",
+      "approval_status": "approved",
+      "owner": "Osiyatech Team",
+      "reviewer": "Osiyatech Team",
+      "reviewed_on": "2026-10-31",
+      "source_pdf_pages": {
+        "start": 7,
+        "end": 13
+      },
+      "answer": "Yes. Osiyatech builds e-commerce stores on Shopify, Magento and WooCommerce, including theme\ncustomisation, payment gateway integration, and product and order management. When an off-the-shelf\nplatform can't support your requirements, such as complex pricing, custom checkout flows or deep ERP\nintegration, the team builds a fully custom e-commerce solution. Stores are designed to convert visitors into\nbuyers, and can include features such as 3D product views.",
+      "source_url": "https://osiyatech.com/web-development",
+      "source_document": "Osiyatech_Services_Knowledge_Base_v3.pdf",
+      "source_pdf_page": 12,
+      "version": "3.0"
+    },
+    {
+      "faq_id": "web-development-008",
+      "question": "Do you build SaaS platforms?",
+      "source_tag": "drafted",
+      "approval_status": "approved",
+      "owner": "Osiyatech Team",
+      "reviewer": "Osiyatech Team",
+      "reviewed_on": "2026-10-31",
+      "source_pdf_pages": {
+        "start": 7,
+        "end": 13
+      },
+      "answer": "Yes. Osiyatech builds SaaS platforms and customer portals, including multi-tenant SaaS products where many\ncustomer organisations share one platform with their data kept separate. A SaaS build typically covers user\nand subscription management, role-based access, admin dashboards, reporting, APIs and integrations, and\nthe cloud infrastructure and CI/CD pipelines needed to release updates safely. Osiyatech can support a SaaS\nproduct from MVP through to scale.",
+      "source_url": "https://osiyatech.com/web-development",
+      "source_document": "Osiyatech_Services_Knowledge_Base_v3.pdf",
+      "source_pdf_page": 12,
+      "version": "3.0"
+    },
+    {
+      "faq_id": "web-development-009",
+      "question": "Can my team update the website content without a developer?",
+      "source_tag": "drafted",
+      "approval_status": "approved",
+      "owner": "Osiyatech Team",
+      "reviewer": "Osiyatech Team",
+      "reviewed_on": "2026-10-31",
+      "source_pdf_pages": {
+        "start": 7,
+        "end": 13
+      },
+      "answer": "Yes. Osiyatech builds websites on WordPress, custom CMS platforms or headless CMS solutions, so your\nmarketing and content teams can create, edit and publish pages, posts, images and other content themselves.\nA headless CMS also lets the same content appear on your website, mobile app and other channels. Osiyatech\ncan migrate existing content and customise the CMS to match how your team works.",
+      "source_url": "https://osiyatech.com/web-development",
+      "source_document": "Osiyatech_Services_Knowledge_Base_v3.pdf",
+      "source_pdf_page": 12,
+      "version": "3.0"
+    },
+    {
+      "faq_id": "web-development-010",
+      "question": "Can you integrate my website with payment gateways, CRM or ERP systems?",
+      "source_tag": "drafted",
+      "approval_status": "approved",
+      "owner": "Osiyatech Team",
+      "reviewer": "Osiyatech Team",
+      "reviewed_on": "2026-10-31",
+      "source_pdf_pages": {
+        "start": 7,
+        "end": 13
+      },
+      "answer": "Yes. API and third-party integrations are a core part of web application development, and ERP and CRM\nintegration is part of Osiyatech's enterprise web solutions. Common integrations include payment gateways,\nCRMs, ERPs, accounting software, shipping and marketing tools. For large or complex integration projects\ninvolving many systems, see the Enterprise System Integration service.",
+      "source_url": "https://osiyatech.com/web-development",
+      "source_document": "Osiyatech_Services_Knowledge_Base_v3.pdf",
+      "source_pdf_page": 12,
+      "version": "3.0"
+    },
+    {
+      "faq_id": "web-development-011",
+      "question": "Can you add 3D or AR experiences to our website?",
+      "source_tag": "drafted",
+      "approval_status": "approved",
+      "owner": "Osiyatech Team",
+      "reviewer": "Osiyatech Team",
+      "reviewed_on": "2026-10-31",
+      "source_pdf_pages": {
+        "start": 7,
+        "end": 13
+      },
+      "answer": "Yes. Osiyatech can build interactive 3D and augmented reality experiences that run in the browser, for example\nletting customers rotate a product in 3D or preview it in their own space through their phone camera. These\nexperiences are especially useful for e-commerce, real estate and product showcase websites. The approach\nand technology are agreed during project assessment, based on your products and audience.",
+      "source_url": "https://osiyatech.com/web-development",
+      "source_document": "Osiyatech_Services_Knowledge_Base_v3.pdf",
+      "source_pdf_page": 13,
+      "version": "3.0"
+    },
+    {
+      "faq_id": "web-development-012",
+      "question": "How much does a website or web application cost?",
+      "source_tag": "drafted",
+      "approval_status": "approved",
+      "owner": "Osiyatech Team",
+      "reviewer": "Osiyatech Team",
+      "reviewed_on": "2026-10-31",
+      "source_pdf_pages": {
+        "start": 7,
+        "end": 13
+      },
+      "answer": "Osiyatech doesn't publish fixed prices, because cost depends on the type of project, the number of features\nand pages, integrations, design complexity and the engagement model. A focused website costs very\ndifferently from a multi-tenant SaaS platform. After an initial consultation, you'll receive a transparent,\nmilestone-based estimate so you know exactly what you're paying for at each stage.",
+      "source_url": "https://osiyatech.com/web-development",
+      "source_document": "Osiyatech_Services_Knowledge_Base_v3.pdf",
+      "source_pdf_page": 13,
+      "version": "3.0"
+    }
+  ],
+  "answer_extraction": "original_markdown",
+  "enriched_at": "2026-10-30T19:22:35.648884+05:30",
+  "last_updated_at": "2026-10-31T12:26:05.687278+05:30"
+}

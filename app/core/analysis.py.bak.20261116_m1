@@ -1,0 +1,78 @@
+"""Structured understanding of a visitor turn (produced by the LLM, validated here)."""
+from __future__ import annotations
+
+import json
+from typing import Any
+
+from pydantic import BaseModel, Field, field_validator
+
+from ..leads.rules import LEAD_FIELDS, clean_field
+
+INTENTS = (
+    "greeting", "company_info", "service_inquiry", "project_discussion", "pricing",
+    "human_request", "closing", "smalltalk", "off_topic", "other",
+)
+NO_RETRIEVAL_INTENTS = frozenset({"greeting", "closing", "smalltalk"})
+
+
+class TurnAnalysis(BaseModel):
+    intent: str = "other"
+    standalone_query: str | None = None
+    wants_human: bool = False
+    needs_clarification: bool = False
+    clarifying_question: str | None = None
+    lead: dict[str, str] = Field(default_factory=dict)
+    active_topic: str | None = None
+    source: str = "llm"
+
+    @field_validator("intent", mode="before")
+    @classmethod
+    def _intent(cls, v: Any) -> str:
+        v = str(v or "other").strip().lower().replace(" ", "_")
+        return v if v in INTENTS else "other"
+
+    @field_validator("wants_human", "needs_clarification", mode="before")
+    @classmethod
+    def _bool(cls, v: Any) -> bool:
+        if isinstance(v, str):
+            return v.strip().lower() in {"true", "yes", "1"}
+        return bool(v)
+
+    @field_validator("standalone_query", "clarifying_question", "active_topic", mode="before")
+    @classmethod
+    def _text(cls, v: Any) -> str | None:
+        if not isinstance(v, str):
+            return None if v is None else str(v)[:300]
+        v = " ".join(v.split())[:300]
+        return v or None
+
+    @field_validator("lead", mode="before")
+    @classmethod
+    def _lead(cls, v: Any) -> dict[str, str]:
+        if not isinstance(v, dict):
+            return {}
+        out: dict[str, str] = {}
+        for key in LEAD_FIELDS:
+            cleaned = clean_field(key, v.get(key))
+            if cleaned:
+                out[key] = cleaned
+        return out
+
+
+def parse_analysis(raw: str) -> TurnAnalysis:
+    start, end = raw.find("{"), raw.rfind("}")
+    if start == -1 or end <= start:
+        raise ValueError("no JSON object in analysis output")
+    data = json.loads(raw[start : end + 1])
+    if not isinstance(data, dict):
+        raise ValueError("analysis JSON is not an object")
+    return TurnAnalysis.model_validate(data)
+
+
+def fallback_analysis(message: str, previous_user_message: str | None) -> TurnAnalysis:
+    """Used when the LLM analysis is disabled or fails. Short follow-ups borrow the previous user message
+    as context for retrieval; no topic or keyword routing happens."""
+    query = message
+    if previous_user_message and len(message.split()) <= 6:
+        query = f"{previous_user_message} {message}"
+    return TurnAnalysis(intent="other", standalone_query=query, source="fallback")

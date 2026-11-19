@@ -1,0 +1,193 @@
+---
+title: AI Agents & Workflow Automation
+source_url: https://osiyatech.com/services
+approval_status: approved
+last_updated: 2026-10-31
+service_category: AI Agents & Workflow Automation
+---
+
+# AI Agents & Workflow Automation
+
+> Source: Osiyatech Services Knowledge Base, Draft v3.0. Captured 2026-10-26. Source PDF pages 38–41.
+> Approval status: APPROVED — approved for ingestion.
+
+--- Source PDF page 38 ---
+
+SERVICE RECORD
+AI Agents & Workflow Automation
+document_id
+ai-agents-workflow-automation-v3
+content_type
+service
+title
+AI Agents & Workflow Automation
+source_url
+https://osiyatech.com/services
+website_page_status
+No dedicated AI Agents service page is currently available. Information is sourced from the Services page and homepage.
+
+owner
+Osiyatech Team
+reviewer
+Osiyatech Team
+approval_status
+approved
+reviewed_on
+2026-10-31
+review_due
+null
+version
+3.0
+visibility
+public
+Service overview
+Osiyatech's AI Agents & Workflow Automation service deploys AI agents, including autonomous multi-agent
+systems, and intelligent workflow pipelines that carry out complex multi-step tasks, triage incoming requests
+automatically and remove repetitive work. On the homepage this is described as "AI & Workflow Automation":
+cutting repetitive manual work by connecting LLMs, AI agents and RAG pipelines directly to a business's
+operational software and internal databases.
+The difference from a simple chatbot is action. An AI agent doesn't only answer questions. It can read a
+request, decide what needs to happen, retrieve information, update systems and hand off to people when
+needed. Osiyatech connects these agents to the tools businesses already use, such as CRMs, WhatsApp and
+other third-party platforms, so automation happens inside existing workflows.
+This service has no dedicated page on the website yet. The information here comes from the Services page
+and the homepage, so details beyond them should be confirmed with the team.
+Business problems solved
+•
+Staff time lost to repetitive tasks: data entry, copying information between systems and routine follow-ups.
+AI workflow automation handles these steps automatically.
+•
+Support teams overwhelmed by routine questions: customer support automation and AI chatbots
+answer common questions instantly, at any hour, and escalate complex cases.
+•
+Requests that must be sorted and routed by hand: AI agents triage incoming requests automatically and
+send them to the right place.
+•
+Knowledge trapped in documents: knowledge-base and document chatbots let customers and staff get
+answers from company documents in plain language.
+•
+Tools that don't work together: CRM and third-party integrations let AI agents act across the systems a
+business already uses.
+Features and capabilities
+•
+AI chatbot development: conversational assistants for websites, apps and messaging channels.
+•
+Custom AI agents: agents designed to complete specific business tasks, including multi-agent systems
+where several agents coordinate on complex, multi-step work.
+•
+Customer support automation: handling common customer enquiries automatically and escalating when a
+person is needed.
+•
+AI workflow automation: intelligent pipelines that orchestrate multi-step processes across systems.
+•
+Knowledge base and document chatbots: assistants that answer questions using company documents
+and knowledge bases, typically using RAG.
+
+
+--- Source PDF page 39 ---
+
+•
+CRM and third-party integrations: connecting agents to CRMs, messaging platforms and other business
+tools so they can read and update information.
+•
+Connection to internal databases and operational software: LLMs, agents and RAG pipelines wired into
+existing business systems (homepage).
+Technologies used
+•
+LLM and agent frameworks: OpenAI, LangChain.
+•
+Backend and APIs: Python, Node.js, FastAPI.
+•
+Messaging channels: WhatsApp API.
+•
+Retrieval: RAG pipelines (see AI & Machine Learning for the vector database stack: Pinecone, PostgreSQL,
+pgvector).
+•
+Redis (agent memory and task management): used to store conversation history and agent state between
+steps, cache frequent answers for faster replies, and run task queues so multi-step workflows and
+background jobs run reliably.
+Target customers and use cases
+AI Agents & Workflow Automation serves organisations where people spend a lot of time on repetitive tasks,
+answering the same questions, moving information between systems or sorting incoming requests, and want AI
+to take on that work.
+By company size
+•
+Startups: lean teams that need to support customers and run operations without hiring large support or
+operations teams. An AI chatbot or simple agent can answer customer questions and handle routine tasks
+from day one.
+•
+Small and medium businesses (SMEs): growing businesses whose staff are stretched by enquiries over
+WhatsApp, email and the website, or by manual data entry between their CRM and other tools. AI agents
+and workflow automation free staff for higher-value work without adding headcount.
+•
+Enterprises: organisations with high volumes of requests, complex multi-step processes and many
+connected systems. Multi-agent systems and intelligent workflow pipelines can triage requests, coordinate
+tasks across departments and work with CRMs, internal databases and operational software at scale.
+By situation or need
+•
+High volumes of repetitive customer questions: support teams that answer the same questions daily and
+need automated, accurate first responses with escalation to staff.
+•
+Customers who prefer messaging: businesses whose customers contact them on WhatsApp and who
+want an assistant there.
+•
+Manual sorting and routing of requests: teams that read every enquiry, ticket or email to decide where it
+goes.
+•
+Information trapped in documents: organisations whose staff or customers struggle to find answers in
+manuals, policies and knowledge bases.
+•
+Repetitive back-office work: operations teams that copy data between systems, create records or follow
+up by hand.
+•
+CRM-driven sales and service: teams that want AI to work with CRM data, for example qualifying leads or
+updating records.
+Industries and example use cases
+•
+E-commerce and retail: order status, product questions and returns handled automatically.
+•
+Professional services: internal knowledge assistants and request triage.
+•
+Healthcare: answering common administrative questions and routing enquiries.
+•
+Financial services: customer FAQ automation and document-driven workflows.
+•
+SaaS and technology: support chatbots trained on product documentation.
+•
+Real estate: enquiry handling and lead qualification over WhatsApp and the web.
+
+
+--- Source PDF page 40 ---
+
+Deliverables
+Not specified on the website. Confirm during project assessment. Expected outputs are a working AI agent,
+chatbot or automated workflow, integrated with the agreed systems.
+Development process
+No service-specific process is published. Work follows Osiyatech's standard six-stage methodology (Discover,
+Architect, Build, Validate, Launch, Scale) and the AI-specific approach described in the AI & Machine Learning
+record: discovery and data strategy, model development and validation, then deployment and continuous
+optimisation.
+Requirements and dependencies
+•
+Customer inputs required: not specified. Typically: the workflow to automate, the knowledge sources, and
+access to the systems to integrate (CRM, messaging, databases).
+•
+Technology or platform prerequisites: none required. Osiyatech recommends the most suitable
+technology stack for each project. If the client already has a pre-selected technology stack, Osiyatech can
+work with it.
+•
+Delivery timeline: requires assessment.
+•
+Pricing: requires a project assessment.
+Proof points
+•
+Public case studies: none specific to this service. See AI & Machine Learning for related AI projects.
+Related services
+•
+AI & Machine Learning: the underlying AI, RAG and LLM capabilities.
+•
+ERP & CRM Solutions: the business systems AI agents often work with.
+•
+Enterprise System Integration: APIs and middleware that let agents act across systems.
+•
+Web Development and Mobile App Development: interfaces where chatbots and agents are deployed.

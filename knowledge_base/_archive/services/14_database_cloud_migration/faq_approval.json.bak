@@ -1,0 +1,86 @@
+{
+  "schema_version": 1,
+  "service_folder": "14_database_cloud_migration",
+  "document_id": "database-cloud-migration-v3",
+  "source_file": "faqs.md",
+  "faqs": [
+    {
+      "faq_id": "database-cloud-migration-001",
+      "question": "Can you migrate our database to the cloud with minimal downtime?",
+      "source_tag": "drafted",
+      "approval_status": "draft",
+      "owner": null,
+      "reviewer": null,
+      "reviewed_on": null,
+      "source_pdf_pages": {
+        "start": 77,
+        "end": 80
+      }
+    },
+    {
+      "faq_id": "database-cloud-migration-002",
+      "question": "Which databases can you migrate?",
+      "source_tag": "drafted",
+      "approval_status": "draft",
+      "owner": null,
+      "reviewer": null,
+      "reviewed_on": null,
+      "source_pdf_pages": {
+        "start": 77,
+        "end": 80
+      }
+    },
+    {
+      "faq_id": "database-cloud-migration-003",
+      "question": "How do you make sure no data is lost?",
+      "source_tag": "drafted",
+      "approval_status": "draft",
+      "owner": null,
+      "reviewer": null,
+      "reviewed_on": null,
+      "source_pdf_pages": {
+        "start": 77,
+        "end": 80
+      }
+    },
+    {
+      "faq_id": "database-cloud-migration-004",
+      "question": "Do you set up backups and disaster recovery?",
+      "source_tag": "drafted",
+      "approval_status": "draft",
+      "owner": null,
+      "reviewer": null,
+      "reviewed_on": null,
+      "source_pdf_pages": {
+        "start": 77,
+        "end": 80
+      }
+    },
+    {
+      "faq_id": "database-cloud-migration-005",
+      "question": "Will our database be faster after migration?",
+      "source_tag": "drafted",
+      "approval_status": "draft",
+      "owner": null,
+      "reviewer": null,
+      "reviewed_on": null,
+      "source_pdf_pages": {
+        "start": 77,
+        "end": 80
+      }
+    },
+    {
+      "faq_id": "database-cloud-migration-006",
+      "question": "How much does a migration cost?",
+      "source_tag": "drafted",
+      "approval_status": "draft",
+      "owner": null,
+      "reviewer": null,
+      "reviewed_on": null,
+      "source_pdf_pages": {
+        "start": 77,
+        "end": 80
+      }
+    }
+  ]
+}

@@ -1,0 +1,118 @@
+{
+  "schema_version": 2,
+  "service_folder": "15_dedicated_engineering_teams",
+  "document_id": "dedicated-engineering-teams-v3",
+  "source_file": "faqs.md",
+  "faqs": [
+    {
+      "faq_id": "dedicated-engineering-teams-001",
+      "question": "Can I hire a dedicated developer or a full team?",
+      "source_tag": "drafted",
+      "approval_status": "draft",
+      "owner": null,
+      "reviewer": null,
+      "reviewed_on": null,
+      "source_pdf_pages": {
+        "start": 81,
+        "end": 84
+      },
+      "answer": "Yes. You can hire individual specialists or a full team. Available roles include web developers, app developers,\nAI/ML experts, DevOps engineers, QA engineers and UI/UX designers, and engineers with AR/VR experience\nare also available. Osiyatech matches the team's size and skills to your roadmap, and the team can grow or\nchange as your needs change.\nWhat is the difference between a Dedicated Engineering Team and an Extended Engineering",
+      "source_url": "https://osiyatech.com/#hire-experts (homepage and Services page)",
+      "source_document": "Osiyatech_Services_Knowledge_Base_v3.pdf",
+      "source_pdf_page": null,
+      "version": "3.0"
+    },
+    {
+      "faq_id": "dedicated-engineering-teams-002",
+      "question": "What is the difference between a Dedicated Engineering Team and an Extended Engineering Pod?",
+      "source_tag": "drafted",
+      "approval_status": "draft",
+      "owner": null,
+      "reviewer": null,
+      "reviewed_on": null,
+      "source_pdf_pages": {
+        "start": 81,
+        "end": 84
+      },
+      "answer": "A Dedicated Engineering Team is an autonomous pod of senior developers, architects and QA engineers that\ntakes responsibility for delivering your product features continuously. It suits companies without their own\nengineering team, or a separate product stream. An Extended Engineering Pod embeds Osiyatech engineers\nin your existing team, so they work in your sprints, attend your standups and follow your processes. It suits\ncompanies that already have a team and need more capacity or specialist skills.",
+      "source_url": "https://osiyatech.com/#hire-experts (homepage and Services page)",
+      "source_document": "Osiyatech_Services_Knowledge_Base_v3.pdf",
+      "source_pdf_page": null,
+      "version": "3.0"
+    },
+    {
+      "faq_id": "dedicated-engineering-teams-003",
+      "question": "Will the engineers work in our tools and meetings?",
+      "source_tag": "drafted",
+      "approval_status": "draft",
+      "owner": null,
+      "reviewer": null,
+      "reviewed_on": null,
+      "source_pdf_pages": {
+        "start": 81,
+        "end": 84
+      },
+      "answer": "Yes. Osiyatech's engineers join your daily standups, sprint planning and other rituals, and work in your tools,\nsuch as your code repository, project management board and communication channels. They work as part of\nyour team, not as a separate vendor, which keeps communication direct and context shared.",
+      "source_url": "https://osiyatech.com/#hire-experts (homepage and Services page)",
+      "source_document": "Osiyatech_Services_Knowledge_Base_v3.pdf",
+      "source_pdf_page": null,
+      "version": "3.0"
+    },
+    {
+      "faq_id": "dedicated-engineering-teams-004",
+      "question": "How do you ensure quality and continuity?",
+      "source_tag": "drafted",
+      "approval_status": "draft",
+      "owner": null,
+      "reviewer": null,
+      "reviewed_on": null,
+      "source_pdf_pages": {
+        "start": 81,
+        "end": 84
+      },
+      "answer": "Teams are made up of experienced, senior engineers, and work follows Osiyatech's disciplined process:\ntwo-week sprints, working demos, peer code reviews, automated testing and clear documentation. Long-term\nengagements let engineers build deep knowledge of your product, and several clients have worked with\nOsiyatech for many years.",
+      "source_url": "https://osiyatech.com/#hire-experts (homepage and Services page)",
+      "source_document": "Osiyatech_Services_Knowledge_Base_v3.pdf",
+      "source_pdf_page": null,
+      "version": "3.0"
+    },
+    {
+      "faq_id": "dedicated-engineering-teams-005",
+      "question": "Can the team work with our existing technology stack?",
+      "source_tag": "drafted",
+      "approval_status": "draft",
+      "owner": null,
+      "reviewer": null,
+      "reviewed_on": null,
+      "source_pdf_pages": {
+        "start": 81,
+        "end": 84
+      },
+      "answer": "Yes. Osiyatech assigns engineers experienced in your existing stack, whether that's React, Node.js, Python,\n.NET, Flutter, native mobile or something else. If you're building something new, the team can recommend a\nstack instead.",
+      "source_url": "https://osiyatech.com/#hire-experts (homepage and Services page)",
+      "source_document": "Osiyatech_Services_Knowledge_Base_v3.pdf",
+      "source_pdf_page": null,
+      "version": "3.0"
+    },
+    {
+      "faq_id": "dedicated-engineering-teams-006",
+      "question": "How much does a dedicated team cost?",
+      "source_tag": "drafted",
+      "approval_status": "draft",
+      "owner": null,
+      "reviewer": null,
+      "reviewed_on": null,
+      "source_pdf_pages": {
+        "start": 81,
+        "end": 84
+      },
+      "answer": "Osiyatech doesn't publish fixed rates. Cost depends on the roles, seniority, team size and length of the\nengagement. After discussing your needs, you'll receive a transparent proposal.",
+      "source_url": "https://osiyatech.com/#hire-experts (homepage and Services page)",
+      "source_document": "Osiyatech_Services_Knowledge_Base_v3.pdf",
+      "source_pdf_page": null,
+      "version": "3.0"
+    }
+  ],
+  "answer_extraction": "original_markdown",
+  "enriched_at": "2026-10-30T19:22:35.691242+05:30"
+}

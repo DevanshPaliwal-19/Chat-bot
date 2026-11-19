@@ -1,0 +1,138 @@
+{
+  "schema_version": 1,
+  "service_folder": "11_enterprise_system_integration",
+  "document_id": "enterprise-system-integration-v3",
+  "source_file": "faqs.md",
+  "faqs": [
+    {
+      "faq_id": "enterprise-system-integration-001",
+      "question": "What is enterprise system integration?",
+      "source_tag": "untagged",
+      "approval_status": "draft",
+      "owner": null,
+      "reviewer": null,
+      "reviewed_on": null,
+      "source_pdf_pages": {
+        "start": 62,
+        "end": 66
+      }
+    },
+    {
+      "faq_id": "enterprise-system-integration-002",
+      "question": "What types of enterprise systems can be integrated?",
+      "source_tag": "untagged",
+      "approval_status": "draft",
+      "owner": null,
+      "reviewer": null,
+      "reviewed_on": null,
+      "source_pdf_pages": {
+        "start": 62,
+        "end": 66
+      }
+    },
+    {
+      "faq_id": "enterprise-system-integration-003",
+      "question": "Can existing legacy systems be integrated with modern applications?",
+      "source_tag": "untagged",
+      "approval_status": "draft",
+      "owner": null,
+      "reviewer": null,
+      "reviewed_on": null,
+      "source_pdf_pages": {
+        "start": 62,
+        "end": 66
+      }
+    },
+    {
+      "faq_id": "enterprise-system-integration-004",
+      "question": "What is the difference between API integration and system integration?",
+      "source_tag": "untagged",
+      "approval_status": "draft",
+      "owner": null,
+      "reviewer": null,
+      "reviewed_on": null,
+      "source_pdf_pages": {
+        "start": 62,
+        "end": 66
+      }
+    },
+    {
+      "faq_id": "enterprise-system-integration-005",
+      "question": "How does enterprise system integration improve business efficiency?",
+      "source_tag": "untagged",
+      "approval_status": "draft",
+      "owner": null,
+      "reviewer": null,
+      "reviewed_on": null,
+      "source_pdf_pages": {
+        "start": 62,
+        "end": 66
+      }
+    },
+    {
+      "faq_id": "enterprise-system-integration-006",
+      "question": "Can enterprise systems exchange data in real time?",
+      "source_tag": "untagged",
+      "approval_status": "draft",
+      "owner": null,
+      "reviewer": null,
+      "reviewed_on": null,
+      "source_pdf_pages": {
+        "start": 62,
+        "end": 66
+      }
+    },
+    {
+      "faq_id": "enterprise-system-integration-007",
+      "question": "How is data security maintained during system integration?",
+      "source_tag": "untagged",
+      "approval_status": "draft",
+      "owner": null,
+      "reviewer": null,
+      "reviewed_on": null,
+      "source_pdf_pages": {
+        "start": 62,
+        "end": 66
+      }
+    },
+    {
+      "faq_id": "enterprise-system-integration-008",
+      "question": "Can you integrate payment gateways and banking systems?",
+      "source_tag": "drafted",
+      "approval_status": "draft",
+      "owner": null,
+      "reviewer": null,
+      "reviewed_on": null,
+      "source_pdf_pages": {
+        "start": 62,
+        "end": 66
+      }
+    },
+    {
+      "faq_id": "enterprise-system-integration-009",
+      "question": "How do you prevent data loss or mismatches between systems?",
+      "source_tag": "drafted",
+      "approval_status": "draft",
+      "owner": null,
+      "reviewer": null,
+      "reviewed_on": null,
+      "source_pdf_pages": {
+        "start": 62,
+        "end": 66
+      }
+    },
+    {
+      "faq_id": "enterprise-system-integration-010",
+      "question": "How much does an integration project cost?",
+      "source_tag": "drafted",
+      "approval_status": "draft",
+      "owner": null,
+      "reviewer": null,
+      "reviewed_on": null,
+      "source_pdf_pages": {
+        "start": 62,
+        "end": 66
+      }
+    }
+  ]
+}

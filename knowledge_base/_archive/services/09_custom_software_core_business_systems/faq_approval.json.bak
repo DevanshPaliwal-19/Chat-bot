@@ -1,0 +1,112 @@
+{
+  "schema_version": 1,
+  "service_folder": "09_custom_software_core_business_systems",
+  "document_id": "custom-software-development-v3",
+  "source_file": "faqs.md",
+  "faqs": [
+    {
+      "faq_id": "custom-software-development-001",
+      "question": "Can you replace our spreadsheets with a proper system?",
+      "source_tag": "drafted",
+      "approval_status": "draft",
+      "owner": null,
+      "reviewer": null,
+      "reviewed_on": null,
+      "source_pdf_pages": {
+        "start": 52,
+        "end": 56
+      }
+    },
+    {
+      "faq_id": "custom-software-development-002",
+      "question": "What's the difference between this and buying an ERP or CRM product?",
+      "source_tag": "drafted",
+      "approval_status": "draft",
+      "owner": null,
+      "reviewer": null,
+      "reviewed_on": null,
+      "source_pdf_pages": {
+        "start": 52,
+        "end": 56
+      }
+    },
+    {
+      "faq_id": "custom-software-development-003",
+      "question": "Do you work with Microsoft Dynamics 365 Business Central?",
+      "source_tag": "drafted",
+      "approval_status": "draft",
+      "owner": null,
+      "reviewer": null,
+      "reviewed_on": null,
+      "source_pdf_pages": {
+        "start": 52,
+        "end": 56
+      }
+    },
+    {
+      "faq_id": "custom-software-development-004",
+      "question": "How do you make sure the system fits how we work?",
+      "source_tag": "drafted",
+      "approval_status": "draft",
+      "owner": null,
+      "reviewer": null,
+      "reviewed_on": null,
+      "source_pdf_pages": {
+        "start": 52,
+        "end": 56
+      }
+    },
+    {
+      "faq_id": "custom-software-development-005",
+      "question": "Will you move our existing data into the new system?",
+      "source_tag": "drafted",
+      "approval_status": "draft",
+      "owner": null,
+      "reviewer": null,
+      "reviewed_on": null,
+      "source_pdf_pages": {
+        "start": 52,
+        "end": 56
+      }
+    },
+    {
+      "faq_id": "custom-software-development-006",
+      "question": "Will you train our staff?",
+      "source_tag": "drafted",
+      "approval_status": "draft",
+      "owner": null,
+      "reviewer": null,
+      "reviewed_on": null,
+      "source_pdf_pages": {
+        "start": 52,
+        "end": 56
+      }
+    },
+    {
+      "faq_id": "custom-software-development-007",
+      "question": "Is the system secure?",
+      "source_tag": "drafted",
+      "approval_status": "draft",
+      "owner": null,
+      "reviewer": null,
+      "reviewed_on": null,
+      "source_pdf_pages": {
+        "start": 52,
+        "end": 56
+      }
+    },
+    {
+      "faq_id": "custom-software-development-008",
+      "question": "How much does custom business software cost?",
+      "source_tag": "drafted",
+      "approval_status": "draft",
+      "owner": null,
+      "reviewer": null,
+      "reviewed_on": null,
+      "source_pdf_pages": {
+        "start": 52,
+        "end": 56
+      }
+    }
+  ]
+}

@@ -1,0 +1,138 @@
+{
+  "schema_version": 1,
+  "service_folder": "08_enterprise_software_development",
+  "document_id": "enterprise-software-development-v3",
+  "source_file": "faqs.md",
+  "faqs": [
+    {
+      "faq_id": "enterprise-software-development-001",
+      "question": "What is enterprise software development?",
+      "source_tag": "untagged",
+      "approval_status": "draft",
+      "owner": null,
+      "reviewer": null,
+      "reviewed_on": null,
+      "source_pdf_pages": {
+        "start": 47,
+        "end": 51
+      }
+    },
+    {
+      "faq_id": "enterprise-software-development-002",
+      "question": "What types of enterprise software does Osiyatech develop?",
+      "source_tag": "untagged",
+      "approval_status": "draft",
+      "owner": null,
+      "reviewer": null,
+      "reviewed_on": null,
+      "source_pdf_pages": {
+        "start": 47,
+        "end": 51
+      }
+    },
+    {
+      "faq_id": "enterprise-software-development-003",
+      "question": "Can you modernize our existing enterprise applications?",
+      "source_tag": "untagged",
+      "approval_status": "draft",
+      "owner": null,
+      "reviewer": null,
+      "reviewed_on": null,
+      "source_pdf_pages": {
+        "start": 47,
+        "end": 51
+      }
+    },
+    {
+      "faq_id": "enterprise-software-development-004",
+      "question": "Can your enterprise software integrate with our existing systems?",
+      "source_tag": "untagged",
+      "approval_status": "draft",
+      "owner": null,
+      "reviewer": null,
+      "reviewed_on": null,
+      "source_pdf_pages": {
+        "start": 47,
+        "end": 51
+      }
+    },
+    {
+      "faq_id": "enterprise-software-development-005",
+      "question": "How long does enterprise software development take?",
+      "source_tag": "untagged",
+      "approval_status": "draft",
+      "owner": null,
+      "reviewer": null,
+      "reviewed_on": null,
+      "source_pdf_pages": {
+        "start": 47,
+        "end": 51
+      }
+    },
+    {
+      "faq_id": "enterprise-software-development-006",
+      "question": "Why choose custom enterprise software instead of off-the-shelf solutions?",
+      "source_tag": "untagged",
+      "approval_status": "draft",
+      "owner": null,
+      "reviewer": null,
+      "reviewed_on": null,
+      "source_pdf_pages": {
+        "start": 47,
+        "end": 51
+      }
+    },
+    {
+      "faq_id": "enterprise-software-development-007",
+      "question": "Do you provide SLA-based support for enterprise applications?",
+      "source_tag": "drafted",
+      "approval_status": "draft",
+      "owner": null,
+      "reviewer": null,
+      "reviewed_on": null,
+      "source_pdf_pages": {
+        "start": 47,
+        "end": 51
+      }
+    },
+    {
+      "faq_id": "enterprise-software-development-008",
+      "question": "Can you build portals for our customers, vendors or partners?",
+      "source_tag": "drafted",
+      "approval_status": "draft",
+      "owner": null,
+      "reviewer": null,
+      "reviewed_on": null,
+      "source_pdf_pages": {
+        "start": 47,
+        "end": 51
+      }
+    },
+    {
+      "faq_id": "enterprise-software-development-009",
+      "question": "Can you work with our existing technology stack?",
+      "source_tag": "drafted",
+      "approval_status": "draft",
+      "owner": null,
+      "reviewer": null,
+      "reviewed_on": null,
+      "source_pdf_pages": {
+        "start": 47,
+        "end": 51
+      }
+    },
+    {
+      "faq_id": "enterprise-software-development-010",
+      "question": "How much does enterprise software cost?",
+      "source_tag": "drafted",
+      "approval_status": "draft",
+      "owner": null,
+      "reviewer": null,
+      "reviewed_on": null,
+      "source_pdf_pages": {
+        "start": 47,
+        "end": 51
+      }
+    }
+  ]
+}

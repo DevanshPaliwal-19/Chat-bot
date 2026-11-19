@@ -1,0 +1,164 @@
+{
+  "schema_version": 1,
+  "service_folder": "01_web_development",
+  "document_id": "web-development-v3",
+  "source_file": "faqs.md",
+  "faqs": [
+    {
+      "faq_id": "web-development-001",
+      "question": "What web application development services does Osiyatech offer?",
+      "source_tag": "untagged",
+      "approval_status": "draft",
+      "owner": null,
+      "reviewer": null,
+      "reviewed_on": null,
+      "source_pdf_pages": {
+        "start": 7,
+        "end": 13
+      }
+    },
+    {
+      "faq_id": "web-development-002",
+      "question": "Which technologies do you use for web application development?",
+      "source_tag": "untagged",
+      "approval_status": "draft",
+      "owner": null,
+      "reviewer": null,
+      "reviewed_on": null,
+      "source_pdf_pages": {
+        "start": 7,
+        "end": 13
+      }
+    },
+    {
+      "faq_id": "web-development-003",
+      "question": "How long does it take to develop a custom web application?",
+      "source_tag": "untagged",
+      "approval_status": "draft",
+      "owner": null,
+      "reviewer": null,
+      "reviewed_on": null,
+      "source_pdf_pages": {
+        "start": 7,
+        "end": 13
+      }
+    },
+    {
+      "faq_id": "web-development-004",
+      "question": "Can you modernize or upgrade an existing web application?",
+      "source_tag": "untagged",
+      "approval_status": "draft",
+      "owner": null,
+      "reviewer": null,
+      "reviewed_on": null,
+      "source_pdf_pages": {
+        "start": 7,
+        "end": 13
+      }
+    },
+    {
+      "faq_id": "web-development-005",
+      "question": "Will my web application be secure, scalable and mobile-friendly?",
+      "source_tag": "untagged",
+      "approval_status": "draft",
+      "owner": null,
+      "reviewer": null,
+      "reviewed_on": null,
+      "source_pdf_pages": {
+        "start": 7,
+        "end": 13
+      }
+    },
+    {
+      "faq_id": "web-development-006",
+      "question": "Do you provide maintenance and support after launch?",
+      "source_tag": "untagged",
+      "approval_status": "draft",
+      "owner": null,
+      "reviewer": null,
+      "reviewed_on": null,
+      "source_pdf_pages": {
+        "start": 7,
+        "end": 13
+      }
+    },
+    {
+      "faq_id": "web-development-007",
+      "question": "Can you build an online store on Shopify, Magento or WooCommerce?",
+      "source_tag": "drafted",
+      "approval_status": "draft",
+      "owner": null,
+      "reviewer": null,
+      "reviewed_on": null,
+      "source_pdf_pages": {
+        "start": 7,
+        "end": 13
+      }
+    },
+    {
+      "faq_id": "web-development-008",
+      "question": "Do you build SaaS platforms?",
+      "source_tag": "drafted",
+      "approval_status": "draft",
+      "owner": null,
+      "reviewer": null,
+      "reviewed_on": null,
+      "source_pdf_pages": {
+        "start": 7,
+        "end": 13
+      }
+    },
+    {
+      "faq_id": "web-development-009",
+      "question": "Can my team update the website content without a developer?",
+      "source_tag": "drafted",
+      "approval_status": "draft",
+      "owner": null,
+      "reviewer": null,
+      "reviewed_on": null,
+      "source_pdf_pages": {
+        "start": 7,
+        "end": 13
+      }
+    },
+    {
+      "faq_id": "web-development-010",
+      "question": "Can you integrate my website with payment gateways, CRM or ERP systems?",
+      "source_tag": "drafted",
+      "approval_status": "draft",
+      "owner": null,
+      "reviewer": null,
+      "reviewed_on": null,
+      "source_pdf_pages": {
+        "start": 7,
+        "end": 13
+      }
+    },
+    {
+      "faq_id": "web-development-011",
+      "question": "Can you add 3D or AR experiences to our website?",
+      "source_tag": "drafted",
+      "approval_status": "draft",
+      "owner": null,
+      "reviewer": null,
+      "reviewed_on": null,
+      "source_pdf_pages": {
+        "start": 7,
+        "end": 13
+      }
+    },
+    {
+      "faq_id": "web-development-012",
+      "question": "How much does a website or web application cost?",
+      "source_tag": "drafted",
+      "approval_status": "draft",
+      "owner": null,
+      "reviewer": null,
+      "reviewed_on": null,
+      "source_pdf_pages": {
+        "start": 7,
+        "end": 13
+      }
+    }
+  ]
+}

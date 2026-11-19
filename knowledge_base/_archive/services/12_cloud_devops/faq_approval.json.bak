@@ -1,0 +1,138 @@
+{
+  "schema_version": 1,
+  "service_folder": "12_cloud_devops",
+  "document_id": "cloud-devops-v3",
+  "source_file": "faqs.md",
+  "faqs": [
+    {
+      "faq_id": "cloud-devops-001",
+      "question": "What are Cloud & DevOps services?",
+      "source_tag": "untagged",
+      "approval_status": "draft",
+      "owner": null,
+      "reviewer": null,
+      "reviewed_on": null,
+      "source_pdf_pages": {
+        "start": 67,
+        "end": 71
+      }
+    },
+    {
+      "faq_id": "cloud-devops-002",
+      "question": "Which cloud platforms does Osiyatech support?",
+      "source_tag": "untagged",
+      "approval_status": "draft",
+      "owner": null,
+      "reviewer": null,
+      "reviewed_on": null,
+      "source_pdf_pages": {
+        "start": 67,
+        "end": 71
+      }
+    },
+    {
+      "faq_id": "cloud-devops-003",
+      "question": "Can existing applications and infrastructure be migrated to the cloud?",
+      "source_tag": "untagged",
+      "approval_status": "draft",
+      "owner": null,
+      "reviewer": null,
+      "reviewed_on": null,
+      "source_pdf_pages": {
+        "start": 67,
+        "end": 71
+      }
+    },
+    {
+      "faq_id": "cloud-devops-004",
+      "question": "What is CI/CD, and how does it benefit businesses?",
+      "source_tag": "untagged",
+      "approval_status": "draft",
+      "owner": null,
+      "reviewer": null,
+      "reviewed_on": null,
+      "source_pdf_pages": {
+        "start": 67,
+        "end": 71
+      }
+    },
+    {
+      "faq_id": "cloud-devops-005",
+      "question": "How can Cloud & DevOps solutions reduce infrastructure costs?",
+      "source_tag": "untagged",
+      "approval_status": "draft",
+      "owner": null,
+      "reviewer": null,
+      "reviewed_on": null,
+      "source_pdf_pages": {
+        "start": 67,
+        "end": 71
+      }
+    },
+    {
+      "faq_id": "cloud-devops-006",
+      "question": "Does Osiyatech provide ongoing cloud infrastructure support?",
+      "source_tag": "untagged",
+      "approval_status": "draft",
+      "owner": null,
+      "reviewer": null,
+      "reviewed_on": null,
+      "source_pdf_pages": {
+        "start": 67,
+        "end": 71
+      }
+    },
+    {
+      "faq_id": "cloud-devops-007",
+      "question": "Do you work with Kubernetes and Docker?",
+      "source_tag": "drafted",
+      "approval_status": "draft",
+      "owner": null,
+      "reviewer": null,
+      "reviewed_on": null,
+      "source_pdf_pages": {
+        "start": 67,
+        "end": 71
+      }
+    },
+    {
+      "faq_id": "cloud-devops-008",
+      "question": "Can you set up infrastructure as code?",
+      "source_tag": "drafted",
+      "approval_status": "draft",
+      "owner": null,
+      "reviewer": null,
+      "reviewed_on": null,
+      "source_pdf_pages": {
+        "start": 67,
+        "end": 71
+      }
+    },
+    {
+      "faq_id": "cloud-devops-009",
+      "question": "Can you work with our existing cloud setup and tools?",
+      "source_tag": "drafted",
+      "approval_status": "draft",
+      "owner": null,
+      "reviewer": null,
+      "reviewed_on": null,
+      "source_pdf_pages": {
+        "start": 67,
+        "end": 71
+      }
+    },
+    {
+      "faq_id": "cloud-devops-010",
+      "question": "How much do Cloud & DevOps services cost?",
+      "source_tag": "drafted",
+      "approval_status": "draft",
+      "owner": null,
+      "reviewer": null,
+      "reviewed_on": null,
+      "source_pdf_pages": {
+        "start": 67,
+        "end": 71
+      }
+    }
+  ]
+}

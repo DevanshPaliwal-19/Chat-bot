@@ -1,0 +1,138 @@
+{
+  "schema_version": 1,
+  "service_folder": "07_bi_analytics",
+  "document_id": "bi-data-analytics-v3",
+  "source_file": "faqs.md",
+  "faqs": [
+    {
+      "faq_id": "bi-data-analytics-001",
+      "question": "What is business intelligence (BI), and how does it help my business?",
+      "source_tag": "untagged",
+      "approval_status": "draft",
+      "owner": null,
+      "reviewer": null,
+      "reviewed_on": null,
+      "source_pdf_pages": {
+        "start": 42,
+        "end": 46
+      }
+    },
+    {
+      "faq_id": "bi-data-analytics-002",
+      "question": "Can you integrate data from multiple sources into a single dashboard?",
+      "source_tag": "untagged",
+      "approval_status": "draft",
+      "owner": null,
+      "reviewer": null,
+      "reviewed_on": null,
+      "source_pdf_pages": {
+        "start": 42,
+        "end": 46
+      }
+    },
+    {
+      "faq_id": "bi-data-analytics-003",
+      "question": "Which BI tools and platforms do you support?",
+      "source_tag": "untagged",
+      "approval_status": "draft",
+      "owner": null,
+      "reviewer": null,
+      "reviewed_on": null,
+      "source_pdf_pages": {
+        "start": 42,
+        "end": 46
+      }
+    },
+    {
+      "faq_id": "bi-data-analytics-004",
+      "question": "How often can our dashboards and reports be refreshed?",
+      "source_tag": "untagged",
+      "approval_status": "draft",
+      "owner": null,
+      "reviewer": null,
+      "reviewed_on": null,
+      "source_pdf_pages": {
+        "start": 42,
+        "end": 46
+      }
+    },
+    {
+      "faq_id": "bi-data-analytics-005",
+      "question": "How do you handle data security and access governance?",
+      "source_tag": "untagged",
+      "approval_status": "draft",
+      "owner": null,
+      "reviewer": null,
+      "reviewed_on": null,
+      "source_pdf_pages": {
+        "start": 42,
+        "end": 46
+      }
+    },
+    {
+      "faq_id": "bi-data-analytics-006",
+      "question": "Can you automate our existing manual Excel and spreadsheet reports?",
+      "source_tag": "untagged",
+      "approval_status": "draft",
+      "owner": null,
+      "reviewer": null,
+      "reviewed_on": null,
+      "source_pdf_pages": {
+        "start": 42,
+        "end": 46
+      }
+    },
+    {
+      "faq_id": "bi-data-analytics-007",
+      "question": "Do we need to buy Power BI or Tableau licences?",
+      "source_tag": "drafted",
+      "approval_status": "draft",
+      "owner": null,
+      "reviewer": null,
+      "reviewed_on": null,
+      "source_pdf_pages": {
+        "start": 42,
+        "end": 46
+      }
+    },
+    {
+      "faq_id": "bi-data-analytics-008",
+      "question": "Can you build a data warehouse for us?",
+      "source_tag": "drafted",
+      "approval_status": "draft",
+      "owner": null,
+      "reviewer": null,
+      "reviewed_on": null,
+      "source_pdf_pages": {
+        "start": 42,
+        "end": 46
+      }
+    },
+    {
+      "faq_id": "bi-data-analytics-009",
+      "question": "Can you add forecasting or predictive analytics?",
+      "source_tag": "drafted",
+      "approval_status": "draft",
+      "owner": null,
+      "reviewer": null,
+      "reviewed_on": null,
+      "source_pdf_pages": {
+        "start": 42,
+        "end": 46
+      }
+    },
+    {
+      "faq_id": "bi-data-analytics-010",
+      "question": "How much does a BI or analytics project cost?",
+      "source_tag": "drafted",
+      "approval_status": "draft",
+      "owner": null,
+      "reviewer": null,
+      "reviewed_on": null,
+      "source_pdf_pages": {
+        "start": 42,
+        "end": 46
+      }
+    }
+  ]
+}

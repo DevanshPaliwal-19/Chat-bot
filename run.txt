@@ -1,0 +1,160 @@
+OSIYATECH AI ASSISTANT - HOW TO RUN (Windows 10/11, PowerShell 5.1)
+====================================================================
+Run every command in PowerShell. Replace the folder path with where you unzipped the project.
+NOTE: this project was tested only in a Linux sandbox with stand-in LLM/voice models. Steps 2, 4, 9 and 10 are the first
+time it meets real Ollama / real embeddings / real voice. See docs\PROJECT_WORK_LOG.md.
+
+
+STEP 1 - Go to the project folder
+---------------------------------
+cd "D:\osiya_tech project\osiyatech_ai_assistant"
+
+
+STEP 2 - Install Ollama and download the model (one time)
+---------------------------------------------------------
+# Install Ollama for Windows from https://ollama.com/download, then:
+ollama pull llama3.2:3b
+ollama list
+# Ollama normally runs in the background after install. If not, start it:
+#   ollama serve
+
+
+STEP 3 - Create the virtual environment and install packages (one time)
+-----------------------------------------------------------------------
+# Easy way (does everything below, also creates .env):
+powershell -ExecutionPolicy Bypass -File .\scripts\setup_windows.ps1
+
+# OR manually:
+python -m venv .venv
+.\.venv\Scripts\Activate.ps1
+python -m pip install --upgrade pip
+pip install -r requirements.txt
+Copy-Item .env.example .env
+
+# If activation is blocked ("running scripts is disabled"):
+Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass
+
+
+STEP 4 - Activate the environment (every new PowerShell window)
+---------------------------------------------------------------
+.\.venv\Scripts\Activate.ps1
+
+
+STEP 5 - Edit settings (optional)
+---------------------------------
+notepad .env
+# Useful values (all start with OSIYA_):
+#   OSIYA_LLM_MODEL=llama3.2:3b
+#   OSIYA_ADMIN_API_KEY=<a long random string you choose>     (only needed for admin endpoints)
+#   OSIYA_CONTACT_EMAIL=<your real contact email>              (only if you want it shown to visitors)
+# Never share or commit the .env file.
+
+
+STEP 6 - Add your real company documents
+----------------------------------------
+# Copy Osiyatech PDF / MD / TXT / HTML files into the knowledge_base folder (sub-folders are fine), for example:
+#   knowledge_base\ai-services\chatbots.pdf
+#   knowledge_base\company\about.md
+# The project ships NO company content. Until you add documents the assistant answers "not found".
+explorer .\knowledge_base
+
+
+STEP 7 - Build the knowledge index
+----------------------------------
+python -m app.rag.cli ingest
+python -m app.rag.cli status
+# Try a retrieval check (shows confidence + matched chunks):
+python -m app.rag.cli search "What services do you offer?"
+# Rebuild everything from scratch if needed:
+python -m app.rag.cli ingest --full
+# The first run downloads the embedding model (needs internet). If it cannot, a weaker fallback is used and a
+# warning is printed.
+
+
+STEP 8 - Start the backend (Terminal 1)
+---------------------------------------
+.\.venv\Scripts\Activate.ps1
+.\scripts\start_backend.ps1
+# same as: uvicorn app.main:app --host 127.0.0.1 --port 8000
+# Check it:   http://127.0.0.1:8000/health     API docs: http://127.0.0.1:8000/docs
+# Or from PowerShell:
+Invoke-RestMethod http://127.0.0.1:8000/health
+
+
+STEP 9 - Start the frontend (Terminal 2, a NEW PowerShell window)
+-----------------------------------------------------------------
+cd "D:\osiya_tech project\osiyatech_ai_assistant"
+.\.venv\Scripts\Activate.ps1
+.\scripts\start_frontend.ps1
+# same as: streamlit run frontend/app.py --server.port 8501
+# Open in Chrome or Edge:  http://localhost:8501
+# (The microphone only works on http://localhost or https.)
+
+
+STEP 10 - Optional: voice (speech in / speech out)
+--------------------------------------------------
+.\.venv\Scripts\Activate.ps1
+pip install -r requirements-voice.txt          # faster-whisper + piper-tts
+# Speech-to-text model downloads automatically on first use (needs internet).
+# Text-to-speech needs a Piper voice (.onnx and its .onnx.json file). Download one from the Piper voices page
+# (https://github.com/rhasspy/piper/blob/master/VOICES.md), put both files in a folder, then add to .env:
+#   OSIYA_PIPER_MODEL_PATH=C:\tools\piper\en_US-lessac-medium.onnx
+# If piper is not on PATH also add:
+#   OSIYA_PIPER_BINARY=C:\path\to\piper.exe
+# Restart the backend (Ctrl+C in Terminal 1, then .\scripts\start_backend.ps1 again).
+# Check that voice is detected:
+Invoke-RestMethod http://127.0.0.1:8000/config      # features.voice_input / voice_output should be True
+# In the UI choose the "Voice" or "Avatar" tab and press the microphone button.
+
+
+STEP 11 - Quick API test (without the UI)
+-----------------------------------------
+Invoke-RestMethod -Uri http://127.0.0.1:8000/api/v1/chat -Method Post -ContentType "application/json" `
+  -Body '{"session_id":"s_test12345","message":"What services do you offer?"}'
+
+
+STEP 12 - Add or update documents later
+---------------------------------------
+# After changing files in knowledge_base, either run:
+python -m app.rag.cli ingest
+# or, with the backend running and OSIYA_ADMIN_API_KEY set in .env (replace the key):
+Invoke-RestMethod -Uri http://127.0.0.1:8000/api/v1/knowledge/ingest -Method Post `
+  -Headers @{ "X-Admin-Key" = "YOUR_ADMIN_KEY" } -ContentType "application/json" -Body '{"full_rebuild": false}'
+
+
+STEP 13 - See saved leads (admin)
+---------------------------------
+Invoke-RestMethod -Uri http://127.0.0.1:8000/api/v1/leads -Headers @{ "X-Admin-Key" = "YOUR_ADMIN_KEY" }
+# Leads are stored in data\leads.sqlite3
+
+
+STEP 14 - Run the automated tests
+---------------------------------
+pip install -r requirements-dev.txt
+python -m pytest -q -m "not e2e"               # fast tests, no browser
+python -m playwright install chromium          # one time, for browser tests
+python -m pytest tests/e2e -q                  # real-browser tests (fake microphone)
+python -m pytest -q                            # everything
+
+
+STEP 15 - Measure retrieval quality on your own questions
+---------------------------------------------------------
+# Write a JSON file of real questions (format is in the top of scripts\eval_rag.py), then:
+python scripts\eval_rag.py .\my_eval.json --sweep
+# Pick a good OSIYA_MIN_CONFIDENCE from the output and put it in .env.
+
+
+STOP / RESTART
+--------------
+# Stop either server with Ctrl+C in its terminal. Start again with Step 8 and Step 9.
+# Every time: Ollama must be running, then backend, then frontend.
+
+
+COMMON PROBLEMS (more in docs\TROUBLESHOOTING.md)
+-------------------------------------------------
+# "cannot reach the assistant service"      -> backend not running (Step 8) or wrong OSIYA_BACKEND_URL
+# /health says "unavailable"                -> start Ollama (ollama serve)
+# /health says "model_missing"              -> ollama pull llama3.2:3b
+# Always "could not find verified info"     -> no documents ingested (Steps 6-7) or threshold too high
+# Port already in use                       -> netstat -ano | findstr :8000   then   taskkill /PID <pid> /F
+# Microphone not working                    -> use http://localhost in Chrome/Edge and allow the microphone

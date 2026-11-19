@@ -1,0 +1,208 @@
+{
+  "schema_version": 2,
+  "service_folder": "03_ui_ux_design",
+  "document_id": "ui-ux-design-v3",
+  "source_file": "faqs.md",
+  "faqs": [
+    {
+      "faq_id": "ui-ux-design-001",
+      "question": "What is your typical UI/UX design process and timeline?",
+      "source_tag": "untagged",
+      "approval_status": "draft",
+      "owner": null,
+      "reviewer": null,
+      "reviewed_on": null,
+      "source_pdf_pages": {
+        "start": 20,
+        "end": 25
+      },
+      "answer": "Osiyatech follows the Double Diamond method, a proven design approach that first explores the problem broadly and then focuses on the best solution. The usual phases are discovery and user research (weeks 1 to 2), information architecture and wireframing (weeks 2 to 3), high-fidelity UI design and the design system (weeks 3 to 5), and interactive prototyping with usability validation (weeks 5 to 6). A typical MVP or SaaS redesign takes 4 to 8 weeks, depending on the number of screens and the complexity of the workflows.",
+      "source_url": "https://osiyatech.com/ui-ux-design",
+      "source_document": "Osiyatech_Services_Knowledge_Base_v3.pdf",
+      "source_pdf_page": null,
+      "version": "3.0"
+    },
+    {
+      "faq_id": "ui-ux-design-002",
+      "question": "What deliverables will we receive at the end of the project?",
+      "source_tag": "untagged",
+      "approval_status": "draft",
+      "owner": null,
+      "reviewer": null,
+      "reviewed_on": null,
+      "source_pdf_pages": {
+        "start": 20,
+        "end": 25
+      },
+      "answer": "You receive complete ownership of an organised Figma workspace. It includes comprehensive user flow maps,\nclickable high-fidelity prototypes, a scalable design system component kit with documented variants and design\ntokens, icon sets, responsive desktop, tablet and mobile artboards, and full developer handoff specifications\nwith CSS inspect values. Research documentation and wireframes are included too. Everything is structured so\nyour developers, or Osiyatech's, can build from it directly.",
+      "source_url": "https://osiyatech.com/ui-ux-design",
+      "source_document": "Osiyatech_Services_Knowledge_Base_v3.pdf",
+      "source_pdf_page": null,
+      "version": "3.0"
+    },
+    {
+      "faq_id": "ui-ux-design-003",
+      "question": "How do you ensure our UI/UX designs translate cleanly into code?",
+      "source_tag": "untagged",
+      "approval_status": "draft",
+      "owner": null,
+      "reviewer": null,
+      "reviewed_on": null,
+      "source_pdf_pages": {
+        "start": 20,
+        "end": 25
+      },
+      "answer": "Engineering feasibility is built into every step of the design process. Designs use auto-layout structures that\nmirror real CSS Flexbox and Grid, a standard 8pt spacing scale, and semantic design tokens that correspond\ndirectly to Tailwind CSS, React or Flutter variables. Osiyatech also runs live design-to-engineering handoff\nwalkthroughs, where designers explain behaviours, states and edge cases to developers. The result is that\nwhat you approve in Figma is what gets built.",
+      "source_url": "https://osiyatech.com/ui-ux-design",
+      "source_document": "Osiyatech_Services_Knowledge_Base_v3.pdf",
+      "source_pdf_page": null,
+      "version": "3.0"
+    },
+    {
+      "faq_id": "ui-ux-design-004",
+      "question": "Can you redesign our existing application without disrupting current users?",
+      "source_tag": "untagged",
+      "approval_status": "draft",
+      "owner": null,
+      "reviewer": null,
+      "reviewed_on": null,
+      "source_pdf_pages": {
+        "start": 20,
+        "end": 25
+      },
+      "answer": "Yes. Osiyatech specialises in progressive UX modernization. Instead of replacing everything at once with\nsudden, jarring changes, the team identifies the key friction points, simplifies bloated forms, improves visual\nhierarchy and rolls out refreshed components step by step. Experienced users keep their familiarity with the\nproduct while its look, usability and conversion improve. Changes can be tested with users along the way to\nconfirm they help.",
+      "source_url": "https://osiyatech.com/ui-ux-design",
+      "source_document": "Osiyatech_Services_Knowledge_Base_v3.pdf",
+      "source_pdf_page": null,
+      "version": "3.0"
+    },
+    {
+      "faq_id": "ui-ux-design-005",
+      "question": "Do you conduct usability testing with actual target users?",
+      "source_tag": "untagged",
+      "approval_status": "draft",
+      "owner": null,
+      "reviewer": null,
+      "reviewed_on": null,
+      "source_pdf_pages": {
+        "start": 20,
+        "end": 25
+      },
+      "answer": "Yes, depending on project scope. Osiyatech runs moderated sessions (a facilitator guides users through tasks)\nor unmoderated sessions (users complete tasks independently) using interactive prototypes, before any code is\nwritten. The team records task completion rates, time-on-task and points of confusion, then iterates on the\ndesign until it meets usability benchmarks. This finds problems while they're still cheap to fix.",
+      "source_url": "https://osiyatech.com/ui-ux-design",
+      "source_document": "Osiyatech_Services_Knowledge_Base_v3.pdf",
+      "source_pdf_page": null,
+      "version": "3.0"
+    },
+    {
+      "faq_id": "ui-ux-design-006",
+      "question": "Who owns the intellectual property and Figma files?",
+      "source_tag": "untagged",
+      "approval_status": "draft",
+      "owner": null,
+      "reviewer": null,
+      "reviewed_on": null,
+      "source_pdf_pages": {
+        "start": 20,
+        "end": 25
+      },
+      "answer": "You keep 100% ownership of all Figma files, research documentation, wireframes, custom icon sets and design\ntokens when the project is complete. There are no proprietary lock-ins and no recurring licensing fees. You're\nfree to use the designs with any development team.",
+      "source_url": "https://osiyatech.com/ui-ux-design",
+      "source_document": "Osiyatech_Services_Knowledge_Base_v3.pdf",
+      "source_pdf_page": null,
+      "version": "3.0"
+    },
+    {
+      "faq_id": "ui-ux-design-007",
+      "question": "Can you audit our current website or app and tell us what to improve?",
+      "source_tag": "drafted",
+      "approval_status": "draft",
+      "owner": null,
+      "reviewer": null,
+      "reviewed_on": null,
+      "source_pdf_pages": {
+        "start": 20,
+        "end": 25
+      },
+      "answer": "Yes. Osiyatech's UX Audits & Optimization offering reviews your existing product through heuristic evaluation\n(an expert review against established usability principles), usability testing and journey analysis. You receive\nclear findings on where users struggle or drop off, with prioritised, conversion-focused recommendations. The\naudit can be followed by a redesign if you choose.",
+      "source_url": "https://osiyatech.com/ui-ux-design",
+      "source_document": "Osiyatech_Services_Knowledge_Base_v3.pdf",
+      "source_pdf_page": null,
+      "version": "3.0"
+    },
+    {
+      "faq_id": "ui-ux-design-008",
+      "question": "Can you build a design system for our product team?",
+      "source_tag": "drafted",
+      "approval_status": "draft",
+      "owner": null,
+      "reviewer": null,
+      "reviewed_on": null,
+      "source_pdf_pages": {
+        "start": 20,
+        "end": 25
+      },
+      "answer": "Yes. Osiyatech builds scalable design systems in Figma: component libraries, design tokens, style guides and\nreusable components with documented variants and states, plus developer handoff documentation. A design\nsystem keeps your products consistent, speeds up both design and development, and makes it easier for new\nteam members to follow the same standards.",
+      "source_url": "https://osiyatech.com/ui-ux-design",
+      "source_document": "Osiyatech_Services_Knowledge_Base_v3.pdf",
+      "source_pdf_page": 25,
+      "version": "3.0"
+    },
+    {
+      "faq_id": "ui-ux-design-009",
+      "question": "Can you design AR, VR or 3D experiences?",
+      "source_tag": "drafted",
+      "approval_status": "draft",
+      "owner": null,
+      "reviewer": null,
+      "reviewed_on": null,
+      "source_pdf_pages": {
+        "start": 20,
+        "end": 25
+      },
+      "answer": "Yes. Osiyatech designs interfaces and interactions for augmented reality, virtual reality and 3D experiences.\nThat covers AR placement controls and on-screen guidance, VR navigation and interaction patterns, and 3D\nassets created in tools such as Blender. Immersive concepts can be prototyped and tested with users before\ndevelopment, and the Mobile and Web Development teams can then build them.",
+      "source_url": "https://osiyatech.com/ui-ux-design",
+      "source_document": "Osiyatech_Services_Knowledge_Base_v3.pdf",
+      "source_pdf_page": 25,
+      "version": "3.0"
+    },
+    {
+      "faq_id": "ui-ux-design-010",
+      "question": "Do you also develop the product after designing it?",
+      "source_tag": "drafted",
+      "approval_status": "draft",
+      "owner": null,
+      "reviewer": null,
+      "reviewed_on": null,
+      "source_pdf_pages": {
+        "start": 20,
+        "end": 25
+      },
+      "answer": "Yes. Osiyatech's Web Development and Mobile App Development teams can build the product from the\napproved designs. Keeping design and engineering with one partner reduces handoff gaps, and designers stay\ninvolved during development to answer questions and review the built screens.",
+      "source_url": "https://osiyatech.com/ui-ux-design",
+      "source_document": "Osiyatech_Services_Knowledge_Base_v3.pdf",
+      "source_pdf_page": 25,
+      "version": "3.0"
+    },
+    {
+      "faq_id": "ui-ux-design-011",
+      "question": "How much does UI/UX design cost?",
+      "source_tag": "drafted",
+      "approval_status": "draft",
+      "owner": null,
+      "reviewer": null,
+      "reviewed_on": null,
+      "source_pdf_pages": {
+        "start": 20,
+        "end": 25
+      },
+      "answer": "Osiyatech doesn't publish fixed prices. Cost depends on the number of screens, the complexity of workflows,\nthe amount of user research and testing, and whether a full design system is needed. After a consultation, you'll\nreceive a transparent estimate based on your scope.",
+      "source_url": "https://osiyatech.com/ui-ux-design",
+      "source_document": "Osiyatech_Services_Knowledge_Base_v3.pdf",
+      "source_pdf_page": 25,
+      "version": "3.0"
+    }
+  ],
+  "answer_extraction": "original_markdown",
+  "enriched_at": "2026-10-30T19:22:35.660492+05:30"
+}

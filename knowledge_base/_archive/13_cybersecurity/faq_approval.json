@@ -1,0 +1,209 @@
+{
+  "schema_version": 2,
+  "service_folder": "13_cybersecurity",
+  "document_id": "cybersecurity-v3",
+  "source_file": "faqs.md",
+  "faqs": [
+    {
+      "faq_id": "cybersecurity-001",
+      "question": "What are cybersecurity services?",
+      "source_tag": "untagged",
+      "approval_status": "approved",
+      "owner": "Osiyatech Team",
+      "reviewer": "Osiyatech Team",
+      "reviewed_on": "2026-10-31",
+      "source_pdf_pages": {
+        "start": 72,
+        "end": 76
+      },
+      "answer": "Cybersecurity services help organisations protect their applications, networks, cloud infrastructure and\nsensitive information from unauthorised access, cyberattacks and security weaknesses. They include risk\nassessments that find vulnerabilities, security testing such as penetration testing, preventive controls such as\naccess management and encryption, continuous monitoring, and incident preparedness so the organisation\ncan respond quickly if something happens.",
+      "source_url": "https://osiyatech.com/cybersecurity",
+      "source_document": "Osiyatech_Services_Knowledge_Base_v3.pdf",
+      "source_pdf_page": null,
+      "version": "3.0"
+    },
+    {
+      "faq_id": "cybersecurity-002",
+      "question": "What cybersecurity services does Osiyatech provide?",
+      "source_tag": "untagged",
+      "approval_status": "approved",
+      "owner": "Osiyatech Team",
+      "reviewer": "Osiyatech Team",
+      "reviewed_on": "2026-10-31",
+      "source_pdf_pages": {
+        "start": 72,
+        "end": 76
+      },
+      "answer": "Osiyatech's cybersecurity offerings include vulnerability assessments, authorised penetration testing, web and\napplication security (including secure code reviews and API protection), cloud infrastructure security on AWS,\nAzure and hybrid environments, network and infrastructure security, security configuration reviews and\nhardening, compliance readiness assessments, and security monitoring and incident readiness support.\nEngagements can be one-off assessments or ongoing support.",
+      "source_url": "https://osiyatech.com/cybersecurity",
+      "source_document": "Osiyatech_Services_Knowledge_Base_v3.pdf",
+      "source_pdf_page": null,
+      "version": "3.0"
+    },
+    {
+      "faq_id": "cybersecurity-003",
+      "question": "How does cybersecurity help protect cloud infrastructure?",
+      "source_tag": "untagged",
+      "approval_status": "approved",
+      "owner": "Osiyatech Team",
+      "reviewer": "Osiyatech Team",
+      "reviewed_on": "2026-10-31",
+      "source_pdf_pages": {
+        "start": 72,
+        "end": 76
+      },
+      "answer": "Cloud environments are powerful but easy to misconfigure, which is a common cause of data breaches. Cloud\nsecurity combines identity and access management (controlling who can do what), encryption of data, network\ncontrols, secure configuration settings, logging and vulnerability management. Together, these reduce the risks\nto cloud-hosted applications and data. Osiyatech assesses your cloud setup against security best practices and\nhardens it.",
+      "source_url": "https://osiyatech.com/cybersecurity",
+      "source_document": "Osiyatech_Services_Knowledge_Base_v3.pdf",
+      "source_pdf_page": null,
+      "version": "3.0"
+    },
+    {
+      "faq_id": "cybersecurity-004",
+      "question": "How often should businesses conduct cybersecurity assessments?",
+      "source_tag": "untagged",
+      "approval_status": "approved",
+      "owner": "Osiyatech Team",
+      "reviewer": "Osiyatech Team",
+      "reviewed_on": "2026-10-31",
+      "source_pdf_pages": {
+        "start": 72,
+        "end": 76
+      },
+      "answer": "It depends on your level of risk, any regulatory requirements and how often your systems change. As a general\npractice, periodic assessments are recommended, and additional assessments are advisable after major\napplication releases, significant infrastructure changes such as a cloud migration, or the introduction of new\nbusiness-critical systems. Osiyatech can help you set a sensible assessment schedule.",
+      "source_url": "https://osiyatech.com/cybersecurity",
+      "source_document": "Osiyatech_Services_Knowledge_Base_v3.pdf",
+      "source_pdf_page": null,
+      "version": "3.0"
+    },
+    {
+      "faq_id": "cybersecurity-005",
+      "question": "How can cybersecurity assessments improve business security?",
+      "source_tag": "untagged",
+      "approval_status": "approved",
+      "owner": "Osiyatech Team",
+      "reviewer": "Osiyatech Team",
+      "reviewed_on": "2026-10-31",
+      "source_pdf_pages": {
+        "start": 72,
+        "end": 76
+      },
+      "answer": "An assessment shows you where you are actually exposed. It finds vulnerabilities, insecure configurations,\nweaknesses in access control and other risks across your applications and infrastructure. The findings are\nprioritised by risk, so you can fix the most serious issues first and invest your security budget where it matters\nmost. Over time, regular assessments build stronger security practices across the organisation.",
+      "source_url": "https://osiyatech.com/cybersecurity",
+      "source_document": "Osiyatech_Services_Knowledge_Base_v3.pdf",
+      "source_pdf_page": null,
+      "version": "3.0"
+    },
+    {
+      "faq_id": "cybersecurity-006",
+      "question": "What measures help prevent unauthorized access to business systems?",
+      "source_tag": "untagged",
+      "approval_status": "approved",
+      "owner": "Osiyatech Team",
+      "reviewer": "Osiyatech Team",
+      "reviewed_on": "2026-10-31",
+      "source_pdf_pages": {
+        "start": 72,
+        "end": 76
+      },
+      "answer": "Key measures include multi-factor authentication, role-based access control, least-privilege permissions (giving\npeople only the access they need), secure password policies, network restrictions and segmentation, regular\npatching of software and systems, and security monitoring to detect suspicious activity. Osiyatech can review\nyour current controls and help implement the ones that are missing.",
+      "source_url": "https://osiyatech.com/cybersecurity",
+      "source_document": "Osiyatech_Services_Knowledge_Base_v3.pdf",
+      "source_pdf_page": null,
+      "version": "3.0"
+    },
+    {
+      "faq_id": "cybersecurity-007",
+      "question": "Does Osiyatech provide ongoing cybersecurity support?",
+      "source_tag": "untagged",
+      "approval_status": "approved",
+      "owner": "Osiyatech Team",
+      "reviewer": "Osiyatech Team",
+      "reviewed_on": "2026-10-31",
+      "source_pdf_pages": {
+        "start": 72,
+        "end": 76
+      },
+      "answer": "Yes. Ongoing support can include regular vulnerability reviews, security configuration updates, help with\nremediation, monitoring integration and periodic security assessments. This keeps your controls effective as\nyour systems, threats and business change.",
+      "source_url": "https://osiyatech.com/cybersecurity",
+      "source_document": "Osiyatech_Services_Knowledge_Base_v3.pdf",
+      "source_pdf_page": null,
+      "version": "3.0"
+    },
+    {
+      "faq_id": "cybersecurity-008",
+      "question": "Do you perform penetration testing?",
+      "source_tag": "drafted",
+      "approval_status": "approved",
+      "owner": "Osiyatech Team",
+      "reviewer": "Osiyatech Team",
+      "reviewed_on": "2026-10-31",
+      "source_pdf_pages": {
+        "start": 72,
+        "end": 76
+      },
+      "answer": "Yes. Vulnerability Assessment & Penetration Testing is a core offering. Penetration testing simulates real-world\nattacks on your applications, networks and infrastructure, with your written authorisation and an agreed scope,\nto find weaknesses an attacker could exploit. You receive clear findings with actionable recommendations for\nfixing each issue.",
+      "source_url": "https://osiyatech.com/cybersecurity",
+      "source_document": "Osiyatech_Services_Knowledge_Base_v3.pdf",
+      "source_pdf_page": null,
+      "version": "3.0"
+    },
+    {
+      "faq_id": "cybersecurity-009",
+      "question": "Is Osiyatech certified, for example SOC 2, ISO 27001 or HIPAA?",
+      "source_tag": "drafted",
+      "approval_status": "approved",
+      "owner": "Osiyatech Team",
+      "reviewer": "Osiyatech Team",
+      "reviewed_on": "2026-10-31",
+      "source_pdf_pages": {
+        "start": 72,
+        "end": 76
+      },
+      "answer": "Osiyatech doesn't currently hold formal third-party certifications such as SOC 2, ISO 27001 or HIPAA\nattestation. Its security work follows established industry practices and frameworks, such as the OWASP\nguidelines for application security, and uses widely recognised security tools. If your organisation needs to\nmeet a particular standard, Osiyatech can assess your systems against the relevant controls, help close the\ngaps and work alongside your auditors. Formal certification of your organisation is issued by an accredited\nauditor.",
+      "source_url": "https://osiyatech.com/cybersecurity",
+      "source_document": "Osiyatech_Services_Knowledge_Base_v3.pdf",
+      "source_pdf_page": 76,
+      "version": "3.0"
+    },
+    {
+      "faq_id": "cybersecurity-010",
+      "question": "Can you help us prepare for SOC 2, ISO 27001 or other compliance requirements?",
+      "source_tag": "drafted",
+      "approval_status": "approved",
+      "owner": "Osiyatech Team",
+      "reviewer": "Osiyatech Team",
+      "reviewed_on": "2026-10-31",
+      "source_pdf_pages": {
+        "start": 72,
+        "end": 76
+      },
+      "answer": "Osiyatech offers compliance readiness assessments that review your applications and infrastructure against\nthe security controls such standards expect, identify gaps and help you put technical controls in place, such as\naccess management, encryption, logging and monitoring. Osiyatech isn't a certification body or auditor, so the\nformal certification itself comes from an accredited auditor. Confirm the specific framework and scope with the\nteam.",
+      "source_url": "https://osiyatech.com/cybersecurity",
+      "source_document": "Osiyatech_Services_Knowledge_Base_v3.pdf",
+      "source_pdf_page": 76,
+      "version": "3.0"
+    },
+    {
+      "faq_id": "cybersecurity-011",
+      "question": "How much do cybersecurity services cost?",
+      "source_tag": "drafted",
+      "approval_status": "approved",
+      "owner": "Osiyatech Team",
+      "reviewer": "Osiyatech Team",
+      "reviewed_on": "2026-10-31",
+      "source_pdf_pages": {
+        "start": 72,
+        "end": 76
+      },
+      "answer": "Osiyatech doesn't publish fixed prices. Cost depends on the size and complexity of your environment, the type\nof assessment or testing, the number of applications and systems in scope, and whether ongoing support is\nneeded. After a consultation, you'll receive a transparent estimate.",
+      "source_url": "https://osiyatech.com/cybersecurity",
+      "source_document": "Osiyatech_Services_Knowledge_Base_v3.pdf",
+      "source_pdf_page": 76,
+      "version": "3.0"
+    }
+  ],
+  "answer_extraction": "original_markdown",
+  "enriched_at": "2026-10-30T19:22:35.686753+05:30",
+  "last_updated_at": "2026-10-31T12:26:05.694135+05:30"
+}

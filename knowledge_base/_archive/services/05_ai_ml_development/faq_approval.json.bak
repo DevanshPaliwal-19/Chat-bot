@@ -1,0 +1,164 @@
+{
+  "schema_version": 1,
+  "service_folder": "05_ai_ml_development",
+  "document_id": "ai-machine-learning-v3",
+  "source_file": "faqs.md",
+  "faqs": [
+    {
+      "faq_id": "ai-machine-learning-001",
+      "question": "What AI and machine learning development services do you offer?",
+      "source_tag": "untagged",
+      "approval_status": "draft",
+      "owner": null,
+      "reviewer": null,
+      "reviewed_on": null,
+      "source_pdf_pages": {
+        "start": 32,
+        "end": 37
+      }
+    },
+    {
+      "faq_id": "ai-machine-learning-002",
+      "question": "Can you develop custom AI solutions for our business?",
+      "source_tag": "untagged",
+      "approval_status": "draft",
+      "owner": null,
+      "reviewer": null,
+      "reviewed_on": null,
+      "source_pdf_pages": {
+        "start": 32,
+        "end": 37
+      }
+    },
+    {
+      "faq_id": "ai-machine-learning-003",
+      "question": "What is the difference between generative AI and traditional machine learning?",
+      "source_tag": "untagged",
+      "approval_status": "draft",
+      "owner": null,
+      "reviewer": null,
+      "reviewed_on": null,
+      "source_pdf_pages": {
+        "start": 32,
+        "end": 37
+      }
+    },
+    {
+      "faq_id": "ai-machine-learning-004",
+      "question": "Can AI models be trained using our company's data?",
+      "source_tag": "untagged",
+      "approval_status": "draft",
+      "owner": null,
+      "reviewer": null,
+      "reviewed_on": null,
+      "source_pdf_pages": {
+        "start": 32,
+        "end": 37
+      }
+    },
+    {
+      "faq_id": "ai-machine-learning-005",
+      "question": "Can you integrate AI and machine learning into our existing applications?",
+      "source_tag": "untagged",
+      "approval_status": "draft",
+      "owner": null,
+      "reviewer": null,
+      "reviewed_on": null,
+      "source_pdf_pages": {
+        "start": 32,
+        "end": 37
+      }
+    },
+    {
+      "faq_id": "ai-machine-learning-006",
+      "question": "How long does it take to develop an AI or machine learning solution?",
+      "source_tag": "untagged",
+      "approval_status": "draft",
+      "owner": null,
+      "reviewer": null,
+      "reviewed_on": null,
+      "source_pdf_pages": {
+        "start": 32,
+        "end": 37
+      }
+    },
+    {
+      "faq_id": "ai-machine-learning-007",
+      "question": "Can you build object detection or computer vision systems?",
+      "source_tag": "drafted",
+      "approval_status": "draft",
+      "owner": null,
+      "reviewer": null,
+      "reviewed_on": null,
+      "source_pdf_pages": {
+        "start": 32,
+        "end": 37
+      }
+    },
+    {
+      "faq_id": "ai-machine-learning-008",
+      "question": "Can you build an AI chatbot that answers questions from our own documents?",
+      "source_tag": "drafted",
+      "approval_status": "draft",
+      "owner": null,
+      "reviewer": null,
+      "reviewed_on": null,
+      "source_pdf_pages": {
+        "start": 32,
+        "end": 37
+      }
+    },
+    {
+      "faq_id": "ai-machine-learning-009",
+      "question": "Is our data kept private when using AI?",
+      "source_tag": "drafted",
+      "approval_status": "draft",
+      "owner": null,
+      "reviewer": null,
+      "reviewed_on": null,
+      "source_pdf_pages": {
+        "start": 32,
+        "end": 37
+      }
+    },
+    {
+      "faq_id": "ai-machine-learning-010",
+      "question": "Which AI models and frameworks do you work with?",
+      "source_tag": "drafted",
+      "approval_status": "draft",
+      "owner": null,
+      "reviewer": null,
+      "reviewed_on": null,
+      "source_pdf_pages": {
+        "start": 32,
+        "end": 37
+      }
+    },
+    {
+      "faq_id": "ai-machine-learning-011",
+      "question": "Can AI power augmented reality features?",
+      "source_tag": "drafted",
+      "approval_status": "draft",
+      "owner": null,
+      "reviewer": null,
+      "reviewed_on": null,
+      "source_pdf_pages": {
+        "start": 32,
+        "end": 37
+      }
+    },
+    {
+      "faq_id": "ai-machine-learning-012",
+      "question": "How much does an AI project cost?",
+      "source_tag": "drafted",
+      "approval_status": "draft",
+      "owner": null,
+      "reviewer": null,
+      "reviewed_on": null,
+      "source_pdf_pages": {
+        "start": 32,
+        "end": 37
+      }
+    }
+  ]
+}

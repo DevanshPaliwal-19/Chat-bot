@@ -1,0 +1,16 @@
+# Core runtime. Lower bounds only: verify against your own environment with `pip freeze` before pinning.
+fastapi>=0.110
+uvicorn[standard]>=0.27
+pydantic>=2.6
+pydantic-settings>=2.2
+httpx>=0.27
+numpy>=1.26
+faiss-cpu>=1.8
+pypdf>=4.0
+beautifulsoup4>=4.12
+python-multipart>=0.0.9
+streamlit>=1.39
+requests>=2.31
+# Real semantic embeddings (you already use this). The app falls back to a built-in hashing
+# embedder if it cannot be loaded, but retrieval quality will be lower.
+sentence-transformers>=2.7

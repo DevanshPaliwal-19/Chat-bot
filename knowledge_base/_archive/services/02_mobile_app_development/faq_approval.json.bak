@@ -1,0 +1,151 @@
+{
+  "schema_version": 1,
+  "service_folder": "02_mobile_app_development",
+  "document_id": "mobile-development-v3",
+  "source_file": "faqs.md",
+  "faqs": [
+    {
+      "faq_id": "mobile-development-001",
+      "question": "Should I choose native iOS/Android or a cross-platform framework like Flutter?",
+      "source_tag": "untagged",
+      "approval_status": "draft",
+      "owner": null,
+      "reviewer": null,
+      "reviewed_on": null,
+      "source_pdf_pages": {
+        "start": 14,
+        "end": 19
+      }
+    },
+    {
+      "faq_id": "mobile-development-002",
+      "question": "How long does it take to develop a custom mobile application?",
+      "source_tag": "untagged",
+      "approval_status": "draft",
+      "owner": null,
+      "reviewer": null,
+      "reviewed_on": null,
+      "source_pdf_pages": {
+        "start": 14,
+        "end": 19
+      }
+    },
+    {
+      "faq_id": "mobile-development-003",
+      "question": "Can you develop a single app for both Android and iOS?",
+      "source_tag": "untagged",
+      "approval_status": "draft",
+      "owner": null,
+      "reviewer": null,
+      "reviewed_on": null,
+      "source_pdf_pages": {
+        "start": 14,
+        "end": 19
+      }
+    },
+    {
+      "faq_id": "mobile-development-004",
+      "question": "Will my mobile app work without an internet connection?",
+      "source_tag": "untagged",
+      "approval_status": "draft",
+      "owner": null,
+      "reviewer": null,
+      "reviewed_on": null,
+      "source_pdf_pages": {
+        "start": 14,
+        "end": 19
+      }
+    },
+    {
+      "faq_id": "mobile-development-005",
+      "question": "Do you provide post-launch maintenance and OS updates?",
+      "source_tag": "untagged",
+      "approval_status": "draft",
+      "owner": null,
+      "reviewer": null,
+      "reviewed_on": null,
+      "source_pdf_pages": {
+        "start": 14,
+        "end": 19
+      }
+    },
+    {
+      "faq_id": "mobile-development-006",
+      "question": "Who owns the source code and App Store developer accounts?",
+      "source_tag": "untagged",
+      "approval_status": "draft",
+      "owner": null,
+      "reviewer": null,
+      "reviewed_on": null,
+      "source_pdf_pages": {
+        "start": 14,
+        "end": 19
+      }
+    },
+    {
+      "faq_id": "mobile-development-007",
+      "question": "Can you build AR or VR features into my app?",
+      "source_tag": "drafted",
+      "approval_status": "draft",
+      "owner": null,
+      "reviewer": null,
+      "reviewed_on": null,
+      "source_pdf_pages": {
+        "start": 14,
+        "end": 19
+      }
+    },
+    {
+      "faq_id": "mobile-development-008",
+      "question": "Can you add payments, push notifications and maps to my app?",
+      "source_tag": "drafted",
+      "approval_status": "draft",
+      "owner": null,
+      "reviewer": null,
+      "reviewed_on": null,
+      "source_pdf_pages": {
+        "start": 14,
+        "end": 19
+      }
+    },
+    {
+      "faq_id": "mobile-development-009",
+      "question": "Can you take over or fix an app built by another developer?",
+      "source_tag": "drafted",
+      "approval_status": "draft",
+      "owner": null,
+      "reviewer": null,
+      "reviewed_on": null,
+      "source_pdf_pages": {
+        "start": 14,
+        "end": 19
+      }
+    },
+    {
+      "faq_id": "mobile-development-010",
+      "question": "Do you design the app as well as build it?",
+      "source_tag": "drafted",
+      "approval_status": "draft",
+      "owner": null,
+      "reviewer": null,
+      "reviewed_on": null,
+      "source_pdf_pages": {
+        "start": 14,
+        "end": 19
+      }
+    },
+    {
+      "faq_id": "mobile-development-011",
+      "question": "How much does a mobile app cost?",
+      "source_tag": "drafted",
+      "approval_status": "draft",
+      "owner": null,
+      "reviewer": null,
+      "reviewed_on": null,
+      "source_pdf_pages": {
+        "start": 14,
+        "end": 19
+      }
+    }
+  ]
+}
